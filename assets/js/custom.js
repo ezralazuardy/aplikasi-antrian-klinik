@@ -1,3 +1,9 @@
+$(document).ready( function () {
+
+    $('#doctor-table').DataTable();
+
+} );
+
 $(function() {
 		var data, options;
 

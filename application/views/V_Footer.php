@@ -13,6 +13,7 @@
 	<script src="<?php echo base_url('assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/vendor/chartist/js/chartist.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/scripts/klorofil-common.js');  ?>"></script>
+	<script src="<?php echo base_url('assets/js/jquery.dataTables.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
 
 </body>
