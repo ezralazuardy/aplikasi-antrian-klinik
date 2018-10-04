@@ -53,6 +53,12 @@ $route['default_controller'] = 'C_Dashboard';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['Admin'] = 'Admin/C_Admin';
+$route['Admin/(:any)'] = 'Admin/C_Admin/$1';
+$route['Admin/(:any)/(:any)'] = 'Admin/C_Admin/$1/$2';
+
+
+
 $route['Dashboard'] = 'C_Dashboard';
 $route['Charts'] = 'C_Charts';
 $route['Elements'] = 'C_Elements';

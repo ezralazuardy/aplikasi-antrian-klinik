@@ -1,3 +1,14 @@
+$(document).ready( function () {
+
+    $('#doctor-table').DataTable();
+    $('.tanggal-lahir').datepicker({
+      changeMonth: true,
+      changeYear: true
+    });		
+    $('.tanggal-lahir').datepicker("option", "dateFormat", 'DD, dd MM yy');
+
+});
+
 $(function() {
 		var data, options;
 
