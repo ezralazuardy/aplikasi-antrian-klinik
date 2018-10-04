@@ -3,7 +3,7 @@
 			<div class="sidebar-scroll">
 				<nav>
 					<ul class="nav">
-						<li><a href="<?php echo base_url('Dashboard'); ?>" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
+						<li><a href="<?php echo base_url('Dashboard'); ?>" ><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
 						
 						<li><a href="<?php echo base_url('Admin/pegawai'); ?>" class=""><i class="lnr lnr-user "></i> <span>Pegawai</span></a></li>
 

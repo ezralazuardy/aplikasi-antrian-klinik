@@ -3,43 +3,74 @@
 	<!-- MAIN CONTENT -->
 	<div class="main-content">
 		<div class="container-fluid">
-			<h3 class="page-title">Tables</h3>
+			<h3 class="page-title">Daftar Pegawai</h3>
 			<div class="row">
 				<div class="col-md-12">
 					<!-- BASIC TABLE -->
+					<?php echo $status; ?>
 					<div class="panel">
 						<div class="panel-heading">
-							<h3 class="panel-title">Basic Table</h3>
 						</div>
 						<div class="panel-body">
+							<div class="row">
+								<div class="col-md-10">
+								</div>
+								<div class="col-md-2">
+									<div class="float-right" style="padding:10px;">
+										<a href="<?php echo base_url('Admin/Insert'); ?>" alt="Add" class="btn btn-success btn-lg insert-btn" "><span class="fa fa-plus"></span>
+										</a>
+									</div>
+								</div>
+							</div>
 							<table class="table" id="doctor-table">
-								<thead>
+								<thead class="text-center">
 									<tr>
-										<th>#</th>
-										<th>First Name</th>
-										<th>Last Name</th>
-										<th>Username</th>
+										<th>No</th>
+										<th>Nama</th>
+										<th>Tanggal Lahir</th>
+										<th>Status</th>
+										<th>Layanan</th>
+										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td>1</td>
-										<td>Steve</td>
-										<td>Jobs</td>
-										<td>@steve</td>
-									</tr>
-									<tr>
-										<td>2</td>
-										<td>Simon</td>
-										<td>Philips</td>
-										<td>@simon</td>
-									</tr>
-									<tr>
-										<td>3</td>
-										<td>Jane</td>
-										<td>Doe</td>
-										<td>@jane</td>
-									</tr>
+									<?php 
+									$i = 1;
+									if($pegawai){
+										foreach ($pegawai as $value) {
+		
+		/* Encrypt ID */
+		$encrypted_string = $this->encrypt->encode($value['id_dok']);
+		$id = str_replace(array('+', '/', '='), array('-', '_', '~'), $encrypted_string);
+		
+
+									?>
+										<tr>
+											<td><?php echo $i++; ?></td>
+											<td><?php echo $value['nama_dokter']; ?></td>
+											<td><?php echo $value['tanggal_lahir']; ?></td>
+											<td><?php echo $value['status']; ?></td>
+											<td><?php echo $value['id_layanan']; ?></td>
+											<td>
+								
+								<a href="<?php echo base_url('Admin/pegawaiDetail/'.$id); ?>" class="btn btn-sm btn-primary">
+									<span class="fa fa-search"></span>
+								</a>
+
+								<a href="<?php echo base_url('Admin/pegawaiEdit/'.$id); ?>" class="btn btn-sm btn-warning">
+									<span class="lnr lnr-pencil"></span>
+								</a>
+								
+								<a href="<?php echo base_url('Admin/pegawaiDelete/'.$id); ?>" class="btn btn-sm btn-danger">
+									<span class="fa fa-trash"></span>
+								</a>
+								
+											</td>
+										</tr>
+									<?php
+										}
+									}
+									?>
 								</tbody>
 							</table>
 						</div>
