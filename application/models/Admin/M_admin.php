@@ -38,5 +38,18 @@ class M_admin extends CI_Model {
 	}
 
 
+	/* ==================== UPDATE SECTION ====================== */
+
+	public function updatePegawai($id,$data){
+		$this->db->where('id_dok',$id);
+		return $this->db->update('tbl_dokter',$data);
+	}
+
+	/*===================== DELETE SECTION ====================== */
+
+	public function deletePegawai($id){
+		$this->db->where('id_dok',$id);
+		return $this->db->delete('tbl_dokter');
+	}
 }
 ?>

@@ -1,23 +1,43 @@
 $(document).ready( function () {
 
-    $('#doctor-table').DataTable();
-    $('.tanggal-lahir').datepicker({
-      changeMonth: true,
-      changeYear: true
-    });		
-    $('.tanggal-lahir').datepicker("option", "dateFormat", 'DD, dd MM yy');
+	$('#doctor-table').DataTable();
+	$('.tanggal-lahir').datepicker({
+		changeMonth: true,
+		changeYear: true
+	});		
+	$('.tanggal-lahir').datepicker("option", "dateFormat", 'DD, dd MM yy');
 
 });
 
+function deleteThis($link){
+	swal({
+		title: "Are you sure?",
+		text: "Data ini akan di delete?",
+		icon: "warning",
+		buttons: true,
+		dangerMode: true,
+	})
+	.then((willDelete) => {
+		if (willDelete) {
+			swal("Poof! Your imaginary file has been deleted!", {
+				icon: "success",
+			});
+			window.location.replace($link)
+		} else {
+			swal("Your imaginary file is safe!");
+		}
+	});
+}
+
 $(function() {
-		var data, options;
+	var data, options;
 
 		// headline charts
 		data = {
 			labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
 			series: [
-				[23, 29, 24, 40, 25, 24, 35],
-				[14, 25, 18, 34, 29, 38, 44],
+			[23, 29, 24, 40, 25, 24, 35],
+			[14, 25, 18, 34, 29, 38, 44],
 			]
 		};
 
@@ -83,7 +103,7 @@ $(function() {
 		data = {
 			labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
 			series: [
-				[6384, 6342, 5437, 2764, 3958, 5068, 7654]
+			[6384, 6342, 5437, 2764, 3958, 5068, 7654]
 			]
 		};
 
