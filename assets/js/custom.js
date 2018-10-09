@@ -11,7 +11,7 @@ $(document).ready( function () {
 
 function deleteThis($link){
 	swal({
-		title: "Are you sure?",
+		title: "Apa Anda Yakin?",
 		text: "Data ini akan di delete?",
 		icon: "warning",
 		buttons: true,
@@ -23,8 +23,6 @@ function deleteThis($link){
 				icon: "success",
 			});
 			window.location.replace($link)
-		} else {
-			swal("Your imaginary file is safe!");
 		}
 	});
 }

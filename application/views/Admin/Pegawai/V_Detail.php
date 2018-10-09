@@ -34,7 +34,7 @@
 											
 											<div class="form-group">
 												<label for="tanggal-lahir">Tanggal Lahir</label>
-												<h4 id="tanggal-lahir"><?php echo date_format(date_create($value['tanggal_lahir']),'F, d m Y'); ?></h4>
+												<h4 id="tanggal-lahir"><?php echo date_format(date_create($value['tanggal_lahir']),'l, d F Y'); ?></h4>
 											</div>
 											<hr>
 											<div class="form-group">

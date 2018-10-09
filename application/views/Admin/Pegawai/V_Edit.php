@@ -46,7 +46,7 @@
 											<div class="form-group">
 												<label for="jenis-kelamin">Jenis Kelamin</label>
 												<label class="fancy-radio">
-													<input name="jenis-kelamin" value="male" type="radio" <?php echo $value['jenis_kelamin'] == 'male' ? "checkdnsrr(host)" : ''; ?> required="">
+													<input name="jenis-kelamin" value="male" type="radio" <?php echo $value['jenis_kelamin'] == 'male' ? "checked" : ''; ?> required="">
 													<span><i></i>Laki - Laki</span>
 												</label>
 												<label class="fancy-radio">
@@ -91,7 +91,7 @@
 								}
 								?>
 								<div class="col-md-12">
-									<input class="btn btn-danger btn-lg" type="submit" value="Update">
+									<input class="btn btn-primary btn-lg" type="submit" value="Update">
 								</div>
 							</div>
 						</div>
