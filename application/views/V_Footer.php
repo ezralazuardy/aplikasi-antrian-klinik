@@ -16,6 +16,7 @@
 	<script src="<?php echo base_url('assets/scripts/klorofil-common.js');  ?>"></script>
 	<script src="<?php echo base_url('assets/js/jquery.dataTables.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.js'); ?>"></script>
+	<script src="<?php echo base_url('assets/js/sweetalert.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
 	
 

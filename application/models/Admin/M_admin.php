@@ -8,18 +8,24 @@ class M_admin extends CI_Model {
 	}
 
 
-	/* ------------------- INSERT SECTION ------------------------ */
+	/* -=-=-=-=-=-=-=-=-=-=- INSERT SECTION -=-=-=-=-=-=-=-=-=-=-=- */
 	public function insertPegawai($data){
 		return $this->db->insert('tbl_dokter',$data);
 	}
+	public function insertLayanan($data){
+		return $this->db->insert('tbl_layanan',$data);
+	}
+	public function insertUser($data){
+		return $this->db->insert('tbl_user',$data);
+	}
 
 
-
-
-
-	/*--------------------- SELECT SECTION ----------------------- */
+	/*-=--=-=-=-=-=-=--=-=-= SELECT SECTION -=-=-=-=-=-=-=-=-=-=-=-= */
 	public function selectPegawai(){
-		$data = $this->db->get('tbl_dokter');
+		$this->db->select('tbl_dokter.*,tbl_layanan.*');;
+		$this->db->from('tbl_dokter');
+		$this->db->join('tbl_layanan','tbl_dokter.id_layanan = tbl_layanan.id_layanan', 'inner');
+		$data = $this->db->get();
 		if($data->num_rows() > 0){
 			return $data->result_array();
 		}else{
@@ -27,6 +33,86 @@ class M_admin extends CI_Model {
 		}
 	}
 
+	public function getPegawai($id){
+		$this->db->where('id_dok',$id);
+		$data = $this->db->get('tbl_dokter');
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}	
+	}
 
+	public function selectLayanan(){
+		$data = $this->db->get('tbl_layanan');
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}
+	}
+
+	public function getLayanan($id){
+		$this->db->where('id_layanan',$id);
+		$data = $this->db->get('tbl_layanan');
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}	
+	}
+
+	public function selectUser(){
+		$data = $this->db->get('tbl_user');
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}
+	}
+
+	public function getUser($id){
+		$this->db->where('id_user',$id);
+		$data = $this->db->get('tbl_user');
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}	
+	}
+
+	/* -=-=-=-=-=-=-=-=-=-=- UPDATE SECTION -=-=-=-=-=-=-=-=-=-=- */
+
+	public function updatePegawai($id,$data){
+		$this->db->where('id_dok',$id);
+		return $this->db->update('tbl_dokter',$data);
+	}
+
+	public function updateLayanan($id,$data){
+		$this->db->where('id_layanan',$id);
+		return $this->db->update('tbl_layanan',$data);
+	}
+
+	public function updateUser($id,$data){
+		$this->db->where('id_user',$id);
+		return $this->db->update('tbl_user',$data);
+	}
+
+	/* -=-=-=-=-=-=-=-=-=-=- DELETE SECTION -=-=-=-=-=-=-=-=-=-=- */
+
+	public function deletePegawai($id){
+		$this->db->where('id_dok',$id);
+		return $this->db->delete('tbl_dokter');
+	}
+
+	public function deleteLayanan($id){
+		$this->db->where('id_layanan',$id);
+		return $this->db->delete('tbl_layanan');
+	}
+
+	public function deleteUser($id){
+		$this->db->where('id_user',$id);
+		return $this->db->delete('tbl_user');
+	}
 }
 ?>
