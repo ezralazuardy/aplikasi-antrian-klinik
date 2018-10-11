@@ -61,8 +61,9 @@ $route['Layanan'] = 'Admin/C_Layanan/';
 $route['Layanan/(:any)'] = 'Admin/C_Layanan/$1';
 $route['Layanan/(:any)/(:any)'] = 'Admin/C_Layanan/$1/$2';
 
-
-
+$route['User'] = 'Admin/C_User/';
+$route['User/(:any)'] = 'Admin/C_User/$1';
+$route['User/(:any)/(:any)'] = 'Admin/C_User/$1/$2';
 
 $route['Dashboard'] = 'C_Dashboard';
 $route['Charts'] = 'C_Charts';

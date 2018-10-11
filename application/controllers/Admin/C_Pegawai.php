@@ -54,7 +54,6 @@ class C_Pegawai extends CI_Controller {
 		// generate all data pegawai
 		$data['pegawai'] = $this->M_admin->selectPegawai();
 
-
 	
 		$this->load->view("V_Header");
 		$this->load->view("V_Sidebar");
@@ -64,9 +63,13 @@ class C_Pegawai extends CI_Controller {
 
 
 	public function inputPegawai(){
+		
+		// generate all data layanan
+		$data['layanan'] = $this->M_admin->selectLayanan();
+
 		$this->load->view("V_Header");
 		$this->load->view("V_Sidebar");
-		$this->load->view("Admin/Pegawai/V_Input");
+		$this->load->view("Admin/Pegawai/V_Input",$data);
 		$this->load->view("V_Footer");	
 	}
 

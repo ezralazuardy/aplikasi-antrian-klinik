@@ -15,11 +15,17 @@ class M_admin extends CI_Model {
 	public function insertLayanan($data){
 		return $this->db->insert('tbl_layanan',$data);
 	}
+	public function insertUser($data){
+		return $this->db->insert('tbl_user',$data);
+	}
 
 
 	/*-=--=-=-=-=-=-=--=-=-= SELECT SECTION -=-=-=-=-=-=-=-=-=-=-=-= */
 	public function selectPegawai(){
-		$data = $this->db->get('tbl_dokter');
+		$this->db->select('tbl_dokter.*,tbl_layanan.*');;
+		$this->db->from('tbl_dokter');
+		$this->db->join('tbl_layanan','tbl_dokter.id_layanan = tbl_layanan.id_layanan', 'inner');
+		$data = $this->db->get();
 		if($data->num_rows() > 0){
 			return $data->result_array();
 		}else{
@@ -56,6 +62,25 @@ class M_admin extends CI_Model {
 		}	
 	}
 
+	public function selectUser(){
+		$data = $this->db->get('tbl_user');
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}
+	}
+
+	public function getUser($id){
+		$this->db->where('id_user',$id);
+		$data = $this->db->get('tbl_user');
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}	
+	}
+
 	/* -=-=-=-=-=-=-=-=-=-=- UPDATE SECTION -=-=-=-=-=-=-=-=-=-=- */
 
 	public function updatePegawai($id,$data){
@@ -68,6 +93,11 @@ class M_admin extends CI_Model {
 		return $this->db->update('tbl_layanan',$data);
 	}
 
+	public function updateUser($id,$data){
+		$this->db->where('id_user',$id);
+		return $this->db->update('tbl_user',$data);
+	}
+
 	/* -=-=-=-=-=-=-=-=-=-=- DELETE SECTION -=-=-=-=-=-=-=-=-=-=- */
 
 	public function deletePegawai($id){
@@ -78,6 +108,11 @@ class M_admin extends CI_Model {
 	public function deleteLayanan($id){
 		$this->db->where('id_layanan',$id);
 		return $this->db->delete('tbl_layanan');
+	}
+
+	public function deleteUser($id){
+		$this->db->where('id_user',$id);
+		return $this->db->delete('tbl_user');
 	}
 }
 ?>

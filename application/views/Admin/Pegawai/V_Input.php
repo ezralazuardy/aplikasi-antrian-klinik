@@ -12,82 +12,90 @@
 						</div>
 						<div class="panel-body">
 							<form action="<?php echo base_url('Admin/insertPegawai'); ?>" method="POST">
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="nama-dokter">Nama Dokter</label>
-									<input id="nama-dokter" name="nama-dokter" type="text" class="form-control" placeholder="Nama Dokter" required="">
-								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="nama-dokter">Nama Dokter</label>
+										<input id="nama-dokter" name="nama-dokter" type="text" class="form-control" placeholder="Nama Dokter" required="">
+									</div>
 
-								<div class="form-group">
-									<label for="tempat-lahir">Tempat Lahir</label>
-									<input id="tempat-lahir" name="tempat-lahir" type="text" class="form-control" placeholder="Tempat Lahir" required="">
-								</div>
+									<div class="form-group">
+										<label for="tempat-lahir">Tempat Lahir</label>
+										<input id="tempat-lahir" name="tempat-lahir" type="text" class="form-control" placeholder="Tempat Lahir" required="">
+									</div>
 
-								<div class="form-group">
-									<label for="tanggal-lahir">Tanggal Lahir</label>
-									<input id="tanggal-lahir" name="tanggal-lahir" type="text" class="form-control tanggal-lahir" placeholder="Tanggal Lahir" required="">
-								</div>
+									<div class="form-group">
+										<label for="tanggal-lahir">Tanggal Lahir</label>
+										<input id="tanggal-lahir" name="tanggal-lahir" type="text" class="form-control tanggal-lahir" placeholder="Tanggal Lahir" required="">
+									</div>
 
-								<div class="form-group">
-									<label for="alamat">Alamat</label>
-									<textarea id="alamat" name="alamat" class="form-control" placeholder="Alamat" required="">
-									</textarea>
+									<div class="form-group">
+										<label for="alamat">Alamat</label>
+										<textarea id="alamat" name="alamat" class="form-control" placeholder="Alamat" required="">
+										</textarea>
+									</div>
 								</div>
-							</div>
-							<div class="col-md-6">
-								<div class="form-group">
-									<label for="jenis-kelamin">Jenis Kelamin</label>
-									<label class="fancy-radio">
-										<input name="jenis-kelamin" value="male" type="radio" required="">
-										<span><i></i>Laki - Laki</span>
-									</label>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="jenis-kelamin">Jenis Kelamin</label>
 										<label class="fancy-radio">
-										<input name="jenis-kelamin" value="female" type="radio" required="">
-										<span><i></i>Perempuan</span>
-									</label>
-									
-								</div>
+											<input name="jenis-kelamin" value="male" type="radio" required="">
+											<span><i></i>Laki - Laki</span>
+										</label>
+										<label class="fancy-radio">
+											<input name="jenis-kelamin" value="female" type="radio" required="">
+											<span><i></i>Perempuan</span>
+										</label>
 
-								<div class="form-group">
-									<label for="status">Status</label>
-									<input id="status" name="status" type="text" class="form-control" placeholder="Status" required="">
-								</div>
+									</div>
 
-								<div class="form-group">
-									<label for="pendidikan">Pendidikan Terakhir </label>
-									<select name="pendidikan" class="form-control" placeholder="Pendidikan Terakhir" required="">
-										<option disabled="" readonly>Pendidikan Terakhir</option>
-										<option value="Doktor">Doktor (S3)</option>
-										<option value="Magister">Magister (S2)</option>
-										<option value="Sarjana">Sarjana (S1)</option>
-										<option value="Diploma 3">Diploma 3</option>
-										<option value="Diploma 2">Diploma 2</option>
-										<option value="Diploma 1">Diploma 1</option>
-										<option value="SMA">SMA</option>
-										<option value="SMK">SMK</option>
-										<option value="SMP">SMP</option>
-										<option value="SD">SD</option>
-									</select>
-								</div>
+									<div class="form-group">
+										<label for="status">Status</label>
+										<input id="status" name="status" type="text" class="form-control" placeholder="Status" required="">
+									</div>
 
-								<div class="form-group">
-									<label for="layanan">Layanan </label>
-									<select name="layanan" class="form-control" placeholder="Layanan" required="">
-										<option disabled="" readonly>Layanan</option>
-										<option value=1>OBAT</option>
-									</select>
+									<div class="form-group">
+										<label for="pendidikan">Pendidikan Terakhir </label>
+										<select name="pendidikan" class="form-control" placeholder="Pendidikan Terakhir" required="">
+											<option disabled="" readonly>Pendidikan Terakhir</option>
+											<option value="Doktor">Doktor (S3)</option>
+											<option value="Magister">Magister (S2)</option>
+											<option value="Sarjana">Sarjana (S1)</option>
+											<option value="Diploma 3">Diploma 3</option>
+											<option value="Diploma 2">Diploma 2</option>
+											<option value="Diploma 1">Diploma 1</option>
+											<option value="SMA">SMA</option>
+											<option value="SMK">SMK</option>
+											<option value="SMP">SMP</option>
+											<option value="SD">SD</option>
+										</select>
+									</div>
+
+									<div class="form-group">
+										<label for="layanan">Layanan </label>
+										<select name="layanan" class="form-control" placeholder="Layanan" required="">
+											<option disabled="" readonly>Layanan</option>
+											<?php 
+											$i = 1;
+											if($layanan){
+												foreach ($layanan as $value) {?>
+												<option value=<?php echo $value['id_layanan']; ?>><?php echo $value['nama']; ?></option>
+											<?php  
+												}
+											} 
+											?>
+											</select>
+										</div>
+									</div>
+									<div class="col-md-12">
+										<input class="btn btn-success btn-lg" type="submit" value="Input">
+									</div>
 								</div>
 							</div>
-							<div class="col-md-12">
-								<input class="btn btn-success btn-lg" type="submit" value="Input">
-							</div>
+							<!-- END INPUTS -->
 						</div>
 					</div>
-					<!-- END INPUTS -->
 				</div>
 			</div>
+			<!-- END MAIN CONTENT -->
 		</div>
-	</div>
-	<!-- END MAIN CONTENT -->
-</div>
-<!-- END MAIN -->
+		<!-- END MAIN -->

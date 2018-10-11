@@ -11,7 +11,7 @@
 						<div class="panel-heading">
 						</div>
 						<div class="panel-body">
-							<form action="<?php echo base_url('Layanan/insertLayanan'); ?>" method="POST">
+							<form action="<?php echo base_url('Layanan/updateLayanan'); ?>" method="POST">
 							<input type="hidden" value="<?php echo $id_layanan; ?>" name="id_layanan">
 							<?php if($list){
 								foreach ($list as $value) {

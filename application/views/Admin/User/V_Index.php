@@ -3,7 +3,7 @@
 	<!-- MAIN CONTENT -->
 	<div class="main-content">
 		<div class="container-fluid">
-			<h3 class="page-title">Daftar Pegawai</h3>
+			<h3 class="page-title">Daftar User</h3>
 			<div class="row">
 				<div class="col-md-12">
 					<!-- BASIC TABLE -->
@@ -15,7 +15,7 @@
 								</div>
 								<div class="col-md-2">
 									<div class="float-right" style="padding:10px;margin:5px;">
-										<a href="<?php echo base_url('Admin/inputPegawai'); ?>" alt="Add" class="btn btn-success btn-lg insert-btn" "><span class="fa fa-plus"></span>
+										<a href="<?php echo base_url('User/inputUser'); ?>" alt="Add" class="btn btn-success btn-lg insert-btn" "><span class="fa fa-plus"></span>
 										</a>
 									</div>
 								</div>
@@ -25,44 +25,37 @@
 									<tr>
 										<th>No</th>
 										<th>Nama</th>
-										<th>Tanggal Lahir</th>
-										<th>Status</th>
-										<th>Layanan</th>
+										<th>Hak Akses</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
 									<?php 
 									$i = 1;
-
-									if($pegawai){
-										foreach ($pegawai as $value) {
+									if($user){
+										foreach ($user as $value) {
 
 											/* Encrypt ID */
-											$encrypted_string = $this->encrypt->encode($value['id_dok']);
+											$encrypted_string = $this->encrypt->encode($value['id_user']);
 											$id = str_replace(array('+', '/', '='), array('-', '_', '~'), $encrypted_string);
 
 
 											?>
 											<tr>
 												<td><?php echo $i++; ?></td>
-												<td><?php echo $value['nama_dokter']; ?></td>
-												<td><?php echo $value['tanggal_lahir']; ?></td>
-												<td><?php echo $value['status']; ?></td>
 												<td><?php echo $value['nama']; ?></td>
+												<td><?php echo $value['akses']; ?></td>
 												<td>
 
-													<a href="<?php echo base_url('Admin/pegawaiDetail/'.$id); ?>" class="btn btn-sm btn-primary">
+													<a href="<?php echo base_url('User/userDetail/'.$id); ?>" class="btn btn-sm btn-primary">
 														<span class="fa fa-search"></span>
 													</a>
 
-													<a href="<?php echo base_url('Admin/pegawaiEdit/'.$id); ?>" class="btn btn-sm btn-warning">
+													<a href="<?php echo base_url('User/userEdit/'.$id); ?>" class="btn btn-sm btn-warning">
 														<span class="lnr lnr-pencil"></span>
 													</a>
 
-													<button class="btn btn-sm btn-danger" onclick="deleteThis('<?php echo base_url('Admin/deletePegawai/'.$id); ?>');" ><span class="fa fa-trash"></span></button> 
-
-
+													<button class="btn btn-sm btn-danger" onclick="deleteThis('<?php echo base_url('User/deleteUser/'.$id); ?>');" ><span class="fa fa-trash"></span></button> 
 
 												</td>
 											</tr>
