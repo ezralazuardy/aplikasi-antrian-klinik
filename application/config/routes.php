@@ -57,6 +57,11 @@ $route['Admin'] = 'Admin/C_Pegawai/';
 $route['Admin/(:any)'] = 'Admin/C_Pegawai/$1';
 $route['Admin/(:any)/(:any)'] = 'Admin/C_Pegawai/$1/$2';
 
+$route['Login'] = 'C_Login';
+$route['Login/(:any)'] = 'C_Login/$1';
+$route['Login/(:any)/(:any)'] = 'C_Login/$1/$2';
+
+
 $route['Layanan'] = 'Admin/C_Layanan/';
 $route['Layanan/(:any)'] = 'Admin/C_Layanan/$1';
 $route['Layanan/(:any)/(:any)'] = 'Admin/C_Layanan/$1/$2';

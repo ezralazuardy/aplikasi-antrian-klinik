@@ -25,7 +25,7 @@
 
 											<div class="form-group">
 												<label for="nama">Nama</label>
-												<input id="nama" name="nama" type="text" class="form-control tanggal-lahir" value="<?php echo $value['nama']; ?>" placeholder="Nama" required="">
+												<input id="nama" name="nama" type="text" class="form-control" value="<?php echo $value['nama']; ?>" placeholder="Nama" required="">
 											</div>
 
 											<div class="form-group">

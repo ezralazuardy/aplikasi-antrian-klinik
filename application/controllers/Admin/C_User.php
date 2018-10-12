@@ -121,9 +121,11 @@ public function userEdit($id = false){
 		// exit();
 
 		if($this->M_admin->insertUser($data)){
-			redirect('User/index/simpan');
+			$this->session->set_flashdata('success', 'User berhasil ditambahkan!');
+			redirect('User/index');
 		}else{
-			redirect('User/index/error');
+			$this->session->set_flashdata('error', 'Terjadi error pada saat insert ke database');
+			redirect('User/index');
 		}
 	}
 
@@ -132,9 +134,6 @@ public function userEdit($id = false){
 		
 		$id = $this->input->post('id_user');
 		$username = $this->input->post('username');
-		
-		$password = $this->input->post('password');
-		$password = $this->encrypt->encode($this->encrypt->encode($password));
 
 		$nama = $this->input->post('nama');
 		$akses = $this->input->post('akses');
@@ -151,9 +150,11 @@ public function userEdit($id = false){
 		// exit();
 
 		if($this->M_admin->updateUser($id,$data)){
-			redirect('User/index/update');
+			$this->session->set_flashdata('success', 'User berhasil diupdate!');
+			redirect('User/index');
 		}else{
-			redirect('User/index/error');
+			$this->session->set_flashdata('error', 'Terjadi error pada saat update ke database');
+			redirect('User/index');
 		}	
 	}
 /*-=-=-=-=-=-=-=-=-=--=-=-=-=-=- DELETE SECTION -=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-= */
@@ -166,9 +167,11 @@ public function deleteUser($id){
 		$id_dok	= $plaintext_string;
 
 		if($this->M_admin->deleteUser($id_dok)){
-			redirect('User/index/delete');
+			$this->session->set_flashdata('success', 'User berhasil didelete!');
+			redirect('User/index');
 		}else{
-			redirect('User/index/error');
+			$this->session->set_flashdata('error', 'Terjadi error pada saat delete dari database');
+			redirect('User/index');
 		}	
 	}
 

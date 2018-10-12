@@ -7,7 +7,22 @@
 			<div class="row">
 				<div class="col-md-12">
 					<!-- BASIC TABLE -->
-					<?php echo $status; ?>
+					<?php if($this->session->flashdata('success')){  ?>
+
+					<div class="alert alert-success alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+						<i class="fa fa-check-circle"></i> <?php echo $this->session->flashdata('success'); ?>
+					</div>
+
+					<?php }elseif($this->session->flashdata('error')) { ?>
+
+					<div class="alert alert-danger alert-dismissible" role="alert">
+						<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>
+						<i class="false fa-times-circle"></i> <?php echo $this->session->flashdata('error'); ?>
+					</div>
+
+					<?php } ?>
+
 					<div class="panel">
 						<div class="panel-body">
 							<div class="row">
