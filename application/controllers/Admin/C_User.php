@@ -104,7 +104,7 @@ public function userEdit($id = false){
 		$username = $this->input->post('username');
 		
 		$password = $this->input->post('password');
-		$password = $this->encrypt->encode($this->encrypt->encode($password));
+		$password = md5(md5(md5(strrev($password))));
 
 		$nama = $this->input->post('nama');
 		$akses = $this->input->post('akses');

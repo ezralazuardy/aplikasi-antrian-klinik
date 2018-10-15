@@ -8,9 +8,12 @@ class M_login extends CI_Model {
 	}
 
 	public function checkUser($data){
-		 $data = $this->db->get_where('tbl_user',array('username' => '$data'));
+		 
+		 $this->db->where('username',$data);
+		 $data = $this->db->get('tbl_user');
+
 		 if($data->num_rows() > 0){
-		 	return $data->row();
+		 	return $data->result_array();
 		 }else{
 		 	return false;
 		 }
@@ -18,9 +21,12 @@ class M_login extends CI_Model {
 	}
 	
 	public function checkPassword($username,$password){
-		$data = $this->db->get_where('tbl_user',array('username' => '$username','password' => '$password'));
+		$this->db->where('username',$username);
+		$this->db->where('password',$password);
+		$data = $this->db->get('tbl_user');
+		 
 		if($data->num_rows() > 0){
-		 	return $data->row();
+		 	return $data->result_array();
 		 }else{
 		 	return false;
 		 }

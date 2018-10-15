@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'C_Dashboard';
+$route['default_controller'] = 'C_Login/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
@@ -57,7 +57,7 @@ $route['Admin'] = 'Admin/C_Pegawai/';
 $route['Admin/(:any)'] = 'Admin/C_Pegawai/$1';
 $route['Admin/(:any)/(:any)'] = 'Admin/C_Pegawai/$1/$2';
 
-$route['Login'] = 'C_Login';
+$route['Login'] = 'C_Login/index';
 $route['Login/(:any)'] = 'C_Login/$1';
 $route['Login/(:any)/(:any)'] = 'C_Login/$1/$2';
 
@@ -70,15 +70,11 @@ $route['User'] = 'Admin/C_User/';
 $route['User/(:any)'] = 'Admin/C_User/$1';
 $route['User/(:any)/(:any)'] = 'Admin/C_User/$1/$2';
 
+
+$route['Jadwal'] = 'Admin/C_Jadwal/';
+$route['Jadwal/(:any)'] = 'Admin/C_Jadwal/$1';
+$route['Jadwal/(:any)/(:any)'] = 'Admin/C_Jadwal/$1/$2';
+
 $route['Dashboard'] = 'C_Dashboard';
-$route['Charts'] = 'C_Charts';
-$route['Elements'] = 'C_Elements';
-$route['Icons'] = 'C_Icons';
-$route['Lockscreen'] = 'C_Lockscreen';
-$route['Login'] = 'C_Login';
-$route['Notifications'] = 'C_Notifications';
-$route['Panels'] = 'C_Panels';
-$route['Profile'] = 'C_Profile';
-$route['Tables'] = 'C_Tables';
-$route['Typography'] = 'C_Typography';
+
 

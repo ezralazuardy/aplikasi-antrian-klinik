@@ -18,6 +18,9 @@ class M_admin extends CI_Model {
 	public function insertUser($data){
 		return $this->db->insert('tbl_user',$data);
 	}
+	public function insertJadwal($data){
+		return $this->db->insert('tbl_jadwal',$data);
+	}
 
 
 	/*-=--=-=-=-=-=-=--=-=-= SELECT SECTION -=-=-=-=-=-=-=-=-=-=-=-= */
@@ -81,6 +84,28 @@ class M_admin extends CI_Model {
 		}	
 	}
 
+	public function selectJadwal(){
+		$this->db->select('tbl_jadwal.*,tbl_dokter.*');;
+		$this->db->from('tbl_jadwal');
+		$this->db->join('tbl_dokter','tbl_dokter.id_dok = tbl_jadwal.id_dokter', 'inner');
+		$data = $this->db->get();
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}
+	}
+
+	public function getJadwal($id){
+		$this->db->where('id_dok',$id);
+		$data = $this->db->get('tbl_dokter');
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}	
+	}
+
 	/* -=-=-=-=-=-=-=-=-=-=- UPDATE SECTION -=-=-=-=-=-=-=-=-=-=- */
 
 	public function updatePegawai($id,$data){
@@ -96,6 +121,12 @@ class M_admin extends CI_Model {
 	public function updateUser($id,$data){
 		$this->db->where('id_user',$id);
 		return $this->db->update('tbl_user',$data);
+	}
+
+
+	public function updateJadwal($id,$data){
+		$this->db->where('id_jadwal',$id);
+		return $this->db->update('tbl_jadwal',$data);
 	}
 
 	/* -=-=-=-=-=-=-=-=-=-=- DELETE SECTION -=-=-=-=-=-=-=-=-=-=- */
@@ -114,5 +145,11 @@ class M_admin extends CI_Model {
 		$this->db->where('id_user',$id);
 		return $this->db->delete('tbl_user');
 	}
+
+	public function deleteJadwal($id){
+		$this->db->where('id_jadwal',$id);
+		return $this->db->delete('tbl_jadwal');
+	}
+
 }
 ?>

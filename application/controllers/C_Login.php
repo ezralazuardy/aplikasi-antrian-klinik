@@ -19,27 +19,27 @@ class C_Login extends CI_Controller {
 
 
 	public function index() {
-		$this->load->view("MainMenu/V_Page-login");
+
+		$this->load->view("V_Login");
 	}
 
-	public function login(){
+	public function authlogin(){
 		
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		
-		$password = $this->encrypt->encode($this->encrypt->encode($password));
+	
+		$password = md5(md5(md5(strrev($password))));
 
-		if($this->M_login->checkUser($username)){
+		if($hasil = $this->M_login->checkUser($username)){
 			if($data = $this->M_login->checkPassword($username,$password)){
-				echo "<pre>";
-				print_r($data);
-				exit();
-				$this->session->set_userdata($data);
+				$this->session->set_userdata($data[0]);
+				redirect('Dashboard');
 			}else{
-				$this->session->set_flashdata();
+				$this->session->set_flashdata('error','Maaf, Password Anda Salah!');
 				redirect('Login');
 			}
 		}else{
+			$this->session->set_flashdata('error','Maaf, Username Belum Terdaftar!');
 			redirect('Login');	
 		}
 	}
