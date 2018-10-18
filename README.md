@@ -4,7 +4,7 @@
 <br>Aamiin</i>
 
 <b>Nyanyi dulu kuyyy..</b>
-Hai Tayo, hai Tayo, dia bis kecil ramah
+<br>Hai Tayo, hai Tayo, dia bis kecil ramah
 <br>Melaju, melambat, Tayo selalu senang
 <br>Hal Tayo, hai Tayo, dia bis kecil ramah
 <br>Melaju, melambat, Tayo selalu senang
