@@ -1,34 +1,20 @@
-Bismillah..
+<i>Bismillah..
 <br>Semoga rezekinya tambah lancar & diberi jodoh...
 <br>biar ga njomblo terus ea
-<br>Aamiin
+<br>Aamiin</i>
 
-Nyanyi dulu kuyyy..
-
+<b>Nyanyi dulu kuyyy..</b>
 Hai Tayo, hai Tayo, dia bis kecil ramah
-
-Melaju, melambat, Tayo selalu senang
-
-Hal Tayo, hai Tayo, dia bis kecil ramah
-
-Melaju, melambat, Tayo selalu senang
-
-Jalan menanjak, jalan berbelok
-
-Dia selalu berani
-
-Meskipun gelap dia tak sendiri
-
-Dengan teman, tak perlu rasa takut
-
-Hai Tayo, hai Tayo, dia bis kecil ramah
-
-Melaju, melambat, Tayo selalu senang
-
-Hal Tayo, hai Tayo, dia bis kecil ramah
-
-Dengan teman, di sisinya, semua senyum ceria
-
-Indahnya hari ini
-
-Mari bergembiraaa
+<br>Melaju, melambat, Tayo selalu senang
+<br>Hal Tayo, hai Tayo, dia bis kecil ramah
+<br>Melaju, melambat, Tayo selalu senang
+<br>Jalan menanjak, jalan berbelok
+<br>Dia selalu berani
+<br>Meskipun gelap dia tak sendiri
+<br>Dengan teman, tak perlu rasa takut
+<br>Hai Tayo, hai Tayo, dia bis kecil ramah
+<br>Melaju, melambat, Tayo selalu senang
+<br>Hal Tayo, hai Tayo, dia bis kecil ramah
+<br>Dengan teman, di sisinya, semua senyum ceria
+<br>Indahnya hari ini
+<br>Mari bergembiraaa
