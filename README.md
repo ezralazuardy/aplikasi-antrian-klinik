@@ -1,5 +1,5 @@
 Bismillah..
 
-Semoga Rezekinya tambah lancarr...
+Semoga rezekinya tambah lancar & diberi jodoh...
 
 Aamiin
