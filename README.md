@@ -3,7 +3,7 @@
 <br>biar ga njomblo terus ea
 <br>Aamiin</i>
 
-<a href="https://www.youtube.com/watch?v=9FBKKvtoG-Q><b>Nyanyi dulu kuyyy..</b></a>
+<b>Nyanyi dulu kuyyy..</b>
 
 Hai Tayo, hai Tayo, dia bis kecil ramah
 <br>Melaju, melambat, Tayo selalu senang
