@@ -30,7 +30,7 @@
 								</div>
 								<div class="col-md-2">
 									<div class="float-right" style="padding:10px;margin:5px;">
-										<a href="<?php echo base_url('User/inputUser'); ?>" alt="Add" class="btn btn-success btn-lg insert-btn" "><span class="fa fa-plus"></span>
+										<a href="<?php echo base_url('Jadwal/inputJadwal'); ?>" alt="Add" class="btn btn-success btn-lg insert-btn" "><span class="fa fa-plus"></span>
 										</a>
 									</div>
 								</div>
@@ -39,38 +39,42 @@
 								<thead class="text-center">
 									<tr>
 										<th>No</th>
-										<th>Nama</th>
-										<th>Hak Akses</th>
+										<th>Dokter</th>
+										<th>Bagian</th>
+										<th>Hari</th>
+										<th>Jam</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
 									<?php 
 									$i = 1;
-									if($user){
-										foreach ($user as $value) {
+									if($jadwal){
+										foreach ($jadwal as $value) {
 
 											/* Encrypt ID */
-											$encrypted_string = $this->encrypt->encode($value['id_user']);
+											$encrypted_string = $this->encrypt->encode($value['id_jadwal']);
 											$id = str_replace(array('+', '/', '='), array('-', '_', '~'), $encrypted_string);
 
 
 											?>
 											<tr>
 												<td><?php echo $i++; ?></td>
-												<td><?php echo $value['nama']; ?></td>
-												<td><?php echo $value['akses']; ?></td>
+												<td><?php echo $value['nama_dokter']; ?></td>
+												<td><?php echo $value['bagian']; ?></td>
+												<td><?php echo $value['hari']; ?></td>
+												<td><?php echo $value['jam']; ?></td>
 												<td>
 
-													<a href="<?php echo base_url('User/userDetail/'.$id); ?>" class="btn btn-sm btn-primary">
+													<a href="<?php echo base_url('Jadwal/jadwalDetail/'.$id); ?>" class="btn btn-sm btn-primary">
 														<span class="fa fa-search"></span>
 													</a>
 
-													<a href="<?php echo base_url('User/userEdit/'.$id); ?>" class="btn btn-sm btn-warning">
+													<a href="<?php echo base_url('Jadwal/jadwalEdit/'.$id); ?>" class="btn btn-sm btn-warning">
 														<span class="lnr lnr-pencil"></span>
 													</a>
 
-													<button class="btn btn-sm btn-danger" onclick="deleteThis('<?php echo base_url('User/deleteUser/'.$id); ?>');" ><span class="fa fa-trash"></span></button> 
+													<button class="btn btn-sm btn-danger" onclick="deleteThis('<?php echo base_url('Jadwal/deleteJadwal/'.$id); ?>');" ><span class="fa fa-trash"></span></button> 
 
 												</td>
 											</tr>
