@@ -1,7 +1,7 @@
 Bismillah..
-Semoga rezekinya tambah lancar & diberi jodoh...
-biar ga njomblo terus ea
-Aamiin
+<br>Semoga rezekinya tambah lancar & diberi jodoh...
+<br>biar ga njomblo terus ea
+<br>Aamiin
 
 Nyanyi dulu kuyyy..
 
