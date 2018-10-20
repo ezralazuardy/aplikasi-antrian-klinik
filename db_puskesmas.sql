@@ -1,13 +1,15 @@
 -- phpMyAdmin SQL Dump
--- version 4.5.1
--- http://www.phpmyadmin.net
+-- version 4.8.0.1
+-- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 02, 2018 at 11:55 PM
--- Server version: 10.1.9-MariaDB
--- PHP Version: 5.5.30
+-- Host: localhost
+-- Generation Time: Oct 20, 2018 at 03:42 AM
+-- Server version: 10.1.32-MariaDB
+-- PHP Version: 5.6.36
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -50,6 +52,20 @@ CREATE TABLE `tbl_dokter` (
   `id_layanan` int(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tbl_dokter`
+--
+
+INSERT INTO `tbl_dokter` (`id_dok`, `nama_dokter`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `jenis_kelamin`, `status`, `pendidikan_akhir`, `id_layanan`) VALUES
+(1, 'Adexe', 'Lahirian', '2018-10-05', 'Jalan Sumbreng									', 'male', 'Raja', 'Magister', 1),
+(2, 'AdexeHola', 'Lhiaraasn', '0000-00-00', 'Dimana Saja', 'female', 'Akademik', 'SMP', 1),
+(3, 'adexeaad', 'a12321', '0000-00-00', 'asdasdads', 'male', 'asdasd', 'SMK', 1),
+(6, 'asdasd', 'asdasd', '0000-00-00', 'asdasdasd', 'female', '123', 'SMK', 1),
+(8, 'asdasd', 'asdasd', '2018-10-23', 'asdasdasd									', 'male', '123', 'SMK', 1),
+(9, 'daasdsad', 'asdasdasd', '2018-10-10', 'asdasdasd', 'asdasd', 'asd', 'asd', 1),
+(10, 'asdasdasd', 'asdasd', '2018-10-16', 'asdasdasd', 'female', '1231', 'SMA', 1),
+(11, 'asdasdasd', 'asdasd', '2018-10-16', 'asdasdasd', 'female', '1231', 'SMA', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -77,6 +93,15 @@ CREATE TABLE `tbl_jadwal` (
   `jam` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `tbl_jadwal`
+--
+
+INSERT INTO `tbl_jadwal` (`id_jadwal`, `id_dokter`, `bagian`, `hari`, `jam`) VALUES
+(1, 2, '12', 'Jumat', '00:00 s/d 00:00'),
+(2, 3, 'Hubker', 'Sabtu', '11:00 s/d 11:00'),
+(3, 10, 'adexe12', 'Minggu', '09:00 s/d 23:00');
+
 -- --------------------------------------------------------
 
 --
@@ -89,6 +114,15 @@ CREATE TABLE `tbl_layanan` (
   `layanan_medis` varchar(255) DEFAULT NULL,
   `info_medis` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_layanan`
+--
+
+INSERT INTO `tbl_layanan` (`id_layanan`, `nama`, `layanan_medis`, `info_medis`) VALUES
+(1, 'Demam Berdarah', 'Penyembuhan Demam Berdarah', 'Dikarenakan Demam Berdarah Sangat Berbahaya Bagi Kesehatan Kita Semua, Dan Menyebabkan Kematian'),
+(2, 'THT', 'Mengobati Telinga Hidung Tenggorokan', 'Kita disini dapat mengobati berbagai penyakit Telinga Hidung dan Tenggorokan									'),
+(3, 'Sakit Perut', 'Sakit Perut Maag dan Sebagainya', 'Mengobati berbagai penyakit yang menyerang perut.');
 
 -- --------------------------------------------------------
 
@@ -121,6 +155,15 @@ CREATE TABLE `tbl_user` (
   `nama` varchar(255) DEFAULT NULL,
   `akses` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_user`
+--
+
+INSERT INTO `tbl_user` (`id_user`, `username`, `password`, `nama`, `akses`) VALUES
+(1, 'adexe', '5e3cbd74208895175d545c310536b296', 'alifianadexe', 'Admin'),
+(2, 'kimpoy', '5e3cbd74208895175d545c310536b296', 'Kimpoy Kuy', 'User'),
+(3, 'zirly', '5e3cbd74208895175d545c310536b296', 'Zirly Fiera Q', 'Pengurus');
 
 --
 -- Indexes for dumped tables
@@ -177,36 +220,44 @@ ALTER TABLE `tbl_user`
 --
 ALTER TABLE `tbl_antrian`
   MODIFY `id_antrian` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `tbl_dokter`
 --
 ALTER TABLE `tbl_dokter`
-  MODIFY `id_dok` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_dok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
 --
 -- AUTO_INCREMENT for table `tbl_hubungi`
 --
 ALTER TABLE `tbl_hubungi`
   MODIFY `id_hubungi` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `tbl_jadwal`
 --
 ALTER TABLE `tbl_jadwal`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `tbl_layanan`
 --
 ALTER TABLE `tbl_layanan`
-  MODIFY `id_layanan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_layanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
 -- AUTO_INCREMENT for table `tbl_pendaftaran`
 --
 ALTER TABLE `tbl_pendaftaran`
   MODIFY `id_daftar` int(11) NOT NULL AUTO_INCREMENT;
+
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+COMMIT;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
