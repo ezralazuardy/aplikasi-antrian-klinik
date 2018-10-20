@@ -1,7 +1,7 @@
-<i>Bismillah..
+<b><i>Bismillah..
 <br>Semoga rezekinya tambah lancar & diberi jodoh...
 <br>biar ga njomblo terus ea
-<br>Aamiin</i>
+<br>Aamiin</i></b>
 
 [<b>Nyanyi dulu kuyyy..</b>](https://www.youtube.com/watch?v=9FBKKvtoG-Q)
 
