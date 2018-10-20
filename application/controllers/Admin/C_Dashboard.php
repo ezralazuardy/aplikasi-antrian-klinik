@@ -18,8 +18,7 @@ class C_Dashboard extends CI_Controller {
 	public function index() {
 		$this->checkSession();
 		$this->load->view("V_Header");
-		$this->load->view("V_Sidebar");
-		$this->load->view("MainMenu/V_Index");
+		$this->load->view("Admin/V_Index");
 		$this->load->view("V_Footer");
 	}
 
