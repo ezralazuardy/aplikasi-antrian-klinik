@@ -19,7 +19,6 @@
 	<link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url('assets/img/favicon.png'); ?>">
 </head>
 <body>
-	<!-- WRAPPER -->
 	<div id="wrapper">
 		<div class="vertical-align-wrap">
 			<div class="vertical-align-middle">
@@ -64,7 +63,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- END WRAPPER -->
 	<!-- <div class="clearfix"></div>
 	<footer>
 		<div class="container-fluid">
@@ -72,8 +70,6 @@
 		</div>
 	</footer> -->
 </div>
-<!-- END WRAPPER -->
-<!-- Javascript -->
 <script src="<?php echo base_url('assets/vendor/jquery/jquery.min.js'); ?>"></script>
 <script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.min.js'); ?>"></script>
 <script src="<?php echo base_url('assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js'); ?>"></script>

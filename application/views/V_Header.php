@@ -1,8 +1,7 @@
 <!doctype html>
 <html lang="en">
-
 <head>
-	<title>Dashboard | Aplikasi Antrian Klinik</title>
+	<title>Dashboard</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -15,15 +14,12 @@
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/jquery.dataTables.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.css'); ?>">
-	
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
+	<link href="<?php echo base_url('assets/css/font.source-sans-pro.css'); ?>" rel="stylesheet">
 	<link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.png'); ?>">
 	<link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url('assets/img/favicon.png'); ?>">
 </head>
 <body>
-	<!-- WRAPPER -->
 	<div id="wrapper">
-		<!-- NAVBAR -->
 		<nav class="navbar navbar-default navbar-fixed-top">
 			<div class="brand">
 				<a href="index.html"><img src="<?php echo base_url('assets/img/logo-dark.png'); ?>" alt="Klorofil Logo" class="img-responsive logo"></a>
@@ -76,4 +72,3 @@
 				</div>
 			</div>
 		</nav>
-		<!-- END NAVBAR -->

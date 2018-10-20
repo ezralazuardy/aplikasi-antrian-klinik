@@ -1,27 +1,27 @@
 <?php
 class M_admin extends CI_Model {
 
-	public function __construct()
-	{
+	public function __construct() {
 		$this->load->database();
 		$this->load->library('encrypt');
 	}
-
 
 	/* -=-=-=-=-=-=-=-=-=-=- INSERT SECTION -=-=-=-=-=-=-=-=-=-=-=- */
 	public function insertPegawai($data){
 		return $this->db->insert('tbl_dokter',$data);
 	}
+
 	public function insertLayanan($data){
 		return $this->db->insert('tbl_layanan',$data);
 	}
+
 	public function insertUser($data){
 		return $this->db->insert('tbl_user',$data);
 	}
+
 	public function insertJadwal($data){
 		return $this->db->insert('tbl_jadwal',$data);
 	}
-
 
 	/*-=--=-=-=-=-=-=--=-=-= SELECT SECTION -=-=-=-=-=-=-=-=-=-=-=-= */
 	public function selectPegawai(){
@@ -107,7 +107,6 @@ class M_admin extends CI_Model {
 	}
 
 	/* -=-=-=-=-=-=-=-=-=-=- UPDATE SECTION -=-=-=-=-=-=-=-=-=-=- */
-
 	public function updatePegawai($id,$data){
 		$this->db->where('id_dok',$id);
 		return $this->db->update('tbl_dokter',$data);
@@ -130,7 +129,6 @@ class M_admin extends CI_Model {
 	}
 
 	/* -=-=-=-=-=-=-=-=-=-=- DELETE SECTION -=-=-=-=-=-=-=-=-=-=- */
-
 	public function deletePegawai($id){
 		$this->db->where('id_dok',$id);
 		return $this->db->delete('tbl_dokter');
@@ -150,6 +148,5 @@ class M_admin extends CI_Model {
 		$this->db->where('id_jadwal',$id);
 		return $this->db->delete('tbl_jadwal');
 	}
-
 }
 ?>

@@ -23,17 +23,17 @@ class C_Login extends CI_Controller {
 	public function authlogin() {
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		$password = md5(md5(md5(strrev($password))));
+		/*$password = md5(md5(md5(strrev($password))));*/
 		if($hasil = $this->M_login->checkUser($username)) {
 			if($data = $this->M_login->checkPassword($username,$password)) {
 				$this->session->set_userdata($data[0]);
 				redirect('Dashboard');
 			} else {
-				$this->session->set_flashdata('error','Maaf, Password Anda Salah!');
+				$this->session->set_flashdata('error','Maaf, kata sandi anda salah!');
 				redirect('Login');
 			}
 		} else {
-			$this->session->set_flashdata('error','Maaf, Username Belum Terdaftar!');
+			$this->session->set_flashdata('error','Maaf, akun ini belum terdaftar!');
 			redirect('Login');	
 		}
 	}

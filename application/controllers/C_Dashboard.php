@@ -4,10 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class C_Dashboard extends CI_Controller {
 
-	public function __construct()
-	{
+	public function __construct() {
 		parent::__construct();
-
 		$this->load->helper('form');
 		$this->load->helper('url');
 		$this->load->helper('html');
@@ -17,11 +15,8 @@ class C_Dashboard extends CI_Controller {
 		date_default_timezone_set("Asia/Bangkok");
 	}
 
-
 	public function index() {
-
 		$this->checkSession();
-
 		$this->load->view("V_Header");
 		$this->load->view("V_Sidebar");
 		$this->load->view("MainMenu/V_Index");
