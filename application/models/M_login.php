@@ -26,5 +26,16 @@ class M_login extends CI_Model {
 			return false;
 		}
 	}
+
+	public function checkAccountType($username,$password) {
+		$this->db->where('username',$username);
+		$this->db->where('password',$password);
+		$query = $this->db->get('tbl_user');
+		if ($query->num_rows() > 0) {
+		    $row = $query->row(); 
+		    return $row->akses;
+		}
+		return null;
+	}
 }
 ?>

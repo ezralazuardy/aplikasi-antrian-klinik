@@ -5,6 +5,8 @@ $route['default_controller'] = 'C_Landingpage/index';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+/*Admin Stuff*/
+$route['DashboardAdmin'] = 'Admin/C_Dashboard';
 $route['Admin'] = 'Admin/C_Pegawai/';
 $route['Admin/(:any)'] = 'Admin/C_Pegawai/$1';
 $route['Admin/(:any)/(:any)'] = 'Admin/C_Pegawai/$1/$2';
@@ -25,4 +27,11 @@ $route['Jadwal'] = 'Admin/C_Jadwal/';
 $route['Jadwal/(:any)'] = 'Admin/C_Jadwal/$1';
 $route['Jadwal/(:any)/(:any)'] = 'Admin/C_Jadwal/$1/$2';
 
-$route['Dashboard'] = 'C_Dashboard';
+/*Client Stuff*/
+$route['Dashboard'] = 'Client/C_Dashboard';
+$route['Client/(:any)'] = 'Client/$1';
+$route['Client/(:any)/(:any)'] = 'Client/$1/$2';
+
+$route['AmbilAntrian'] = 'Client/C_AmbilAntrian';
+
+$route['LihatJadwal'] = 'Client/C_LihatJadwal';
