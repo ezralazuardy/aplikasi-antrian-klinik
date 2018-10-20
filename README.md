@@ -7,7 +7,7 @@
 
 Hai Tayo, hai Tayo, dia bis kecil ramah
 <br>Melaju, melambat, Tayo selalu senang
-<br>Hal Tayo, hai Tayo, dia bis kecil ramah
+<br>Hai Tayo, hai Tayo, dia bis kecil ramah
 <br>Melaju, melambat, Tayo selalu senang
 <br>Jalan menanjak, jalan berbelok
 <br>Dia selalu berani
