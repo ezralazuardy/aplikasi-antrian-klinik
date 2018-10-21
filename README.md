@@ -1,1 +1,1 @@
-<b>Update terbaru ada di [Branch Beta](https://github.com/ezralazuardy/aplikasi-antrian-klinik/tree/beta), Branch Master untuk versi release.<b>
+<i><b>Update terbaru ada di [Branch Beta](https://github.com/ezralazuardy/aplikasi-antrian-klinik/tree/beta), [Branch Master](https://github.com/ezralazuardy/aplikasi-antrian-klinik/tree/master) untuk versi release.</b></i>
