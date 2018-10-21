@@ -34,9 +34,7 @@ class C_Login extends CI_Controller {
 					redirect('DashboardAdmin');
 				} else {
 					$this->session->set_flashdata('error','Maaf, telah terjadi kesalahan.');
-				}
-				if ($akses == "client") {
-					$this->session->set_userdata($data[0]);
+					redirect('Login');
 				}
 			} else {
 				$this->session->set_flashdata('error','Maaf, kata sandi anda salah!');

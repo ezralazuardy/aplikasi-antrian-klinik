@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>Dashboard</title>
+	<title>Aplikasi Antrian Klinik</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -49,17 +49,17 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Bantuan</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="#">Informasi</a></li>
-								<li><a href="#">Hubungi Kami</a></li>
+								<li><a href="<?php echo base_url('Petunjuk'); ?>">Petunjuk &amp; Informasi</a></li>
+								<li><a href="<?php echo base_url('HubungiKami'); ?>">Hubungi Kami</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<?php echo base_url('assets/img/user-placeholder.webp'); ?>" class="img-circle" alt="Avatar"> <span><?php echo $this->session->userdata('nama'); ?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
-								<li><a href="#"><i class="lnr lnr-user"></i> <span>Profil Saya</span></a></li>
-								<li><a href="#"><i class="lnr lnr-envelope"></i> <span>Pesan</span></a></li>
-								<li><a href="#"><i class="lnr lnr-cog"></i> <span>Pengaturan</span></a></li>
-								<li><a href="#"><i class="lnr lnr-exit"></i> <span>Keluar</span></a></li>
+								<li><a href="<?php echo base_url('ProfilPengguna'); ?>"><i class="lnr lnr-user"></i> <span>Profil Saya</span></a></li>
+								<li><a href="<?php echo base_url('Pesan'); ?>"><i class="lnr lnr-envelope"></i> <span>Pesan</span></a></li>
+								<li><a href="<?php echo base_url('Pengaturan'); ?>"><i class="lnr lnr-cog"></i> <span>Pengaturan</span></a></li>
+								<li><a href="<?php echo base_url('KeluarPengguna'); ?>"><i class="lnr lnr-exit"></i> <span>Keluar</span></a></li>
 							</ul>
 						</li>
 					</ul>

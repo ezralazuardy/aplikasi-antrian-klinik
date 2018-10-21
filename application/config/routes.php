@@ -35,3 +35,15 @@ $route['Client/(:any)/(:any)'] = 'Client/$1/$2';
 $route['AmbilAntrian'] = 'Client/C_AmbilAntrian';
 
 $route['LihatJadwal'] = 'Client/C_LihatJadwal';
+
+$route['Petunjuk'] = 'Client/C_Petunjuk';
+
+$route['HubungiKami'] = 'Client/C_HubungiKami';
+
+$route['ProfilPengguna'] = 'Client/C_ProfilPengguna';
+
+$route['Pesan'] = 'Client/C_Pesan';
+
+$route['Pengaturan'] = 'Client/C_Pengaturan';
+
+$route['KeluarPengguna'] = 'Client/C_Keluar';

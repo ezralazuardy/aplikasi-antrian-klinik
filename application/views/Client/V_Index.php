@@ -46,15 +46,6 @@
 								</p>
 							</div>
 						</div>
-						<!-- <div class="col-md-3">
-							<div class="metric">
-								<span class="icon"><i class="fa fa-bar-chart"></i></span>
-								<p>
-									<span class="number">35%</span>
-									<span class="title">Conversions</span>
-								</p>
-							</div>
-						</div> -->
 					</div>
 				</div>
 			</div>
