@@ -1019,7 +1019,7 @@ ul.activity-list > li {
     width: 58%;
     height: 100%;
     position: relative;
-    background-image: url("../../assets/img/login-bg.jpg");
+    background-image: url("../../assets/img/bg.jpg");
     background-repeat: no-repeat;
     background-size: cover; }
     .auth-box .right:before {

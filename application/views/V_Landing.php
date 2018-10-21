@@ -2,22 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" href="assets/img/favicon.png">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>
-    Landing Page
-  </title>
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
-  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Landing Page</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/material-icons.css" />
+  <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
   <link href="assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
 </head>
 <body class="landing-page sidebar-collapse">
   <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="https://demos.creative-tim.com/material-kit/index.html">
+        <a class="navbar-brand" href="#">
           Aplikasi Antrian Klinik </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="sr-only">Toggle navigation</span>
@@ -29,7 +27,7 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="C_Login">
+            <a class="nav-link" href="Login">
               <i class="material-icons">person</i> Masuk
             </a>
           </li>
@@ -54,7 +52,7 @@
           <h1 class="title">Memudahkan manajemen klinik anda.</h1>
           <h4>Kami membuat aplikasi yang kaya akan fitur untuk memudahkan proses manajemen di klinik anda.</h4>
           <br>
-          <a href="C_Login" class="btn btn-danger btn-raised btn-lg">
+          <a href="Login" class="btn btn-danger btn-raised btn-lg">
             Mulai
           </a>
         </div>
@@ -75,19 +73,19 @@
             <div class="col-md-4">
               <div class="info">
                 <div class="icon icon-info">
-                  <i class="material-icons">chat</i>
+                  <i class="material-icons">schedule</i>
                 </div>
-                <h4 class="info-title">Free Chat</h4>
-                <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                <h4 class="info-title">Lihat Jadwal</h4>
+                <p>Dapatkan informasi tentang jadwal dokter yang bersangkutan.</p>
               </div>
             </div>
             <div class="col-md-4">
               <div class="info">
                 <div class="icon icon-success">
-                  <i class="material-icons">verified_user</i>
+                  <i class="material-icons">chat</i>
                 </div>
-                <h4 class="info-title">Verified Users</h4>
-                <p>Divide details about your product or agency work into parts. Write a few lines about each one. A paragraph describing a feature will be enough.</p>
+                <h4 class="info-title">Hubungi Kami</h4>
+                <p>Kirim pertanyaan, pesan, kritik, ataupun saran dengan mudah dan cepat, diproses dan dibalas langsung oleh admin ke alamat surel anda.</p>
               </div>
             </div>
             <div class="col-md-4">
@@ -96,7 +94,7 @@
                   <i class="material-icons">person</i>
                 </div>
                 <h4 class="info-title">Manajemen Profil</h4>
-                <p>Anda dapat mengubah informasi profil / biodata anda dengan mudah.</p>
+                <p>Ubah informasi profil, data diri, atau biodata anda dengan mudah.</p>
               </div>
             </div>
           </div>
@@ -122,7 +120,7 @@
                   <div class="card-footer justify-content-center">
                     <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
                     <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
-                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/ezralazuardy" class="btn btn-link btn-just-icon"><i class="fa fa-linkedin"></i></a>
                   </div>
                 </div>
               </div>
@@ -138,12 +136,12 @@
                     <small class="card-description text-muted">Back-End Programmer</small>
                   </h4>
                   <div class="card-body">
-                    <p class="card-description">Samlekom mhank.</p>
+                    <p class="card-description">Jomblo Elite.</p>
                   </div>
                   <div class="card-footer justify-content-center">
                     <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
                     <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
-                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/alifian-aqshol-44969215a" class="btn btn-link btn-just-icon"><i class="fa fa-linkedin"></i></a>
                   </div>
                 </div>
               </div>
@@ -159,12 +157,12 @@
                     <small class="card-description text-muted">Admin</small>
                   </h4>
                   <div class="card-body">
-                    <p class="card-description">Samlekom mhank.</p>
+                    <p class="card-description">Samlekom Mhank.</p>
                   </div>
                   <div class="card-footer justify-content-center">
                     <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
                     <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
-                    <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/bintang-kumarasakti-806b57169" class="btn btn-link btn-just-icon"><i class="fa fa-linkedin"></i></a>
                   </div>
                 </div>
               </div>
@@ -219,7 +217,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="https://github.com/ezralazuardy/aplikasi-antrian-klinik/blob/master/LICENSE">
               Lisensi
             </a>
           </li>
