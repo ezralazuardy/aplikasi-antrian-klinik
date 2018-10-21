@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class C_Pesan extends CI_Controller {
+class C_PengaturanAdmin extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -18,7 +18,7 @@ class C_Pesan extends CI_Controller {
 	public function index() {
 		$this->checkSession();
 		$this->load->view("V_Header");
-		$this->load->view("Client/V_Pesan");
+		$this->load->view("Admin/V_PengaturanAdmin");
 		$this->load->view("V_Footer");
 	}
 

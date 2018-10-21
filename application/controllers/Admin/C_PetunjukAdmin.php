@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class C_Keluar extends CI_Controller {
+class C_PetunjukAdmin extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -17,7 +17,9 @@ class C_Keluar extends CI_Controller {
 
 	public function index() {
 		$this->checkSession();
-		redirect('Login');
+		$this->load->view("V_Header");
+		$this->load->view("Admin/V_PetunjukAdmin");
+		$this->load->view("V_Footer");
 	}
 
 	public function checkSession(){

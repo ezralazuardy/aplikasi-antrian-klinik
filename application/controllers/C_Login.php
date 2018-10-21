@@ -26,14 +26,11 @@ class C_Login extends CI_Controller {
 		if($hasil = $this->M_login->checkUser($username)) {
 			if($data = $this->M_login->checkPassword($username,$password)) {
 				$akses = $this->M_login->checkAccountType($username,$password);
-				if ($akses == "client") {
-					$this->session->set_userdata($data[0]);
-					redirect('Dashboard');
-				} else if ($akses == "admin") {
+				if ($akses == "admin") {
 					$this->session->set_userdata($data[0]);
 					redirect('DashboardAdmin');
 				} else {
-					$this->session->set_flashdata('error','Maaf, telah terjadi kesalahan.');
+					$this->session->set_flashdata('error','Akun ini tidak memiliki izin akses.');
 					redirect('Login');
 				}
 			} else {
