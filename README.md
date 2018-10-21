@@ -1,3 +1,5 @@
+<b>Update terbaru ada di [Branch Beta]("https://github.com/ezralazuardy/aplikasi-antrian-klinik/tree/beta"), Branch Master untuk versi release.<b>
+
 <b><i>Bismillah..
 <br>Semoga rezekinya tambah lancar & diberi jodoh...
 <br>biar ga njomblo terus ea
