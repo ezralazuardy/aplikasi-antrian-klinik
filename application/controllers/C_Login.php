@@ -15,7 +15,6 @@ class C_Login extends CI_Controller {
 		date_default_timezone_set("Asia/Bangkok");
 	}
 
-
 	public function index() {
 		$this->load->view("V_Login");
 	}
