@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$route['default_controller'] = 'C_Landingpage/index';
+$route['default_controller'] = 'C_Landing';
+$route['TentangAplikasi'] = 'C_TentangAplikasi';
+$route['LandingPage'] = 'C_Landing';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
