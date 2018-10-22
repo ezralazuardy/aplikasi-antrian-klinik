@@ -39,21 +39,22 @@
 						<li class="dropdown">
 							<a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
 								<i class="lnr lnr-alarm"></i>
-								<span class="badge bg-danger">1</span>
+								<span class="badge bg-danger"></span>
 							</a>
 							<ul class="dropdown-menu notifications">
-								<li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Lorem ipsum sit dolor amet</a></li>
-								<li><a href="#" class="more">Lihat semua notifikasi</a></li>
+								<!-- <li><a href="#" class="notification-item"><span class="dot bg-warning"></span>Lorem ipsum sit dolor amet</a></li> -->
+								<li><a style="text-align: center">Tidak ada notifikasi</a></li>
+								<!-- <li><a href="#" class="more">Lihat semua notifikasi</a></li> -->
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Bantuan</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-question-circle"></i> <span>Bantuan</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
 								<li><a href="<?php echo base_url('PetunjukAdmin'); ?>">Petunjuk &amp; Informasi</a></li>
 							</ul>
 						</li>
 						<li class="dropdown">
-							<a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="<?php echo base_url('assets/img/user-placeholder.webp'); ?>" class="img-circle" alt="Avatar"> <span><?php echo $this->session->userdata('nama'); ?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+							<a href="" class="dropdown-toggle" data-toggle="dropdown"><img src="<?php echo base_url('assets/img/user-placeholder.webp'); ?>" class="img-circle" alt="Avatar"> <span><?php echo $this->session->userdata('nama'); ?></span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
 							<ul class="dropdown-menu">
 								<li><a href="<?php echo base_url('ProfilAdmin'); ?>"><i class="lnr lnr-user"></i> <span>Profil Saya</span></a></li>
 								<li><a href="<?php echo base_url('PengaturanAdmin'); ?>"><i class="lnr lnr-cog"></i> <span>Pengaturan</span></a></li>
