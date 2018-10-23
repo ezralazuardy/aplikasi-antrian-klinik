@@ -36,3 +36,9 @@ $route['ProfilAdmin'] = 'Admin/C_ProfilAdmin';
 $route['PengaturanAdmin'] = 'Admin/C_PengaturanAdmin';
 
 $route['Keluar'] = 'C_Keluar';
+
+
+/* Main Menu Stuff */
+$route['Daftar'] = 'C_Daftar/index';
+$route['Daftar/(:any)'] = 'C_Daftar/$1';
+$route['Daftar/(:any)/(:any)'] = 'C_Daftar/$1/$2';
