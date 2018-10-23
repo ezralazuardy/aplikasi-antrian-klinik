@@ -97,8 +97,8 @@ class M_admin extends CI_Model {
 	}
 
 	public function getJadwal($id){
-		$this->db->where('id_jadwal',$id);
-		$data = $this->db->get('tbl_jadwal');
+		$this->db->where('id_dok',$id);
+		$data = $this->db->get('tbl_dokter');
 		if($data->num_rows() > 0){
 			return $data->result_array();
 		}else{

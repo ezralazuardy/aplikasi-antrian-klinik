@@ -18,13 +18,19 @@ class C_Daftar extends CI_Controller {
 		$this->load->view("MainMenu/V_Daftar",$data);
 	}
 
+	public function generate($id){
+		$plaintext_string = str_replace(array('-', '_', '~'), array('+', '/', '='), $id);
+		$id = $this->encrypt->decode($plaintext_string);
+
+		$data =  array();
+		$data['list'] = $this->M_mainmenu->generate($id);
+
+		$this->load->view("MainMenu/V_Generate",$data);
+	}
+
 	/* ----------------------- INSERT SECTION ----------------------------*/
 
 	public function insertDaftar() {
-
-		echo "<pre>";
-		print_r($_POST);
-		exit();
 
 		$id_dokter = $this->input->post('id_dokter');
 		$nama = $this->input->post('nama');
@@ -34,35 +40,74 @@ class C_Daftar extends CI_Controller {
 		$tanggal_besuk = $this->input->post('tanggal_besuk');
 		$alamat = $this->input->post('alamat');
 
-		$this->getAntrian();
+		$antrian = $this->getAntrian();
 
 		$data  = array(
-			''
+			'antrian' => $antrian,
 			'nama' => $nama, 
 			'umur' => $umur, 
-					'berat_badan' => $berat_badan, 
-				'jenis_kelamin' => $jenis_kelamin, 	
-				'tanggal_besuk' => $tanggal_besuk, 	
-				'alamat' => $alamat ,
-				'id_dokter' => $id_dokter 
-				
-				);
+			'berat_badan' => $berat_badan, 
+			'jenis_kelamin' => $jenis_kelamin, 	
+			'tanggal_besuk' => $tanggal_besuk, 	
+			'alamat' => $alamat ,
+			'id_dokter' => $id_dokter 
+
+		);
 		// echo "<pre>";
 		// print_r($data);
 		// exit();
-		if($this->M_admin->insertJadwal($data)) {
-			redirect('Jadwal/index/simpan');
+
+		/* Encrypt ID */
+		$encrypted_string = $this->encrypt->encode($antrian);
+		$id = str_replace(array('+', '/', '='), array('-', '_', '~'), $encrypted_string);
+
+		if($this->M_admin->insertPendaftaran($data)) {
+			redirect('Daftar/generate/'.$id);
 		} else {
-			redirect('Jadwal/index/error');
+			redirect('Daftar/error');
 		}
 	}
 
 
 	public function getAntrian(){
+		$antrian = '';
 		if($data = $this->M_mainmenu->countAntrian()){
 
+			$no_urut = substr($data[0]['antrian'],1,3);
+			
+			echo $no_urut;
+			
+			if(strlen($no_urut) == 1){
+				$antrian = 'A00' + ((int) $no_urut + 1);
+			}else if(strlen($no_urut) == 2){
+				$antrian = 'A0' + ((int) $no_urut + 1);
+			}else{
+				$antrian = 'A' + ((int) $no_urut + 1);
+			}
+
+			$tanggal = date('d-M-Y');
+
+			$data = array(
+				'tanggal' => $tanggal,
+				'antrian' => $antrian
+			);
+
+			$antrian = $this->M_mainmenu->insertAntrian($data);
+
+			
 		}else{
-			return 'A001';
+			$antrian = 'A001';
+			$tanggal = date('d-M-Y');
+
+			$data = array(
+				'tanggal' => $tanggal,
+				'antrian' => $antrian
+			);
+
+			$antrian = $this->M_mainmenu->insertAntrian($data);
 		}
+		return $antrian;
 	}
+
+
 }

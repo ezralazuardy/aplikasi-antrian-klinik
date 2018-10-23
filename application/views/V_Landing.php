@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <title>Landing Page</title>
   <meta charset="utf-8" />
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>Landing Page</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/material-icons.css" />
-  <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
-  <link href="assets/css/material-kit.css?v=2.0.4" rel="stylesheet" />
-  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
-  <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/material-icons.css'); ?>" />
+  <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/material-kit.css?v=2.0.4'); ?>"/>
+  <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.webp'); ?>">
+  <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url('assets/img/favicon.webp'); ?>">
 </head>
 <body class="landing-page sidebar-collapse">
   <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
@@ -26,11 +26,11 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" href="Login">
               <i class="material-icons">person</i> Masuk
             </a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/" target="_blank" data-original-title="Ikuti kami di Facebook">
               <i class="fa fa-facebook-square"></i>
@@ -45,7 +45,7 @@
       </div>
     </div>
   </nav>
-  <div class="page-header header-filter" data-parallax="true" style="background-image: url('assets/img/bg.jpg')">
+  <div class="page-header header-filter" data-parallax="true" style="background-image: url('<?php echo base_url('assets/img/bg.webp'); ?>')">
     <div class="container">
       <div class="row">
         <div class="col-md-6">
@@ -108,7 +108,7 @@
               <div class="team-player">
                 <div class="card card-plain">
                   <div class="col-md-6 ml-auto mr-auto">
-                    <img src="assets/img/person/ezra.webp" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
+                    <img src="<?php echo base_url('assets/img/person/ezra.webp'); ?>" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
                   </div>
                   <h4 class="card-title">Ezra Lazuardy
                     <br>
@@ -129,7 +129,7 @@
               <div class="team-player">
                 <div class="card card-plain">
                   <div class="col-md-6 ml-auto mr-auto">
-                    <img src="assets/img/person/aqshol.png" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
+                    <img src="<?php echo base_url('assets/img/person/aqshol.webp'); ?>" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
                   </div>
                   <h4 class="card-title">Muhammad Alifian Aqshol
                     <br>
@@ -150,7 +150,7 @@
               <div class="team-player">
                 <div class="card card-plain">
                   <div class="col-md-6 ml-auto mr-auto">
-                    <img src="assets/img/person/bintang.png" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
+                    <img src="<?php echo base_url('assets/img/person/bintang.webp'); ?>" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
                   </div>
                   <h4 class="card-title">Bintang Kumarasakti
                     <br>
@@ -212,33 +212,33 @@
       <nav class="float-left">
         <ul>
           <li>
-            <a href="#">
+            <a href="<?php echo base_url('TentangAplikasi'); ?>">
               Tentang Aplikasi
             </a>
           </li>
           <li>
-            <a href="https://github.com/ezralazuardy/aplikasi-antrian-klinik/blob/master/LICENSE">
+            <a href="https://github.com/ezralazuardy/aplikasi-antrian-klinik/blob/master/LICENSE" target="_blank">
               Lisensi
             </a>
           </li>
         </ul>
       </nav>
-      <div class="copyright float-right">
+      <!-- <div class="copyright float-right">
         &copy;
         <script>
           document.write(new Date().getFullYear())
         </script>, dibuat dengan <i class="material-icons">favorite</i> oleh
         <a href="#" target="_blank">TinyLab</a>.
-      </div>
+      </div> -->
     </div>
   </footer>
-  <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
-  <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
-  <script src="assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
-  <script src="assets/js/plugins/moment.min.js"></script>
-  <script src="assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
-  <script src="assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
-  <script src="assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
-  <script src="assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/core/popper.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/moment.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/bootstrap-datetimepicker.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/nouislider.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/jquery.sharrre.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/material-kit.js?v=2.0.4'); ?>"></script>
 </body>
 </html>
