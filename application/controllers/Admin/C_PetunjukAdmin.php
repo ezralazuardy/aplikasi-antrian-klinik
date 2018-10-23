@@ -2,7 +2,7 @@
 
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class C_LihatJadwal extends CI_Controller {
+class C_PetunjukAdmin extends CI_Controller {
 
 	public function __construct() {
 		parent::__construct();
@@ -18,7 +18,7 @@ class C_LihatJadwal extends CI_Controller {
 	public function index() {
 		$this->checkSession();
 		$this->load->view("V_Header");
-		$this->load->view("Client/V_LihatJadwal");
+		$this->load->view("Admin/V_PetunjukAdmin");
 		$this->load->view("V_Footer");
 	}
 
