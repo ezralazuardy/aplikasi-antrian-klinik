@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$route['default_controller'] = 'C_Landingpage/index';
+$route['default_controller'] = 'C_Landing';
+$route['TentangAplikasi'] = 'C_TentangAplikasi';
+$route['LandingPage'] = 'C_Landing';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
@@ -27,11 +29,10 @@ $route['Jadwal'] = 'Admin/C_Jadwal/';
 $route['Jadwal/(:any)'] = 'Admin/C_Jadwal/$1';
 $route['Jadwal/(:any)/(:any)'] = 'Admin/C_Jadwal/$1/$2';
 
-/*Client Stuff*/
-$route['Dashboard'] = 'Client/C_Dashboard';
-$route['Client/(:any)'] = 'Client/$1';
-$route['Client/(:any)/(:any)'] = 'Client/$1/$2';
+$route['PetunjukAdmin'] = 'Admin/C_PetunjukAdmin';
 
-$route['AmbilAntrian'] = 'Client/C_AmbilAntrian';
+$route['ProfilAdmin'] = 'Admin/C_ProfilAdmin';
 
-$route['LihatJadwal'] = 'Client/C_LihatJadwal';
+$route['PengaturanAdmin'] = 'Admin/C_PengaturanAdmin';
+
+$route['Keluar'] = 'C_Keluar';
