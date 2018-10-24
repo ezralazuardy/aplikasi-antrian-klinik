@@ -52,8 +52,8 @@
           <h1 class="title">Memudahkan manajemen klinik anda.</h1>
           <h4>Kami membuat aplikasi yang kaya akan fitur untuk memudahkan proses manajemen di klinik anda.</h4>
           <br>
-          <a href="Login" class="btn btn-danger btn-raised btn-lg">
-            Mulai
+          <a href="<?php echo base_url('Daftar'); ?>" class="btn btn-danger btn-raised btn-lg">
+            Daftar
           </a>
         </div>
       </div>

@@ -9,10 +9,10 @@ class M_mainmenu extends CI_Model {
 
 /* ---------------------- DAFTAR PAGE ---------------------- */	
 	public function generate($id){
-		$this->db->select('tbl_antrian.*,tbl_pendaftaran.*','tbl_dokter.nama_dokter nama_dokter');
+		$this->db->select('*');
 		$this->db->from('tbl_antrian');
-		$this->db->join('tbl_pendaftaran','tbl_antrian.id_antrian = tbl_pendaftaran.id_antrian', 'inner');
-		$this->db->join('tbl_dokter','tbl_dokter.id_dok = tbl_pendaftaran.id_dok', 'inner');
+		$this->db->join('tbl_pendaftaran','tbl_antrian.id_antrian = tbl_pendaftaran.id_antrian', 'outter');
+		$this->db->join('tbl_dokter','tbl_dokter.id_dok = tbl_pendaftaran.id_dokter', 'outter');
 		$this->db->where('tbl_antrian.id_antrian',$id);
 		$data = $this->db->get();
 		if($data->num_rows() > 0){

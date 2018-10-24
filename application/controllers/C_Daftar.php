@@ -24,7 +24,9 @@ class C_Daftar extends CI_Controller {
 
 		$data =  array();
 		$data['list'] = $this->M_mainmenu->generate($id);
-
+		// echo "<pre>";
+		// print_r($data);
+		// exit();
 		$this->load->view("MainMenu/V_Generate",$data);
 	}
 
@@ -43,7 +45,7 @@ class C_Daftar extends CI_Controller {
 		$antrian = $this->getAntrian();
 
 		$data  = array(
-			'antrian' => $antrian,
+			'id_antrian' => $antrian,
 			'nama' => $nama, 
 			'umur' => $umur, 
 			'berat_badan' => $berat_badan, 
@@ -61,7 +63,7 @@ class C_Daftar extends CI_Controller {
 		$encrypted_string = $this->encrypt->encode($antrian);
 		$id = str_replace(array('+', '/', '='), array('-', '_', '~'), $encrypted_string);
 
-		if($this->M_admin->insertPendaftaran($data)) {
+		if($this->M_mainmenu->insertDaftar($data)) {
 			redirect('Daftar/generate/'.$id);
 		} else {
 			redirect('Daftar/error');
@@ -73,31 +75,32 @@ class C_Daftar extends CI_Controller {
 		$antrian = '';
 		if($data = $this->M_mainmenu->countAntrian()){
 
-			$no_urut = substr($data[0]['antrian'],1,3);
-			
-			echo $no_urut;
+			$no_urut = (int) substr($data[0]['antrian'],1,3);
 			
 			if(strlen($no_urut) == 1){
-				$antrian = 'A00' + ((int) $no_urut + 1);
+				$antrian = "A00".((int) $no_urut + 1);
 			}else if(strlen($no_urut) == 2){
-				$antrian = 'A0' + ((int) $no_urut + 1);
+				$antrian = "A0".((int) $no_urut + 1);
 			}else{
-				$antrian = 'A' + ((int) $no_urut + 1);
+				$antrian = "A".((int) $no_urut + 1);
 			}
 
-			$tanggal = date('d-M-Y');
+			$tanggal = date('Y-m-d');
 
 			$data = array(
 				'tanggal' => $tanggal,
 				'antrian' => $antrian
 			);
 
+			// echo "<pre>";
+			// print_r($data);
+			// exit();
 			$antrian = $this->M_mainmenu->insertAntrian($data);
 
 			
 		}else{
 			$antrian = 'A001';
-			$tanggal = date('d-M-Y');
+			$tanggal = date('Y-m-d');
 
 			$data = array(
 				'tanggal' => $tanggal,
