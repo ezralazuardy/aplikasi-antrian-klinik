@@ -36,6 +36,7 @@ class M_mainmenu extends CI_Model {
 	public function countAntrian(){
 		$this->db->select('antrian');
 		$this->db->from('tbl_antrian');
+		$this->db->where('tanggal','CURDATE()');
 		$this->db->order_by('antrian','desc');
 		$data = $this->db->get();
 		if($data->num_rows() > 0){

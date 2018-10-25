@@ -73,6 +73,7 @@ class C_Daftar extends CI_Controller {
 
 	public function getAntrian(){
 		$antrian = '';
+		
 		if($data = $this->M_mainmenu->countAntrian()){
 
 			$no_urut = (int) substr($data[0]['antrian'],1,3);

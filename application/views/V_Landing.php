@@ -15,7 +15,7 @@
   <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="<?php echo base_url(''); ?>">
           Aplikasi Antrian Klinik </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="sr-only">Toggle navigation</span>
@@ -26,11 +26,11 @@
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
-          <!-- <li class="nav-item">
+          <li class="nav-item">
             <a class="nav-link" href="Login">
               <i class="material-icons">person</i> Masuk
             </a>
-          </li> -->
+          </li>
           <li class="nav-item">
             <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/" target="_blank" data-original-title="Ikuti kami di Facebook">
               <i class="fa fa-facebook-square"></i>
@@ -51,6 +51,18 @@
         <div class="col-md-6">
           <h1 class="title">Memudahkan manajemen klinik anda.</h1>
           <h4>Kami membuat aplikasi yang kaya akan fitur untuk memudahkan proses manajemen di klinik anda.</h4>
+        </div>
+        <div class="col-md-6">
+          <h2>Antrian Saat Ini :</h2>
+          <h1 class="title"><?php 
+
+              if(is_array($list) && !empty($list)){
+                
+                  echo $list[0]['antrian'];
+              }else{
+                echo "Belum ada antrian";
+              }
+          ?></h1>
           <br>
           <a href="<?php echo base_url('Daftar'); ?>" class="btn btn-danger btn-raised btn-lg">
             Daftar

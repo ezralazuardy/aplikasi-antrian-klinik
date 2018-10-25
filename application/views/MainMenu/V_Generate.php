@@ -160,7 +160,9 @@
 
       function printToImage(){
         html2canvas(document.querySelector("#section-to-print")).then(canvas => {
-          document.body.appendChild(canvas)
+          // document.body.appendChild(canvas)
+          // console.log(canvas.toDataURL("image/png"));
+          window.open(canvas.toDataURL("image/png"),'_blank');
         });  
       }
 

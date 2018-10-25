@@ -59,7 +59,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="bmd-label-floating">Nama Lengkap</label>
-                    <input type="text"  name="nama" class="form-control">
+                    <input type="text"  name="nama" class="form-control" required="">
                   </div>
                 </div>
               </div>
@@ -67,21 +67,21 @@
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Umur</label>
-                    <input type="text" name="umur" class="form-control">
+                    <input type="text" name="umur" class="form-control" required="">
                   </div>
                 </div>
                 
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Berat Badan</label>
-                    <input type="text" name="berat_badan" class="form-control">
+                    <input type="text" name="berat_badan" class="form-control" required="">
                   </div>
                 </div>
 
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Jenis Kelamin</label>
-                    <select name="jenis_kelamin" class="form-control">
+                    <select name="jenis_kelamin" class="form-control" required="">
                         <option value="Laki-Laki">Laki - Laki</option>
                         <option value="Perempuan">Perempuan</option>
                     </select>
@@ -92,19 +92,19 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="">Tanggal Besuk</label>
-                    <input type="date" name="tanggal_besuk" class="form-control">
+                    <input type="date" name="tanggal_besuk" class="form-control" required="">
                   </div>
                 </div>
               </div>
               <div class="form-group">
                 <label for="alamat" class="bmd-label-floating">Alamat</label>
-                <textarea  class="form-control" rows="4" id="alamat" name="alamat"></textarea>
+                <textarea  class="form-control" rows="4" id="alamat" name="alamat" required=""></textarea>
               </div>
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
                     <label class="bmd-label-floating">Dokter Yang Ingin Anda Temui</label>
-                    <select name="id_dokter" class="form-control">
+                    <select name="id_dokter" class="form-control" required="">
                       <?php foreach ($list as $value) { ?>
                           <option value="<?php echo $value['id_dok']; ?>"><?php echo $value['nama_dokter']; ?></option>
                       <?php }; ?>
