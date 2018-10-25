@@ -7,6 +7,7 @@
 				<li><a href="<?php echo base_url('Layanan/index'); ?>" class=""><i class="lnr lnr-bookmark "></i> <span>Atur Layanan</span></a></li>
 				<li><a class="active" href="<?php echo base_url('Jadwal/index'); ?>" class=""><i class="lnr lnr-user "></i> <span>Atur Jadwal</span></a></li>
 				<li><a href="<?php echo base_url('User/index'); ?>" class=""><i class="lnr lnr-user "></i> <span>Atur Akun Pengguna</span></a></li>
+				<li><a href="<?php echo base_url('Antrian/index'); ?>" class=""><i class="lnr lnr-book "></i> <span>Lihat Antrian</span></a></li>
 			</ul>
 		</nav>
 	</div>
@@ -52,41 +53,42 @@
 									<tr>
 										<th>No</th>
 										<th>No Antrian</th>
-										<th>Jadwal</th>
-										<th>Hari</th>
-										<th>Jam</th>
+										<th>Tanggal</th>
+										<th>Nama</th>
+										<th>Dokter</th>
 										<th>Action</th>
 									</tr>
 								</thead>
 								<tbody>
 									<?php 
 									$i = 1;
-									if($jadwal){
-										foreach ($jadwal as $value) {
+									if($antrian){
+										foreach ($antrian as $value) {
 
 											/* Encrypt ID */
-											$encrypted_string = $this->encrypt->encode($value['id_jadwal']);
+											$encrypted_string = $this->encrypt->encode($value['id_antrian']);
 											$id = str_replace(array('+', '/', '='), array('-', '_', '~'), $encrypted_string);
-
-
 											?>
 											<tr>
 												<td><?php echo $i++; ?></td>
+												<td><?php echo $value['antrian']; ?></td>
+												<td><?php echo $value['tanggal']; ?></td>
+												<td><?php echo $value['nama_user']; ?></td>
 												<td><?php echo $value['nama_dokter']; ?></td>
-												<td><?php echo $value['bagian']; ?></td>
-												<td><?php echo $value['hari']; ?></td>
-												<td><?php echo $value['jam']; ?></td>
 												<td>
 
-													<a href="<?php echo base_url('Jadwal/jadwalDetail/'.$id); ?>" class="btn btn-sm btn-primary">
+													<a href="<?php echo base_url('Jadwal/antrianDetail/'.$id); ?>" class="btn btn-sm btn-primary">
 														<span class="fa fa-search"></span>
 													</a>
 
-													<a href="<?php echo base_url('Jadwal/jadwalEdit/'.$id); ?>" class="btn btn-sm btn-warning">
+													<a href="<?php echo base_url('Jadwal/antrianEdit/'.$id); ?>" class="btn btn-sm btn-warning">
 														<span class="lnr lnr-pencil"></span>
 													</a>
 
-													<button class="btn btn-sm btn-danger" onclick="deleteThis('<?php echo base_url('Jadwal/deleteJadwal/'.$id); ?>');" ><span class="fa fa-trash"></span></button> 
+													<button class="btn btn-sm btn-danger" onclick="deleteThis('<?php echo base_url('Antrian/deleteAntrian/'.$id); ?>');" ><span class="fa fa-trash"></span></button> 
+
+													<button class="btn btn-sm btn-success" onclick="skipThis('<?php echo base_url('Antrian/skipAntrian/'.$id); ?>');" ><span class="fa fa-play"></span></button> 
+
 
 												</td>
 											</tr>

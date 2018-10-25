@@ -19,9 +19,17 @@ class C_Antrian extends CI_Controller {
 
 	public function index($status=false) {
 		// generate all data antrian
-		$data['dokter'] = $this->M_admin->selectPegawai();
+		
+		$data['total_antrian'] = $this->M_admin->getCountAntrian();
+		$data['sisa_antrian'] = $this->M_admin->getCountSisaAntrian();
+		$data['sisa_antrian'] = $this->M_admin->getCurrentAntrian();
+
 		$data['antrian'] = $this->M_admin->selectAntrian();
 
+
+		// echo "<pre>";
+		// print_r($data);
+		// exit();
 		$this->load->view("V_Header");
 		$this->load->view("Admin/Antrian/V_Index",$data);
 		$this->load->view("V_Footer");
@@ -85,8 +93,10 @@ public function antrianEdit($id = false) {
 		// print_r($data);
 		// exit();
 		if($this->M_admin->insertAntrian($data)) {
+			$this->session->set_flashdata('success', 'Antrian berhasil ditambahkan!');
 			redirect('Antrian/index/simpan');
 		} else {
+			$this->session->set_flashdata('error', 'Jadwal berhasil didelete!');
 			redirect('Antrian/index/error');
 		}
 	}
@@ -111,22 +121,43 @@ public function antrianEdit($id = false) {
 		// print_r($data);
 		// exit();
 		if($this->M_admin->updateAntrian($id,$data)) {
+			$this->session->set_flashdata('success', 'Antrian berhasil diupdate!');
 			redirect('Antrian/index/update');
 		} else {
+			$this->session->set_flashdata('error', 'Jadwal berhasil didelete!');
+			redirect('Antrian/index/error');
+		}	
+	}
+
+	public function skipAntrian($id) {
+		$plaintext_string = str_replace(array('-', '_', '~'), array('+', '/', '='), $id);
+		$plaintext_string = $this->encrypt->decode($plaintext_string);
+		
+		$id_antrian	= $plaintext_string;
+		
+		if($this->M_admin->skipAntrian($id_antrian)) {
+			$this->session->set_flashdata('success', 'Antrian berhasil didelete!');
+			redirect('Antrian/index/delete');
+		} else {
+			$this->session->set_flashdata('error', 'Jadwal berhasil didelete!');
 			redirect('Antrian/index/error');
 		}	
 	}
 
 /*-=-=-=-=-=-=-=-=-=--=-=-=-=-=- DELETE SECTION -=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-= */
 
-public function deleteAntrian($id) {
+
+	public function deleteAntrian($id) {
 		$plaintext_string = str_replace(array('-', '_', '~'), array('+', '/', '='), $id);
 		$plaintext_string = $this->encrypt->decode($plaintext_string);
 		$id_dok	= $plaintext_string;
 		if($this->M_admin->deleteAntrian($id_dok)) {
+			$this->session->set_flashdata('success', 'Jadwal berhasil didelete!');
 			redirect('Antrian/index/delete');
 		} else {
+			$this->session->set_flashdata('error', 'Jadwal berhasil didelete!');
 			redirect('Antrian/index/error');
 		}	
 	}
 }
+

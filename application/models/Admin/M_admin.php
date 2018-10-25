@@ -23,6 +23,50 @@ class M_admin extends CI_Model {
 		return $this->db->insert('tbl_jadwal',$data);
 	}
 
+	/*-=--=-=-=-=-=-=--=-=-= SELECT MAIN SECTION -=-=-=-=-=-=-=-=-=-=-=-= */
+
+	public function getCountAntrian(){
+		$select = array('count(antrian) as total_antrian');
+		$this->db->select($select);
+		$this->db->from('tbl_antrian');
+		$this->db->where('tanggal','CURDATE()');
+		$this->db->group_by('antrian');
+
+		$data = $this->db->get();
+
+		return $data->result_array();
+
+	}
+
+	public function getCountSisaAntrian(){
+		$select = array('count(antrian) as total_antrian');
+		$this->db->select($select);
+		$this->db->from('tbl_antrian');
+		$this->db->where('tanggal','CURDATE()');
+		$this->db->where('status','0');
+		$this->db->group_by('antrian');
+
+		$data = $this->db->get();
+
+		return $data->result_array();
+	}
+
+	public function getCurrentAntrian(){
+		$select = array('*');
+		$this->db->select($select);
+		$this->db->from('tbl_antrian');
+		$this->db->where('tanggal','CURDATE()');
+		$this->db->where('status','0');
+		$this->db->order_by('antrian','desc');
+		
+		
+		$data = $this->db->get();
+
+		return $data->result_array();
+	}
+
+
+
 	/*-=--=-=-=-=-=-=--=-=-= SELECT SECTION -=-=-=-=-=-=-=-=-=-=-=-= */
 	public function selectPegawai(){
 		$this->db->select('tbl_dokter.*,tbl_layanan.*');;
@@ -107,11 +151,13 @@ class M_admin extends CI_Model {
 	}
 
 	public function selectAntrian(){
-		$this->db->select('*');
+		$this->db->select('* , tbl_pendaftaran.nama nama_user');
 		$this->db->from('tbl_antrian');
 		$this->db->join('tbl_pendaftaran','tbl_antrian.id_antrian = tbl_pendaftaran.id_antrian', 'outter');
 		$this->db->join('tbl_dokter','tbl_dokter.id_dok = tbl_pendaftaran.id_dokter', 'outter');
 		$this->db->join('tbl_layanan','tbl_dokter.id_layanan = tbl_layanan.id_layanan', 'outter');
+		$this->db->order_by('tanggal','desc');
+		
 		
 		$data = $this->db->get();
 		if($data->num_rows() > 0){
@@ -158,6 +204,12 @@ class M_admin extends CI_Model {
 	public function updateJadwal($id,$data){
 		$this->db->where('id_jadwal',$id);
 		return $this->db->update('tbl_jadwal',$data);
+	}
+
+	public function skipAntrian($id){
+		$this->db->set('status','1');
+		$this->db->where('id_antrian',$id);
+		return $this->db->update('tbl_antrian');
 	}
 
 	/* -=-=-=-=-=-=-=-=-=-=- DELETE SECTION -=-=-=-=-=-=-=-=-=-=- */

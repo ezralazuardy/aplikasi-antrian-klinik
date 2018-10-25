@@ -93,7 +93,7 @@
                   <div class="icon icon-danger">
                     <i class="material-icons">person</i>
                   </div>
-                  <h4 class="info-title"><?php echo $value['nama']; ?></h4>
+                  <h4 class="info-title"><?php echo $value['nama_user']; ?></h4>
                   <div class="row">
                     <div class="col-md-5"><h5 class="description">Umur : <?php echo $value['umur']; ?></h5></div>
                     <div class="col-md-2"><h5 class="description">|</h5></div>
@@ -106,7 +106,7 @@
                   <div class="icon icon-success">
                     <i class="material-icons">chat</i>
                   </div>
-                  <h4 class="info-title">Hubungi Kami</h4>
+                  <h4 class="info-title"><?php echo $value['nama']; ?></h4>
                 </div>
               </div>
             </div>

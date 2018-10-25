@@ -80,8 +80,10 @@ public function jadwalEdit($id = false) {
 		// print_r($data);
 		// exit();
 		if($this->M_admin->insertJadwal($data)) {
+			$this->session->set_flashdata('success', 'Jadwal berhasil ditambahkan!');
 			redirect('Jadwal/index/simpan');
 		} else {
+			$this->session->set_flashdata('error', 'Ada kesalahan pada proses data');
 			redirect('Jadwal/index/error');
 		}
 	}
@@ -106,8 +108,11 @@ public function jadwalEdit($id = false) {
 		// print_r($data);
 		// exit();
 		if($this->M_admin->updateJadwal($id,$data)) {
+			$this->session->set_flashdata('success', 'Jadwal berhasil diupdate!');
 			redirect('Jadwal/index/update');
+
 		} else {
+			$this->session->set_flashdata('error', 'Ada kesalahan pada proses data');
 			redirect('Jadwal/index/error');
 		}	
 	}
@@ -119,8 +124,10 @@ public function deleteJadwal($id) {
 		$plaintext_string = $this->encrypt->decode($plaintext_string);
 		$id_dok	= $plaintext_string;
 		if($this->M_admin->deleteJadwal($id_dok)) {
+			$this->session->set_flashdata('success', 'Jadwal berhasil didelete!');
 			redirect('Jadwal/index/delete');
 		} else {
+			$this->session->set_flashdata('error', 'Ada kesalahan pada proses data');
 			redirect('Jadwal/index/error');
 		}	
 	}
