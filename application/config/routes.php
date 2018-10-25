@@ -29,6 +29,10 @@ $route['Jadwal'] = 'Admin/C_Jadwal/';
 $route['Jadwal/(:any)'] = 'Admin/C_Jadwal/$1';
 $route['Jadwal/(:any)/(:any)'] = 'Admin/C_Jadwal/$1/$2';
 
+$route['Antrian'] = 'Admin/C_Antrian/';
+$route['Antrian/(:any)'] = 'Admin/C_Antrian/$1';
+$route['Antrian/(:any)/(:any)'] = 'Admin/C_Antrian/$1/$2';
+
 $route['PetunjukAdmin'] = 'Admin/C_PetunjukAdmin';
 
 $route['ProfilAdmin'] = 'Admin/C_ProfilAdmin';

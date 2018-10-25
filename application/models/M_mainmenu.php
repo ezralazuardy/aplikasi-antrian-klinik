@@ -13,6 +13,7 @@ class M_mainmenu extends CI_Model {
 		$this->db->from('tbl_antrian');
 		$this->db->join('tbl_pendaftaran','tbl_antrian.id_antrian = tbl_pendaftaran.id_antrian', 'outter');
 		$this->db->join('tbl_dokter','tbl_dokter.id_dok = tbl_pendaftaran.id_dokter', 'outter');
+		$this->db->join('tbl_layanan','tbl_dokter.id_layanan = tbl_layanan.id_layanan', 'outter');
 		$this->db->where('tbl_antrian.id_antrian',$id);
 		$data = $this->db->get();
 		if($data->num_rows() > 0){
