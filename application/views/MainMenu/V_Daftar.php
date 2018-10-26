@@ -92,7 +92,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="">Tanggal Besuk</label>
-                    <input type="date" name="tanggal_besuk" class="form-control" required="">
+                    <input type="text" name="tanggal_besuk" class="form-control tanggal-lahir"   required="">
                   </div>
                 </div>
               </div>
@@ -158,7 +158,14 @@
   <script src="assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
   <script src="assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
   <script src="assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
-  <script src="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.js'); ?>"></script> 
 
+  <script src="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.js'); ?>"></script> 
+  <script src="<?php echo base_url('assets/vendor/chartist/js/chartist.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/scripts/klorofil-common.js');  ?>"></script>
+  <script src="<?php echo base_url('assets/js/jquery.dataTables.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/js/sweetalert.min.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
+  <script src="<?php echo base_url('assets/vendor/toastr/toastr.min.js'); ?>"></script>
 </body>
 </html>

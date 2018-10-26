@@ -37,4 +37,19 @@ class C_Dashboard extends CI_Controller {
 			redirect('Login');
 		}
 	}	
+
+	public function skipAntrian($id) {
+		$plaintext_string = str_replace(array('-', '_', '~'), array('+', '/', '='), $id);
+		$plaintext_string = $this->encrypt->decode($plaintext_string);
+		
+		$id_antrian	= $plaintext_string;
+		
+		if($this->M_admin->skipAntrian($id_antrian)) {
+			redirect('Dashboard/index');
+		} else {
+			$this->session->set_flashdata('error', 'Jadwal berhasil didelete!');
+			redirect('Dashboard/index/error');
+		}	
+	}
+
 }

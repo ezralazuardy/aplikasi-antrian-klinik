@@ -43,7 +43,7 @@
 								</div>
 								<div class="col-md-2">
 									<div class="float-right" style="padding:10px;margin:5px;">
-										<a href="<?php echo base_url('Jadwal/inputJadwal'); ?>" alt="Add" class="btn btn-success btn-lg insert-btn" "><span class="fa fa-plus"></span>
+										<a href="<?php echo base_url('Antrian/inputAntrian'); ?>" alt="Add" class="btn btn-success btn-lg insert-btn" "><span class="fa fa-plus"></span>
 										</a>
 									</div>
 								</div>
