@@ -1,10 +1,14 @@
 <?php
 class M_admin extends CI_Model {
 
+
+
 	public function __construct() {
 		$this->load->database();
 		$this->load->library('encrypt');
 	}
+
+	
 
 	/* -=-=-=-=-=-=-=-=-=-=- INSERT SECTION -=-=-=-=-=-=-=-=-=-=-=- */
 	public function insertPegawai($data){
@@ -22,6 +26,53 @@ class M_admin extends CI_Model {
 	public function insertJadwal($data){
 		return $this->db->insert('tbl_jadwal',$data);
 	}
+
+	/*-=--=-=-=-=-=-=--=-=-= SELECT MAIN SECTION -=-=-=-=-=-=-=-=-=-=-=-= */
+
+	public function getCountAntrian(){
+		$date = date('Y-m-d');
+		$select = array('*');
+		$this->db->select($select);
+		$this->db->from('tbl_antrian');
+		$this->db->where('tanggal',$date);
+		$this->db->group_by('antrian');
+
+		$data = $this->db->get();
+
+		return $data->num_rows();
+
+	}
+
+	public function getCountSisaAntrian(){
+		$date = date('Y-m-d');
+		$select = array('*');
+		$this->db->select($select);
+		$this->db->from('tbl_antrian');
+		$this->db->where('tanggal',$date);
+		$this->db->where('status','0');
+		$this->db->group_by('antrian');
+
+		$data = $this->db->get();
+
+		return $data->num_rows();
+	}
+
+	public function getCurrentAntrian(){
+		$date = date('Y-m-d');
+		$select = array('*');
+		$this->db->select($select);
+		$this->db->from('tbl_antrian');
+		$this->db->where('tanggal',$date);
+		$this->db->where('status','0');
+		$this->db->order_by('antrian','asc');
+		
+		
+		$data = $this->db->get();
+
+		return $data->result_array();
+	}
+
+
 
 	/*-=--=-=-=-=-=-=--=-=-= SELECT SECTION -=-=-=-=-=-=-=-=-=-=-=-= */
 	public function selectPegawai(){
@@ -106,6 +157,42 @@ class M_admin extends CI_Model {
 		}	
 	}
 
+	public function selectAntrian(){
+		$this->db->select('* , tbl_pendaftaran.nama nama_user');
+		$this->db->from('tbl_antrian');
+		$this->db->join('tbl_pendaftaran','tbl_antrian.id_antrian = tbl_pendaftaran.id_antrian', 'outter');
+		$this->db->join('tbl_dokter','tbl_dokter.id_dok = tbl_pendaftaran.id_dokter', 'outter');
+		$this->db->join('tbl_layanan','tbl_dokter.id_layanan = tbl_layanan.id_layanan', 'outter');
+		$this->db->where('tbl_antrian.status != 1');
+		$this->db->order_by('tanggal','desc');
+		$this->db->order_by('antrian','asc');
+		
+		
+		$data = $this->db->get();
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}
+
+	}
+
+	public function getAntrian($id){		
+		$this->db->select('*');
+		$this->db->from('tbl_antrian');
+		$this->db->join('tbl_pendaftaran','tbl_antrian.id_antrian = tbl_pendaftaran.id_antrian', 'outter');
+		$this->db->join('tbl_dokter','tbl_dokter.id_dok = tbl_pendaftaran.id_dokter', 'outter');
+		$this->db->join('tbl_layanan','tbl_dokter.id_layanan = tbl_layanan.id_layanan', 'outter');	
+		$this->db->where('tbl_antrian.id_antrian',$id);
+		$data = $this->db->get();
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}
+	
+	}
+
 	/* -=-=-=-=-=-=-=-=-=-=- UPDATE SECTION -=-=-=-=-=-=-=-=-=-=- */
 	public function updatePegawai($id,$data){
 		$this->db->where('id_dok',$id);
@@ -126,6 +213,12 @@ class M_admin extends CI_Model {
 	public function updateJadwal($id,$data){
 		$this->db->where('id_jadwal',$id);
 		return $this->db->update('tbl_jadwal',$data);
+	}
+
+	public function skipAntrian($id){
+		$this->db->set('status','1');
+		$this->db->where('id_antrian',$id);
+		return $this->db->update('tbl_antrian');
 	}
 
 	/* -=-=-=-=-=-=-=-=-=-=- DELETE SECTION -=-=-=-=-=-=-=-=-=-=- */

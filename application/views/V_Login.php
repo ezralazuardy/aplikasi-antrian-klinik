@@ -44,7 +44,8 @@
 										<span>Ingat saya</span>
 									</label>
 								</div>
-								<input type="submit" class="btn btn-primary btn-lg btn-block" value="MASUK"/>
+								<input type="submit" class="btn btn-primary btn-lg btn-block" value="Masuk"/>
+								<a class="btn btn-success btn-lg btn-block" href="<?php echo base_url(''); ?>">Kembali</a>
 								<!-- <div class="bottom">
 									<span class="helper-text"><i class="fa fa-lock"></i> <a href="#">Forgot password?</a></span>
 								</div> -->

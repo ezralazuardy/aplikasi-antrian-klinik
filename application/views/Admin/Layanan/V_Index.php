@@ -7,6 +7,7 @@
 				<li><a class="active" href="<?php echo base_url('Layanan/index'); ?>" class=""><i class="lnr lnr-bookmark "></i> <span>Atur Layanan</span></a></li>
 				<li><a href="<?php echo base_url('Jadwal/index'); ?>" class=""><i class="lnr lnr-user "></i> <span>Atur Jadwal</span></a></li>
 				<li><a href="<?php echo base_url('User/index'); ?>" class=""><i class="lnr lnr-user "></i> <span>Atur Akun Pengguna</span></a></li>
+				<li><a href="<?php echo base_url('Antrian/index'); ?>" class=""><i class="lnr lnr-book "></i> <span>Lihat Antrian</span></a></li>
 			</ul>
 		</nav>
 	</div>
@@ -36,6 +37,7 @@
 								<thead class="text-center">
 									<tr>
 										<th>No</th>
+										<th>Kode Layanan</th>
 										<th>Nama</th>
 										<th>Layanan Medis</th>
 										<th>Action</th>
@@ -54,6 +56,7 @@
 											?>
 											<tr>
 												<td><?php echo $i++; ?></td>
+												<td><?php echo $value['code_layanan']; ?></td>
 												<td><?php echo $value['nama']; ?></td>
 												<td><?php echo $value['layanan_medis']; ?></td>
 												<td>

@@ -27,6 +27,24 @@ function deleteThis($link){
 	});
 }
 
+function skipThis($link){
+	swal({
+		title: "Lewati?",
+		text: "Lewati antrian ini?",
+		icon: "info",
+		buttons: true,
+		dangerMode: true,
+	})
+	.then((willDelete) => {
+		if (willDelete) {
+			swal("Antrian Berhasil di Skip!", {
+				icon: "success",
+			});
+			window.location.replace($link)
+		}
+	});
+}
+
 $(function() {
 	var data, options;
 
