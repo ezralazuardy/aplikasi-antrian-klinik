@@ -17,12 +17,6 @@
       <div class="navbar-translate">
         <a class="navbar-brand" href="#">
           Aplikasi Antrian Klinik </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-        </button>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">

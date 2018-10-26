@@ -17,10 +17,6 @@
       <div class="navbar-translate">
         <a class="navbar-brand" href="">Tentang Aplikasi </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
-          <span class="navbar-toggler-icon"></span>
         </button>
       </div>
       <div class="collapse navbar-collapse">
@@ -51,16 +47,13 @@
               </div>
               <div class="name">
                 <h3 class="title">Aplikasi Antrian Klinik</h3>
-                <h6>versi 1.0</h6>
-                <!-- <a href="#pablo" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-dribbble"></i></a>
-                <a href="#pablo" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>
-                <a href="#pablo" class="btn btn-just-icon btn-link btn-pinterest"><i class="fa fa-pinterest"></i></a> -->
+                <h6 style="margin-top:-20px;">versi 1.0</h6>
               </div>
             </div>
           </div>
         </div>
         <div class="description text-center" style="padding-bottom: 40px;">
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <p>Aplikasi untuk manajemen antrian klinik</p>
         </div>
       </div>
     </div>
