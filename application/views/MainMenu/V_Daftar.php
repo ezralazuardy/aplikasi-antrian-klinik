@@ -17,7 +17,7 @@
   <nav class="navbar  fixed-top navbar-expand-lg" id="sectionsNav">
     <div class="container">
       <div class="navbar-translate">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="<?php echo base_url(''); ?>">
           Aplikasi Antrian Klinik </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
           <span class="sr-only">Toggle navigation</span>

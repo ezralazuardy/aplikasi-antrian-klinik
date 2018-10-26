@@ -37,10 +37,14 @@ class M_mainmenu extends CI_Model {
 	}
 
 	public function countAntrian(){
+
+		$date = date('Y-m-d');
+
 		$this->db->select('antrian,tanggal');
 		$this->db->from('tbl_antrian');
-		$this->db->where('tanggal','CURDATE()');
-		$this->db->order_by('antrian','desc');
+		$this->db->where('tanggal',$date);
+		$this->db->where('status != 1');
+		$this->db->order_by('antrian','asc');
 		$this->db->order_by('tanggal','desc');
 		
 		$data = $this->db->get();

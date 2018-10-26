@@ -22,7 +22,7 @@ class C_Antrian extends CI_Controller {
 		
 		$data['total_antrian'] = $this->M_admin->getCountAntrian();
 		$data['sisa_antrian'] = $this->M_admin->getCountSisaAntrian();
-		$data['sisa_antrian'] = $this->M_admin->getCurrentAntrian();
+		$data['current_antrian'] = $this->M_admin->getCurrentAntrian();
 
 		$data['antrian'] = $this->M_admin->selectAntrian();
 
@@ -66,7 +66,8 @@ public function antrianEdit($id = false) {
 		
 		$data['id_antrian']	= $plaintext_string;
 		$data['list'] = $this->M_admin->getAntrian($plaintext_string);
-		
+		$data['id_dok'] = $this->M_admin->selectPegawai();
+
 		$this->load->view("V_Header");
 		$this->load->view("Admin/Antrian/V_Edit",$data);
 		$this->load->view("V_Footer");

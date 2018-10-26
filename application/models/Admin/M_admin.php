@@ -1,10 +1,14 @@
 <?php
 class M_admin extends CI_Model {
 
+
+
 	public function __construct() {
 		$this->load->database();
 		$this->load->library('encrypt');
 	}
+
+	
 
 	/* -=-=-=-=-=-=-=-=-=-=- INSERT SECTION -=-=-=-=-=-=-=-=-=-=-=- */
 	public function insertPegawai($data){
@@ -26,38 +30,41 @@ class M_admin extends CI_Model {
 	/*-=--=-=-=-=-=-=--=-=-= SELECT MAIN SECTION -=-=-=-=-=-=-=-=-=-=-=-= */
 
 	public function getCountAntrian(){
-		$select = array('count(antrian) as total_antrian');
+		$date = date('Y-m-d');
+		$select = array('*');
 		$this->db->select($select);
 		$this->db->from('tbl_antrian');
-		$this->db->where('tanggal','CURDATE()');
+		$this->db->where('tanggal',$date);
 		$this->db->group_by('antrian');
 
 		$data = $this->db->get();
 
-		return $data->result_array();
+		return $data->num_rows();
 
 	}
 
 	public function getCountSisaAntrian(){
-		$select = array('count(antrian) as total_antrian');
+		$date = date('Y-m-d');
+		$select = array('*');
 		$this->db->select($select);
 		$this->db->from('tbl_antrian');
-		$this->db->where('tanggal','CURDATE()');
+		$this->db->where('tanggal',$date);
 		$this->db->where('status','0');
 		$this->db->group_by('antrian');
 
 		$data = $this->db->get();
 
-		return $data->result_array();
+		return $data->num_rows();
 	}
 
 	public function getCurrentAntrian(){
+		$date = date('Y-m-d');
 		$select = array('*');
 		$this->db->select($select);
 		$this->db->from('tbl_antrian');
-		$this->db->where('tanggal','CURDATE()');
+		$this->db->where('tanggal',$date);
 		$this->db->where('status','0');
-		$this->db->order_by('antrian','desc');
+		$this->db->order_by('antrian','asc');
 		
 		
 		$data = $this->db->get();
@@ -156,7 +163,9 @@ class M_admin extends CI_Model {
 		$this->db->join('tbl_pendaftaran','tbl_antrian.id_antrian = tbl_pendaftaran.id_antrian', 'outter');
 		$this->db->join('tbl_dokter','tbl_dokter.id_dok = tbl_pendaftaran.id_dokter', 'outter');
 		$this->db->join('tbl_layanan','tbl_dokter.id_layanan = tbl_layanan.id_layanan', 'outter');
+		$this->db->where('tbl_antrian.status != 1');
 		$this->db->order_by('tanggal','desc');
+		$this->db->order_by('antrian','asc');
 		
 		
 		$data = $this->db->get();

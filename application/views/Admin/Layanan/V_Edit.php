@@ -35,7 +35,10 @@
 									<label for="nama">Nama</label>
 									<input id="nama" name="nama" type="text" class="form-control" placeholder="Nama" value="<?php echo $value['nama']; ?>" required="">
 								</div>
-
+								<div class="form-group">
+									<label for="nama">Kode Layanan</label>
+									<input id="nama" maxlength="3" name="nama" type="text" class="form-control" placeholder="Kode Layanan" value="<?php echo $value['code_layanan']; ?>" required="" style="width: 30%;">
+								</div>
 								<div class="form-group">
 									<label for="layanan_medis">Layanan Medis</label>
 									<input id="layanan_medis" name="layanan_medis" type="text" class="form-control" placeholder="Layanan Medis" value="<?php echo $value['layanan_medis']; ?>" required="">
