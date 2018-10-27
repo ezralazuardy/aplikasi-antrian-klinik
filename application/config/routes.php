@@ -46,3 +46,8 @@ $route['Keluar'] = 'C_Keluar';
 $route['Daftar'] = 'C_Daftar/index';
 $route['Daftar/(:any)'] = 'C_Daftar/$1';
 $route['Daftar/(:any)/(:any)'] = 'C_Daftar/$1/$2';
+
+$route['MainJadwal'] = 'C_MainMenu/jadwal';
+$route['Dokter'] = 'C_MainMenu/dokter';
+$route['MainLayanan'] = 'C_MainMenu/layanan';
+	

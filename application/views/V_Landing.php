@@ -6,7 +6,7 @@
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/material-icons.css'); ?>" />
-  <link rel="stylesheet" type="text/css" href="assets/vendor/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/vendor/font-awesome/css/font-awesome.min.css');?>">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/material-kit.css?v=2.0.4'); ?>"/>
   <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.webp'); ?>">
   <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url('assets/img/favicon.webp'); ?>">
@@ -31,20 +31,26 @@
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url('Dokter'); ?>">
+                <i class="material-icons">persons</i> Dokter 
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url('MainLayanan'); ?>">
+                <i class="material-icons">book</i> Layanan 
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url('MainJadwal'); ?>">
+                <i class="material-icons">schedule</i> Jadwal
+              </a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="Login">
-                <i class="material-icons">person</i> Masuk
+                <i class="material-icons">lock</i> Masuk
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/" target="_blank" data-original-title="Ikuti kami di Facebook">
-                <i class="fa fa-facebook-square"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/" target="_blank" data-original-title="Ikuti kami di Instagram">
-                <i class="fa fa-instagram"></i>
-              </a>
-            </li>
+          
           </ul>
         </div>
 <!-- >>>>>>> 971814a659fbc2cad2c9cdc30273c699ad497126 -->
@@ -251,7 +257,7 @@
                     <button class="btn btn-primary btn-raised">
                       Kirim pesan
                     </button>
-                  </div>
+                   </div>
                 </div>
               </form>
             </div>
@@ -273,15 +279,25 @@
                 Lisensi
               </a>
             </li>
+              <li class="nav-item">
+              <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/" target="_blank" data-original-title="Ikuti kami di Facebook">
+                <i class="fa fa-facebook-square"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/" target="_blank" data-original-title="Ikuti kami di Instagram">
+                <i class="fa fa-instagram"></i>
+              </a>
+            </li>
           </ul>
         </nav>
-      <!-- <div class="copyright float-right">
+      <div class="copyright float-right">
         &copy;
         <script>
           document.write(new Date().getFullYear())
         </script>, dibuat dengan <i class="material-icons">favorite</i> oleh
         <a href="#" target="_blank">TinyLab</a>.
-      </div> -->
+      </div>
     </div>
   </footer>
   <script type="text/javascript" src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>"></script>

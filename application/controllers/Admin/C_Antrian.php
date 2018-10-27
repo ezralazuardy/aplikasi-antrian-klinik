@@ -166,7 +166,7 @@ public function antrianEdit($id = false) {
 		$id_antrian	= $plaintext_string;
 		
 		if($this->M_admin->skipAntrian($id_antrian)) {
-			$this->session->set_flashdata('success', 'Antrian berhasil didelete!');
+			$this->session->set_flashdata('success', 'Antrian berhasil Diskip!');
 			redirect('Antrian/index/delete');
 		} else {
 			$this->session->set_flashdata('error', 'Jadwal berhasil didelete!');
