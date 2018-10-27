@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 20, 2018 at 03:42 AM
+-- Generation Time: Oct 27, 2018 at 03:41 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -31,8 +31,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `tbl_antrian` (
   `id_antrian` int(11) NOT NULL,
   `tanggal` date DEFAULT NULL,
-  `antrian` varchar(255) DEFAULT NULL
+  `antrian` varchar(255) DEFAULT NULL,
+  `status` tinyint(1) DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_antrian`
+--
+
+INSERT INTO `tbl_antrian` (`id_antrian`, `tanggal`, `antrian`, `status`) VALUES
+(5, '2018-10-24', 'A002', 0),
+(7, '2018-10-26', 'A001', 1),
+(8, '2018-10-26', 'A002', 0),
+(9, '2018-10-26', 'A003', 1),
+(10, '2018-10-26', 'A004', 1),
+(11, '2018-10-27', 'A001', 0);
 
 -- --------------------------------------------------------
 
@@ -112,17 +125,18 @@ CREATE TABLE `tbl_layanan` (
   `id_layanan` int(11) NOT NULL,
   `nama` varchar(255) DEFAULT NULL,
   `layanan_medis` varchar(255) DEFAULT NULL,
-  `info_medis` varchar(255) DEFAULT NULL
+  `info_medis` varchar(255) DEFAULT NULL,
+  `code_layanan` char(10) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_layanan`
 --
 
-INSERT INTO `tbl_layanan` (`id_layanan`, `nama`, `layanan_medis`, `info_medis`) VALUES
-(1, 'Demam Berdarah', 'Penyembuhan Demam Berdarah', 'Dikarenakan Demam Berdarah Sangat Berbahaya Bagi Kesehatan Kita Semua, Dan Menyebabkan Kematian'),
-(2, 'THT', 'Mengobati Telinga Hidung Tenggorokan', 'Kita disini dapat mengobati berbagai penyakit Telinga Hidung dan Tenggorokan									'),
-(3, 'Sakit Perut', 'Sakit Perut Maag dan Sebagainya', 'Mengobati berbagai penyakit yang menyerang perut.');
+INSERT INTO `tbl_layanan` (`id_layanan`, `nama`, `layanan_medis`, `info_medis`, `code_layanan`) VALUES
+(1, 'Demam Berdarah', 'Penyembuhan Demam Berdarah', 'Dikarenakan Demam Berdarah Sangat Berbahaya Bagi Kesehatan Kita Semua, Dan Menyebabkan Kematian', 'DB'),
+(2, 'THT', 'Mengobati Telinga Hidung Tenggorokan', 'Kita disini dapat mengobati berbagai penyakit Telinga Hidung dan Tenggorokan									', 'THT'),
+(3, 'Sakit Perut', 'Sakit Perut Maag dan Sebagainya', 'Mengobati berbagai penyakit yang menyerang perut.', 'SP');
 
 -- --------------------------------------------------------
 
@@ -141,6 +155,20 @@ CREATE TABLE `tbl_pendaftaran` (
   `tanggal_besuk` varchar(255) DEFAULT NULL,
   `id_dokter` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_pendaftaran`
+--
+
+INSERT INTO `tbl_pendaftaran` (`id_daftar`, `id_antrian`, `nama`, `alamat`, `jenis_kelamin`, `umur`, `berat_badan`, `tanggal_besuk`, `id_dokter`) VALUES
+(1, '4', 'Muhammad Alifian Aqshol', 'adexeadexe', 'Laki-Laki', '22', '120', '2018-10-18', 9),
+(2, '5', 'asd', 'asdasd', 'Perempuan', '21', '12', '2018-10-17', 10),
+(3, '6', 'Desi', 'Dihati seseotrang', 'Perempuan', '22', '50', '2018-10-09', 2),
+(4, '7', 'Termonator', 'adexe asdaexe', 'Perempuan', '22', '12', '2018-10-27', 2),
+(5, '8', 'Teriyaki Bos', 'Adexe', 'Perempuan', '123', '100', '2018-10-31', 9),
+(6, '9', 'Saya kuandar', 'Tempat sepi', 'Laki-Laki', '201', '110', '2018-10-20', 10),
+(7, '10', 'Kurtwandar', 'Sepi di dalam gundah', 'Laki-Laki', '12', '110', '2018-10-27', 1),
+(8, '11', 'Muhammad Alifian Aqshol', 'adeexe', 'Laki-Laki', '18', '22', 'Saturday, 27 October 2018', 1);
 
 -- --------------------------------------------------------
 
@@ -219,7 +247,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_antrian`
 --
 ALTER TABLE `tbl_antrian`
-  MODIFY `id_antrian` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_antrian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `tbl_dokter`
@@ -249,7 +277,7 @@ ALTER TABLE `tbl_layanan`
 -- AUTO_INCREMENT for table `tbl_pendaftaran`
 --
 ALTER TABLE `tbl_pendaftaran`
-  MODIFY `id_daftar` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_daftar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`

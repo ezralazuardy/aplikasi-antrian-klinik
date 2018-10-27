@@ -17,7 +17,7 @@
       <div class="navbar-translate">
         <a class="navbar-brand" href="<?php echo base_url(''); ?>">
           Aplikasi Antrian Klinik </a>
-<<<<<<< HEAD
+<!-- <<<<<<< HEAD -->
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
@@ -25,26 +25,9 @@
             <a class="nav-link" href="Login">
               <i class="material-icons">person</i> Masuk
             </a>
-          </li> -->
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/" target="_blank" data-original-title="Ikuti kami di Facebook">
-              <i class="fa fa-facebook-square"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/" target="_blank" data-original-title="Ikuti kami di Instagram">
-              <i class="fa fa-instagram"></i>
-            </a>
-          </li>
+          </li> --> 
         </ul>
-=======
-          <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </div>
+<!-- ======= -->
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -64,7 +47,7 @@
             </li>
           </ul>
         </div>
->>>>>>> 971814a659fbc2cad2c9cdc30273c699ad497126
+<!-- >>>>>>> 971814a659fbc2cad2c9cdc30273c699ad497126 -->
       </div>
     </nav>
     <div class="page-header header-filter" data-parallax="true" style="background-image: url('<?php echo base_url('assets/img/bg.webp'); ?>')">
@@ -84,7 +67,7 @@
             if($sisa_antrian){
               echo $sisa_antrian;
             }else{
-              echo "Belum ada antrian";
+              echo "0";
             }
             ?></h1>
             <br>
@@ -114,7 +97,7 @@
 
                 echo (int)($sisa_antrian*10) ." Menit";
               }else{
-                echo "Belum ada antrian";
+                echo "0 Menit";
               }
               ?></h1>
               <br>
@@ -128,7 +111,7 @@
         </div>
       </div>
     </div>
-    <div class="main main-raised">
+    <div class="main main-raised" style="margin-top:1%;">
       <div class="container">
         <div class="section text-center">
           <div class="row">
@@ -169,7 +152,7 @@
             </div>
           </div>
         </div>
-        <<!-- div class="section text-center">
+        <!-- div class="section text-center">
           <h2 class="title">Tim pengembang aplikasi</h2>
           <div class="team">
             <div class="row">

@@ -18,7 +18,7 @@
 			<div class="panel panel-headline">
 				<div class="panel-heading">
 					<h3 class="panel-title">Day Overview</h3>
-					<p class="panel-subtitle">Period: Oct 14, 2016 - Oct 21, 2016</p>
+					<p class="panel-subtitle">Period: <?php echo date('l,d F Y'); ?></p>
 				</div>
 				<div class="panel-body">
 					<div class="row">
@@ -44,7 +44,11 @@
 							<div class="metric">
 								<span class="icon"><i class="fa fa-eye"></i></span>
 								<p>
-									<span class="number"><?php echo $current_antrian[0]['antrian']; ?></span>
+									<span class="number"><?php if(!empty($current_antrian[0]['antrian'])){
+											echo $current_antrian[0]['antrian'];
+										}else{
+											echo " - ";
+										}	 ?></span>
 									<span class="title">Antrian Saat Ini</span>
 								</p>
 							</div>
@@ -71,11 +75,19 @@
 						<div class="col-md-12 text-right">
 							<?php 
 								/* Encrypt ID */
-								$encrypted_string = $this->encrypt->encode($current_antrian[0]['id_antrian']);
+								$id = '';
+								$point = "";
+								if(!empty($current_antrian[0]['id_antrian'])){
+											$id = $current_antrian[0]['id_antrian'];
+											$point = "";
+										}else{
+											$point =  "disabled";
+										}	
+								$encrypted_string = $this->encrypt->encode($id);
 								$id = str_replace(array('+', '/', '='), array('-', '_', '~'), $encrypted_string);
 
 							?>
-							<a href="<?php echo base_url('Dashboard/skipAntrian/'.$id); ?>" class="btn btn-success btn-large" ><span class="title fa fa-play"></span> &nbsp; Next</a>
+							<a href="<?php echo base_url('Dashboard/skipAntrian/'.$id); ?>" class="btn btn-success btn-large" <?php echo $point; ?>><span class="title fa fa-play"></span> &nbsp; Next</a>
 						</div>
 					</div>
 				</div>
