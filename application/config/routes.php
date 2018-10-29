@@ -29,6 +29,10 @@ $route['Jadwal'] = 'Admin/C_Jadwal/';
 $route['Jadwal/(:any)'] = 'Admin/C_Jadwal/$1';
 $route['Jadwal/(:any)/(:any)'] = 'Admin/C_Jadwal/$1/$2';
 
+$route['Antrian'] = 'Admin/C_Antrian/';
+$route['Antrian/(:any)'] = 'Admin/C_Antrian/$1';
+$route['Antrian/(:any)/(:any)'] = 'Admin/C_Antrian/$1/$2';
+
 $route['PetunjukAdmin'] = 'Admin/C_PetunjukAdmin';
 
 $route['ProfilAdmin'] = 'Admin/C_ProfilAdmin';
@@ -36,3 +40,14 @@ $route['ProfilAdmin'] = 'Admin/C_ProfilAdmin';
 $route['PengaturanAdmin'] = 'Admin/C_PengaturanAdmin';
 
 $route['Keluar'] = 'C_Keluar';
+
+
+/* Main Menu Stuff */
+$route['Daftar'] = 'C_Daftar/index';
+$route['Daftar/(:any)'] = 'C_Daftar/$1';
+$route['Daftar/(:any)/(:any)'] = 'C_Daftar/$1/$2';
+
+$route['MainJadwal'] = 'C_MainMenu/jadwal';
+$route['Dokter'] = 'C_MainMenu/dokter';
+$route['MainLayanan'] = 'C_MainMenu/layanan';
+	

@@ -29,6 +29,10 @@
 									<label for="nama">Nama</label>
 									<input id="nama" name="nama" type="text" class="form-control" placeholder="Nama" required="">
 								</div>
+								<div class="form-group">
+									<label for="nama">Kode Layanan</label>
+									<input id="nama" maxlength="3" name="nama" type="text" class="form-control" placeholder="Kode Layanan" style="width:30%" required="">
+								</div>
 
 								<div class="form-group">
 									<label for="layanan_medis">Layanan Medis</label>
