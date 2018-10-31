@@ -59,60 +59,47 @@
     <div class="page-header header-filter" data-parallax="true" style="background-image: url('<?php echo base_url('assets/img/bg.webp'); ?>')">
       <div class="container">
         <div class="row">
-        <!-- <div class="col-md-6">
-          <h1 class="title">Memudahkan manajemen klinik anda.</h1>
-          <h4>Kami membuat aplikasi yang kaya akan fitur untuk memudahkan proses manajemen di klinik anda.</h4>
-        </div> -->
-        <div class="col-md-12 text-center">
-             <h1 class="title">Aplikasi Antrian</h1>
-             <h2><?php echo date('l,d F Y'); ?></h2>
-          </div>
-        <div class="col-md-4 text-center">
-          <h2>Sisa Antrian :</h2>
-          <h1 class="title"><?php 
+          <!-- <div class="col-md-6">
+            <h1 class="title">Memudahkan manajemen klinik anda.</h1>
+            <h4>Kami membuat aplikasi yang kaya akan fitur untuk memudahkan proses manajemen di klinik anda.</h4>
+          </div> -->
+          <div class="col-md-12 text-center">
+             <!-- <h1 class="title">Aplikasi Antrian</h1> -->
+             <h4><?php echo date('l, d F Y'); ?></h4>
+           </div>
+           <div class="col-md-4 text-center">
+            <h3 class="title">Sisa antrian</h3>
+            <h1><?php 
             if($sisa_antrian){
               echo $sisa_antrian;
-            }else{
+            } else {
               echo "0";
-            }
-            ?></h1>
+            } ?></h1>
             <br>
-
           </div>
-
           <div class="col-md-4 text-center">
-            <h2>Antrian Saat Ini :</h2>
-            <h1 class="title"><?php 
-
-              if(is_array($list) && !empty($list)){
-
-                echo $list[0]['antrian'];
-              }else{
-                echo "Belum ada antrian";
-              }
-              ?></h1>
-              <br>
-
-            </div>
-
-            <div class="col-md-4 text-center">
-            <h2>Waktu Tunggu : </h2>
-            <h1 class="title"><?php 
-
-              if(is_array($list) && !empty($list)){
-
-                echo (int)($sisa_antrian*10) ." Menit";
-              }else{
-                echo "0 Menit";
-              }
-              ?></h1>
-              <br>
-
-            </div>
-            <div class="col-md-12 text-center">
-             <a href="<?php echo base_url('Daftar'); ?>" class="btn btn-danger btn-raised btn-lg">
-              Daftar
-            </a>
+            <h3 class="title">Antrian saat ini</h3>
+            <h1><?php 
+            if (is_array($list) && !empty($list)) {
+              echo $list[0]['antrian'];
+            } else {
+              echo "0";
+            } ?>
+            </h1>
+            <br>
+          </div>
+          <div class="col-md-4 text-center">
+            <h3 class="title">Waktu tunggu</h3>
+            <h1><?php 
+            if (is_array($list) && !empty($list)) {
+              echo (int)($sisa_antrian*10) ." Menit";
+            } else {
+              echo "0 Menit";
+            } ?></h1>
+            <br>
+          </div>
+          <div class="col-md-12 text-center">
+            <a href="<?php echo base_url('Daftar'); ?>" class="btn btn-danger btn-raised btn-lg">Daftar</a>
           </div>
         </div>
       </div>
