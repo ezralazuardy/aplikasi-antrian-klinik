@@ -54,4 +54,5 @@ $route['Daftar/(:any)/(:any)'] = 'C_Daftar/$1/$2';
 $route['MainJadwal'] = 'C_MainMenu/jadwal';
 $route['Dokter'] = 'C_MainMenu/dokter';
 $route['MainLayanan'] = 'C_MainMenu/layanan';
+$route['getAntrian'] = 'C_Landing/getAntrian';
 	

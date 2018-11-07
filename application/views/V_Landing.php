@@ -16,8 +16,8 @@
     <div class="container">
       <div class="navbar-translate">
         <a class="navbar-brand" href="<?php echo base_url(''); ?>">
-          Aplikasi Antrian Klinik </a>
-<!-- <<<<<<< HEAD -->
+        Aplikasi Antrian Klinik </a>
+        <!-- <<<<<<< HEAD -->
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
@@ -27,7 +27,7 @@
             </a>
           </li> --> 
         </ul>
-<!-- ======= -->
+        <!-- ======= -->
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -50,10 +50,10 @@
                 <i class="material-icons">lock</i> Masuk
               </a>
             </li>
-          
+
           </ul>
         </div>
-<!-- >>>>>>> 971814a659fbc2cad2c9cdc30273c699ad497126 -->
+        <!-- >>>>>>> 971814a659fbc2cad2c9cdc30273c699ad497126 -->
       </div>
     </nav>
     <div class="page-header header-filter" data-parallax="true" style="background-image: url('<?php echo base_url('assets/img/bg.webp'); ?>')">
@@ -64,87 +64,87 @@
             <h4>Kami membuat aplikasi yang kaya akan fitur untuk memudahkan proses manajemen di klinik anda.</h4>
           </div> -->
           <div class="col-md-12 text-center">
-             <!-- <h1 class="title">Aplikasi Antrian</h1> -->
-             <h4><?php echo date('l, d F Y'); ?></h4>
-           </div>
-           <div class="col-md-4 text-center">
-            <h3 class="title">Sisa antrian</h3>
-            <h1><?php 
-            if($sisa_antrian){
-              echo $sisa_antrian;
-            } else {
-              echo "0";
-            } ?></h1>
-            <br>
+           <!-- <h1 class="title">Aplikasi Antrian</h1> -->
+           <h4><?php echo date('l, d F Y'); ?></h4>
+         </div>
+         <div class="col-md-4 text-center">
+          <h3 class="title">Sisa antrian</h3>
+          <h1 id="sisa-antrian-ini"><?php 
+          if($sisa_antrian){
+            echo $sisa_antrian;
+          } else {
+            echo "0";
+          } ?></h1>
+          <br>
+        </div>
+        <div class="col-md-4 text-center">
+          <h3 class="title">Antrian saat ini</h3>
+          <h1 id="antrian-ini"><?php 
+          if (is_array($list) && !empty($list)) {
+            echo $list[0]['antrian'];
+          } else {
+            echo "0";
+          } ?>
+        </h1>
+        <br>
+      </div>
+      <div class="col-md-4 text-center">
+        <h3 class="title">Waktu tunggu</h3>
+        <h1 id="waktu-tunggu-ini"><?php 
+        if (is_array($list) && !empty($list)) {
+          echo (int)($sisa_antrian*10) ." Menit";
+        } else {
+          echo "0 Menit";
+        } ?></h1>
+        <br>
+      </div>
+      <div class="col-md-12 text-center">
+        <a href="<?php echo base_url('Daftar'); ?>" class="btn btn-danger btn-raised btn-lg">Daftar</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main main-raised" style="margin-top:1%;">
+  <div class="container">
+    <div class="section text-center">
+      <div class="row">
+        <div class="col-md-8 ml-auto mr-auto">
+          <h2 class="title">Mari bicara tentang fitur</h2>
+          <h5 class="description">Kami membuat Aplikasi Antrian Klinik yang kaya akan fitur, mudah digunakan, dan juga handal dalam proses manajemen klinik.</h5>
+        </div>
+      </div>
+      <div class="features">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="info">
+              <div class="icon icon-info">
+                <i class="material-icons">schedule</i>
+              </div>
+              <h4 class="info-title">Lihat Jadwal</h4>
+              <p>Dapatkan informasi tentang jadwal dokter yang bersangkutan.</p>
+            </div>
           </div>
-          <div class="col-md-4 text-center">
-            <h3 class="title">Antrian saat ini</h3>
-            <h1><?php 
-            if (is_array($list) && !empty($list)) {
-              echo $list[0]['antrian'];
-            } else {
-              echo "0";
-            } ?>
-            </h1>
-            <br>
+          <div class="col-md-4">
+            <div class="info">
+              <div class="icon icon-success">
+                <i class="material-icons">chat</i>
+              </div>
+              <h4 class="info-title">Hubungi Kami</h4>
+              <p>Kirim pertanyaan, pesan, kritik, ataupun saran dengan mudah dan cepat, diproses dan dibalas langsung oleh admin ke alamat surel anda.</p>
+            </div>
           </div>
-          <div class="col-md-4 text-center">
-            <h3 class="title">Waktu tunggu</h3>
-            <h1><?php 
-            if (is_array($list) && !empty($list)) {
-              echo (int)($sisa_antrian*10) ." Menit";
-            } else {
-              echo "0 Menit";
-            } ?></h1>
-            <br>
-          </div>
-          <div class="col-md-12 text-center">
-            <a href="<?php echo base_url('Daftar'); ?>" class="btn btn-danger btn-raised btn-lg">Daftar</a>
+          <div class="col-md-4">
+            <div class="info">
+              <div class="icon icon-danger">
+                <i class="material-icons">person</i>
+              </div>
+              <h4 class="info-title">Manajemen Profil</h4>
+              <p>Ubah informasi profil, data diri, atau biodata anda dengan mudah.</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="main main-raised" style="margin-top:1%;">
-      <div class="container">
-        <div class="section text-center">
-          <div class="row">
-            <div class="col-md-8 ml-auto mr-auto">
-              <h2 class="title">Mari bicara tentang fitur</h2>
-              <h5 class="description">Kami membuat Aplikasi Antrian Klinik yang kaya akan fitur, mudah digunakan, dan juga handal dalam proses manajemen klinik.</h5>
-            </div>
-          </div>
-          <div class="features">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="info">
-                  <div class="icon icon-info">
-                    <i class="material-icons">schedule</i>
-                  </div>
-                  <h4 class="info-title">Lihat Jadwal</h4>
-                  <p>Dapatkan informasi tentang jadwal dokter yang bersangkutan.</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="info">
-                  <div class="icon icon-success">
-                    <i class="material-icons">chat</i>
-                  </div>
-                  <h4 class="info-title">Hubungi Kami</h4>
-                  <p>Kirim pertanyaan, pesan, kritik, ataupun saran dengan mudah dan cepat, diproses dan dibalas langsung oleh admin ke alamat surel anda.</p>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="info">
-                  <div class="icon icon-danger">
-                    <i class="material-icons">person</i>
-                  </div>
-                  <h4 class="info-title">Manajemen Profil</h4>
-                  <p>Ubah informasi profil, data diri, atau biodata anda dengan mudah.</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
         <!-- div class="section text-center">
           <h2 class="title">Tim pengembang aplikasi</h2>
           <div class="team">
@@ -244,7 +244,7 @@
                     <button class="btn btn-primary btn-raised">
                       Kirim pesan
                     </button>
-                   </div>
+                  </div>
                 </div>
               </form>
             </div>
@@ -266,7 +266,7 @@
                 Lisensi
               </a>
             </li>
-              <li class="nav-item">
+            <li class="nav-item">
               <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/" target="_blank" data-original-title="Ikuti kami di Facebook">
                 <i class="fa fa-facebook-square"></i>
               </a>
@@ -278,22 +278,52 @@
             </li>
           </ul>
         </nav>
-      <div class="copyright float-right">
-        &copy;
-        <script>
-          document.write(new Date().getFullYear())
-        </script>, dibuat dengan <i class="material-icons">favorite</i> oleh
-        <a href="#" target="_blank">TinyLab</a>.
+        <div class="copyright float-right">
+          &copy;
+          <script>
+            document.write(new Date().getFullYear())
+          </script>, dibuat dengan <i class="material-icons">favorite</i> oleh
+          <a href="#" target="_blank">TinyLab</a>.
+        </div>
       </div>
-    </div>
-  </footer>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/core/popper.min.js'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/moment.min.js'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/bootstrap-datetimepicker.js'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/nouislider.min.js'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/jquery.sharrre.js'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/material-kit.js?v=2.0.4'); ?>"></script>
-</body>
-</html>
+    </footer>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/core/popper.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/moment.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/bootstrap-datetimepicker.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/nouislider.min.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/jquery.sharrre.js'); ?>"></script>
+    <script type="text/javascript" src="<?php echo base_url('assets/js/material-kit.js?v=2.0.4'); ?>"></script>
+    <script type="text/javascript">
+      var getUrl = window.location;
+      var base_url = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+
+      $(document).ready( function () {
+
+        checkAntrian();
+        setInterval(function(){ checkAntrian(); }, 10000);
+      });
+
+      function checkAntrian(){
+        $.ajax({
+          url : base_url+"/getAntrian",
+          type: "POST",
+          dataType: 'json',
+          success: function(result)
+          {
+            var hasil = result.sisa_antrian * 10;
+            $("#sisa-antrian-ini").text(result.sisa_antrian);
+            $("#antrian-ini").text(result.list[0].antrian);
+            $("#waktu-tunggu-ini").text(hasil+" Menit");
+            console.log(result.sisa_antrian);
+          },
+          error: function(jqXHR, textStatus, errorThrown)
+          {
+
+          }
+        }); 
+      }
+    </script>
+  </body>
+  </html>

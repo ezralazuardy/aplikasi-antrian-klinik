@@ -56,6 +56,7 @@
 										<th>Tanggal</th>
 										<th>Nama</th>
 										<th>Dokter</th>
+										<th>Jaminan Kesehatan</th>
 										<th>Action</th>
 									</tr>
 								</thead>
@@ -75,13 +76,14 @@
 												<td><?php echo $value['tanggal']; ?></td>
 												<td><?php echo $value['nama_user']; ?></td>
 												<td><?php echo $value['nama_dokter']; ?></td>
+												<td><?php echo $value['singkatan']; ?></td>
 												<td>
 
-													<a href="<?php echo base_url('Jadwal/antrianDetail/'.$id); ?>" class="btn btn-sm btn-primary">
+													<a href="<?php echo base_url('Daftar/generate/'.$id); ?>" class="btn btn-sm btn-primary">
 														<span class="fa fa-search"></span>
 													</a>
 
-													<a href="<?php echo base_url('Jadwal/antrianEdit/'.$id); ?>" class="btn btn-sm btn-warning">
+													<a href="<?php echo base_url('Antrian/antrianEdit/'.$id); ?>" class="btn btn-sm btn-warning">
 														<span class="lnr lnr-pencil"></span>
 													</a>
 

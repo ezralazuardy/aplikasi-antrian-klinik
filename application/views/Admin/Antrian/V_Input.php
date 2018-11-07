@@ -71,11 +71,23 @@
 									<?php }} ?>
 									</select>
 								</div>
+
+								<div class="form-group">
+									<label for="id_jamkes">Jaminan Kesehatan</label>
+									<select id="id_jamkes" name="id_jamkes"  class="form-control">
+									<?php 
+									if($jamkes){
+									foreach ($jamkes as $value) { ?>
+										<option value="<?php echo $value['id_jamkes']; ?>"><?php echo $value['singkatan']; ?>&nbsp;(<?php echo $value['nama_jamkes']; ?>)</option>
+									<?php }} ?>
+									</select>
+								</div>
 								
 							</div>
 							<div style="padding: 20px;" class="col-md-12 text-center">
 								<input class="btn btn-success btn-lg" type="submit" value="Input">
 							</div>
+						</form>
 						</div>
 					</div>
 					<!-- END INPUTS -->

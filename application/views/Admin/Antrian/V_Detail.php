@@ -23,7 +23,7 @@
 						<div class="panel-heading">
 						</div>
 						<div class="panel-body">
-							<form action="<?php echo base_url('Antrian/updateAntrian'); ?>" method="POST">
+							<!-- <form action="<?php echo base_url('Antrian/updateAntrian'); ?>" method="POST"> -->
 								<input type="hidden" value="<?php echo $id_antrian; ?>" name="id_antrian">
 								<div class="col-md-6">
 									<?php 

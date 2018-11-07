@@ -187,6 +187,7 @@ class M_admin extends CI_Model {
 		$this->db->join('tbl_pendaftaran','tbl_antrian.id_antrian = tbl_pendaftaran.id_antrian', 'outter');
 		$this->db->join('tbl_dokter','tbl_dokter.id_dok = tbl_pendaftaran.id_dokter', 'outter');
 		$this->db->join('tbl_layanan','tbl_dokter.id_layanan = tbl_layanan.id_layanan', 'outter');
+		$this->db->join('tbl_jamkes','tbl_pendaftaran.id_jamkes = tbl_jamkes.id_jamkes', 'outter');
 		$this->db->where('tbl_antrian.status != 1');
 		$this->db->order_by('tanggal','desc');
 		$this->db->order_by('antrian','asc');
@@ -207,6 +208,7 @@ class M_admin extends CI_Model {
 		$this->db->join('tbl_pendaftaran','tbl_antrian.id_antrian = tbl_pendaftaran.id_antrian', 'outter');
 		$this->db->join('tbl_dokter','tbl_dokter.id_dok = tbl_pendaftaran.id_dokter', 'outter');
 		$this->db->join('tbl_layanan','tbl_dokter.id_layanan = tbl_layanan.id_layanan', 'outter');	
+		$this->db->join('tbl_jamkes','tbl_pendaftaran.id_jamkes = tbl_jamkes.id_jamkes', 'outter');
 		$this->db->where('tbl_antrian.id_antrian',$id);
 		$data = $this->db->get();
 		if($data->num_rows() > 0){
