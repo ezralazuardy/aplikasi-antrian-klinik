@@ -15,6 +15,8 @@ class C_Daftar extends CI_Controller {
 
 	public function index() {
 		$data['list'] = $this->M_mainmenu->selectDokter();
+		$data['jamkes'] = $this->M_mainmenu->selectJamkes();
+
 		$this->load->view("MainMenu/V_Daftar",$data);
 	}
 
@@ -41,6 +43,7 @@ class C_Daftar extends CI_Controller {
 		$jenis_kelamin = $this->input->post('jenis_kelamin');
 		$tanggal_besuk = $this->input->post('tanggal_besuk');
 		$alamat = $this->input->post('alamat');
+		$id_jamkes = $this->input->post('id_jamkes');
 
 		$antrian = $this->getAntrian();
 
@@ -52,7 +55,8 @@ class C_Daftar extends CI_Controller {
 			'jenis_kelamin' => $jenis_kelamin, 	
 			'tanggal_besuk' => $tanggal_besuk, 	
 			'alamat' => $alamat ,
-			'id_dokter' => $id_dokter 
+			'id_dokter' => $id_dokter,
+			'id_jamkes'	=> $id_jamkes
 
 		);
 		// echo "<pre>";

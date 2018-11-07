@@ -27,6 +27,10 @@ class M_admin extends CI_Model {
 		return $this->db->insert('tbl_jadwal',$data);
 	}
 
+	public function insertJamkes($data){
+		return $this->db->insert('tbl_jamkes',$data);
+	}
+
 	/*-=--=-=-=-=-=-=--=-=-= SELECT MAIN SECTION -=-=-=-=-=-=-=-=-=-=-=-= */
 
 	public function getCountAntrian(){
@@ -40,7 +44,6 @@ class M_admin extends CI_Model {
 		$data = $this->db->get();
 
 		return $data->num_rows();
-
 	}
 
 	public function getCountSisaAntrian(){
@@ -148,7 +151,28 @@ class M_admin extends CI_Model {
 	}
 
 	public function getJadwal($id){
-		$this->db->where('id_dok',$id);
+		$this->db->where('id_jadwal',$id);
+		$data = $this->db->get('tbl_jadwal');
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}	
+	}
+
+	public function selectJamkes(){
+		$this->db->select('*');
+		$this->db->from('tbl_jamkes');
+		$data = $this->db->get();
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}
+	}
+
+	public function getJamkes($id){
+		$this->db->where('id_jamkes',$id);
 		$data = $this->db->get('tbl_dokter');
 		if($data->num_rows() > 0){
 			return $data->result_array();
@@ -240,6 +264,11 @@ class M_admin extends CI_Model {
 	public function deleteJadwal($id){
 		$this->db->where('id_jadwal',$id);
 		return $this->db->delete('tbl_jadwal');
+	}
+
+	public function deleteJamkes($id){
+		$this->db->where('id_jamkes',$id);
+		return $this->db->delete('tbl_jamkes');
 	}
 }
 ?>

@@ -118,6 +118,19 @@
                 </div>
               </div>
               <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Jaminan Kesehatan : </label>
+                    <select name="id_jamkes" class="form-control" required="">
+                      <option>Tidak Ada</option>
+                      <?php foreach ($jamkes as $value) { ?>
+                          <option value="<?php echo $value['id_jamkes']; ?>"><?php echo $value['singkatan']; ?>&nbsp;(<?php echo $value['nama_jamkes']; ?>)</option>
+                      <?php }; ?>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
                 <div class="col-md-4 ml-auto mr-auto text-center">
                   <button class="btn btn-primary btn-raised">
                    Daftar

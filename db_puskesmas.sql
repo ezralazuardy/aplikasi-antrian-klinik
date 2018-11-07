@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 27, 2018 at 03:41 AM
+-- Generation Time: Nov 07, 2018 at 08:40 AM
 -- Server version: 10.1.32-MariaDB
 -- PHP Version: 5.6.36
 
@@ -45,7 +45,8 @@ INSERT INTO `tbl_antrian` (`id_antrian`, `tanggal`, `antrian`, `status`) VALUES
 (8, '2018-10-26', 'A002', 0),
 (9, '2018-10-26', 'A003', 1),
 (10, '2018-10-26', 'A004', 1),
-(11, '2018-10-27', 'A001', 0);
+(11, '2018-10-27', 'A001', 0),
+(12, '2018-10-27', 'A002', 0);
 
 -- --------------------------------------------------------
 
@@ -118,6 +119,25 @@ INSERT INTO `tbl_jadwal` (`id_jadwal`, `id_dokter`, `bagian`, `hari`, `jam`) VAL
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `tbl_jamkes`
+--
+
+CREATE TABLE `tbl_jamkes` (
+  `id_jamkes` int(11) NOT NULL,
+  `singkatan` varchar(255) NOT NULL,
+  `nama_jamkes` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `tbl_jamkes`
+--
+
+INSERT INTO `tbl_jamkes` (`id_jamkes`, `singkatan`, `nama_jamkes`) VALUES
+(1, 'BPJS', 'Badan Penyelenggara Jaminan Sosial');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `tbl_layanan`
 --
 
@@ -153,22 +173,24 @@ CREATE TABLE `tbl_pendaftaran` (
   `umur` varchar(255) DEFAULT NULL,
   `berat_badan` varchar(255) DEFAULT NULL,
   `tanggal_besuk` varchar(255) DEFAULT NULL,
-  `id_dokter` int(11) NOT NULL
+  `id_dokter` int(11) NOT NULL,
+  `id_jamkes` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_pendaftaran`
 --
 
-INSERT INTO `tbl_pendaftaran` (`id_daftar`, `id_antrian`, `nama`, `alamat`, `jenis_kelamin`, `umur`, `berat_badan`, `tanggal_besuk`, `id_dokter`) VALUES
-(1, '4', 'Muhammad Alifian Aqshol', 'adexeadexe', 'Laki-Laki', '22', '120', '2018-10-18', 9),
-(2, '5', 'asd', 'asdasd', 'Perempuan', '21', '12', '2018-10-17', 10),
-(3, '6', 'Desi', 'Dihati seseotrang', 'Perempuan', '22', '50', '2018-10-09', 2),
-(4, '7', 'Termonator', 'adexe asdaexe', 'Perempuan', '22', '12', '2018-10-27', 2),
-(5, '8', 'Teriyaki Bos', 'Adexe', 'Perempuan', '123', '100', '2018-10-31', 9),
-(6, '9', 'Saya kuandar', 'Tempat sepi', 'Laki-Laki', '201', '110', '2018-10-20', 10),
-(7, '10', 'Kurtwandar', 'Sepi di dalam gundah', 'Laki-Laki', '12', '110', '2018-10-27', 1),
-(8, '11', 'Muhammad Alifian Aqshol', 'adeexe', 'Laki-Laki', '18', '22', 'Saturday, 27 October 2018', 1);
+INSERT INTO `tbl_pendaftaran` (`id_daftar`, `id_antrian`, `nama`, `alamat`, `jenis_kelamin`, `umur`, `berat_badan`, `tanggal_besuk`, `id_dokter`, `id_jamkes`) VALUES
+(1, '4', 'Muhammad Alifian Aqshol', 'adexeadexe', 'Laki-Laki', '22', '120', '2018-10-18', 9, 1),
+(2, '5', 'asd', 'asdasd', 'Perempuan', '21', '12', '2018-10-17', 10, 1),
+(3, '6', 'Desi', 'Dihati seseotrang', 'Perempuan', '22', '50', '2018-10-09', 2, 1),
+(4, '7', 'Termonator', 'adexe asdaexe', 'Perempuan', '22', '12', '2018-10-27', 2, 1),
+(5, '8', 'Teriyaki Bos', 'Adexe', 'Perempuan', '123', '100', '2018-10-31', 9, 1),
+(6, '9', 'Saya kuandar', 'Tempat sepi', 'Laki-Laki', '201', '110', '2018-10-20', 10, 1),
+(7, '10', 'Kurtwandar', 'Sepi di dalam gundah', 'Laki-Laki', '12', '110', '2018-10-27', 1, 1),
+(8, '11', 'Muhammad Alifian Aqshol', 'adeexe', 'Laki-Laki', '18', '22', 'Saturday, 27 October 2018', 1, 1),
+(9, '12', 'Draft you wild gonna ', 'adexeasd', 'Laki-Laki', '20', '12', 'Tuesday, 30 October 2018', 9, 1);
 
 -- --------------------------------------------------------
 
@@ -222,6 +244,12 @@ ALTER TABLE `tbl_jadwal`
   ADD PRIMARY KEY (`id_jadwal`);
 
 --
+-- Indexes for table `tbl_jamkes`
+--
+ALTER TABLE `tbl_jamkes`
+  ADD PRIMARY KEY (`id_jamkes`);
+
+--
 -- Indexes for table `tbl_layanan`
 --
 ALTER TABLE `tbl_layanan`
@@ -247,7 +275,7 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_antrian`
 --
 ALTER TABLE `tbl_antrian`
-  MODIFY `id_antrian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id_antrian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `tbl_dokter`
@@ -268,6 +296,12 @@ ALTER TABLE `tbl_jadwal`
   MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
+-- AUTO_INCREMENT for table `tbl_jamkes`
+--
+ALTER TABLE `tbl_jamkes`
+  MODIFY `id_jamkes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT for table `tbl_layanan`
 --
 ALTER TABLE `tbl_layanan`
@@ -277,7 +311,7 @@ ALTER TABLE `tbl_layanan`
 -- AUTO_INCREMENT for table `tbl_pendaftaran`
 --
 ALTER TABLE `tbl_pendaftaran`
-  MODIFY `id_daftar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_daftar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `tbl_user`

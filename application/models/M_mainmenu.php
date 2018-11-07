@@ -36,6 +36,17 @@ class M_mainmenu extends CI_Model {
 		}
 	}
 
+	public function selectJamkes(){
+		$this->db->select('*');;
+		$this->db->from('tbl_jamkes');
+		$data = $this->db->get();
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}
+	}
+
 	public function countAntrian(){
 
 		$date = date('Y-m-d');
