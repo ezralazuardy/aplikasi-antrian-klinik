@@ -97,9 +97,9 @@ class C_Daftar extends CI_Controller {
 				'antrian' => $antrian
 			);
 
-			echo "<pre>";
-			print_r($data);
-			exit();
+			// echo "<pre>";
+			// print_r($data);
+			// exit();
 			$antrian = $this->M_mainmenu->insertAntrian($data);
 
 			
