@@ -78,7 +78,7 @@ class C_Daftar extends CI_Controller {
 	public function getAntrian(){
 		$antrian = '';
 		
-		if($data = $this->M_mainmenu->countAntrian()){
+		if($data = $this->M_mainmenu->countAntrian(true)){
 
 			$no_urut = (int) substr($data[0]['antrian'],1,3);
 			
@@ -97,9 +97,9 @@ class C_Daftar extends CI_Controller {
 				'antrian' => $antrian
 			);
 
-			// echo "<pre>";
-			// print_r($data);
-			// exit();
+			echo "<pre>";
+			print_r($data);
+			exit();
 			$antrian = $this->M_mainmenu->insertAntrian($data);
 
 			

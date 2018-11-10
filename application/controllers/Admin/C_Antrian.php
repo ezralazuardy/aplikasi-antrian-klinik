@@ -201,7 +201,7 @@ public function antrianEdit($id = false) {
 public function getAntrian(){
 		$antrian = '';
 		
-		if($data = $this->M_mainmenu->countAntrian()){
+		if($data = $this->M_mainmenu->countAntrian(true)){
 
 			$no_urut = (int) substr($data[0]['antrian'],1,3);
 			

@@ -47,7 +47,7 @@ class M_mainmenu extends CI_Model {
 		}
 	}
 
-	public function countAntrian(){
+	public function countAntrian($daftar = false){
 
 		$date = date('Y-m-d');
 
@@ -55,7 +55,13 @@ class M_mainmenu extends CI_Model {
 		$this->db->from('tbl_antrian');
 		$this->db->where('tanggal',$date);
 		$this->db->where('status != 1');
-		$this->db->order_by('antrian','asc');
+		if($daftar){
+			$this->db->order_by('antrian','desc');	
+		}else{
+			$this->db->order_by('antrian','asc');
+		}
+		
+		
 		$this->db->order_by('tanggal','desc');
 		
 		$data = $this->db->get();
