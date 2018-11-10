@@ -17,17 +17,10 @@
       <div class="navbar-translate">
         <a class="navbar-brand" href="<?php echo base_url(''); ?>">
         Aplikasi Antrian Klinik </a>
-        <!-- <<<<<<< HEAD -->
       </div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
-          <!-- <li class="nav-item">
-            <a class="nav-link" href="Login">
-              <i class="material-icons">person</i> Masuk
-            </a>
-          </li> --> 
         </ul>
-        <!-- ======= -->
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
@@ -45,75 +38,68 @@
                 <i class="material-icons">schedule</i> Jadwal
               </a>
             </li>
-            <li class="nav-item">
+<!--             <li class="nav-item">
               <a class="nav-link" href="Login">
                 <i class="material-icons">lock</i> Masuk
               </a>
-            </li>
-
+            </li> -->
           </ul>
         </div>
-        <!-- >>>>>>> 971814a659fbc2cad2c9cdc30273c699ad497126 -->
       </div>
     </nav>
     <div class="page-header header-filter" data-parallax="true" style="background-image: url('<?php echo base_url('assets/img/bg.webp'); ?>')">
       <div class="container">
         <div class="row">
-          <!-- <div class="col-md-6">
-            <h1 class="title">Memudahkan manajemen klinik anda.</h1>
-            <h4>Kami membuat aplikasi yang kaya akan fitur untuk memudahkan proses manajemen di klinik anda.</h4>
-          </div> -->
           <div class="col-md-12 text-center">
-           <!-- <h1 class="title">Aplikasi Antrian</h1> -->
-           <h4><?php echo date('l, d F Y'); ?></h4>
-         </div>
-         <div class="col-md-4 text-center">
-          <h3 class="title">Sisa antrian</h3>
-          <h1 id="sisa-antrian-ini"><?php 
-          if($sisa_antrian){
-            echo $sisa_antrian;
-          } else {
-            echo "0";
-          } ?></h1>
+            <h4><?php echo date('l, d F Y'); ?></h4>
+          </div>
+          <div class="col-md-4 text-center">
+            <h3 class="title">Sisa antrian</h3>
+            <h1 id="sisa-antrian-ini"><?php 
+            if ($sisa_antrian) {
+              echo $sisa_antrian;
+            } else {
+              echo "0";
+            } ?></h1>
+            <br>
+          </div>
+          <div class="col-md-4 text-center">
+            <h3 class="title">Antrian saat ini</h3>
+            <h1 id="antrian-ini"><?php 
+            if (is_array($list) && !empty($list)) {
+              echo $list[0]['antrian'];
+            } else {
+              echo "0";
+            } ?>
+          </h1>
           <br>
         </div>
         <div class="col-md-4 text-center">
-          <h3 class="title">Antrian saat ini</h3>
-          <h1 id="antrian-ini"><?php 
+          <h3 class="title">Waktu tunggu</h3>
+          <h1 id="waktu-tunggu-ini"><?php 
           if (is_array($list) && !empty($list)) {
-            echo $list[0]['antrian'];
+            echo (int)($sisa_antrian*10) ." Menit";
           } else {
-            echo "0";
-          } ?>
-        </h1>
-        <br>
-      </div>
-      <div class="col-md-4 text-center">
-        <h3 class="title">Waktu tunggu</h3>
-        <h1 id="waktu-tunggu-ini"><?php 
-        if (is_array($list) && !empty($list)) {
-          echo (int)($sisa_antrian*10) ." Menit";
-        } else {
-          echo "0 Menit";
-        } ?></h1>
-        <br>
-      </div>
-      <div class="col-md-12 text-center">
-        <a href="<?php echo base_url('Daftar'); ?>" class="btn btn-danger btn-raised btn-lg">Daftar</a>
+            echo "0 Menit";
+          } ?></h1>
+          <br>
+        </div>
+        <div class="col-md-12 text-center">
+          <a href="<?php echo base_url('Daftar'); ?>" class="btn btn-danger btn-raised btn-lg">Daftar</a>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<div class="main main-raised" style="margin-top:1%;">
-  <div class="container">
-    <div class="section text-center">
-      <div class="row">
-        <div class="col-md-8 ml-auto mr-auto">
-          <h2 class="title">Mari bicara tentang fitur</h2>
-          <h5 class="description">Kami membuat Aplikasi Antrian Klinik yang kaya akan fitur, mudah digunakan, dan juga handal dalam proses manajemen klinik.</h5>
+  <div class="main main-raised" style="margin-top:1%;">
+    <div class="container">
+      <div class="section text-center">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto">
+            <h2 class="title">Petunjuk Penggunaan Aplikasi</h2>
+            <h5 class="description">Informasi singkat tentang bagaimana cara menggunakan Aplikasi Antrian Klinik</h5>
+          </div>
         </div>
-      </div>
-      <div class="features">
+      <!-- <div class="features">
         <div class="row">
           <div class="col-md-4">
             <div class="info">
@@ -142,188 +128,108 @@
               <p>Ubah informasi profil, data diri, atau biodata anda dengan mudah.</p>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-        <!-- div class="section text-center">
-          <h2 class="title">Tim pengembang aplikasi</h2>
-          <div class="team">
-            <div class="row">
-              <div class="col-md-4">
-                <div class="team-player">
-                  <div class="card card-plain">
-                    <div class="col-md-6 ml-auto mr-auto">
-                      <img src="<?php echo base_url('assets/img/person/ezra.webp'); ?>" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
-                    </div>
-                    <h4 class="card-title">Ezra Lazuardy
-                      <br>
-                      <small class="card-description text-muted">UI Designer & Front-End Programmer</small>
-                    </h4>
-                    <div class="card-body">
-                      <p class="card-description">You need a little rain to make a rainbow.</p>
-                    </div>
-                    <div class="card-footer justify-content-center">
-                      <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
-                      <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
-                      <a href="https://www.linkedin.com/in/ezralazuardy" class="btn btn-link btn-just-icon"><i class="fa fa-linkedin"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="team-player">
-                  <div class="card card-plain">
-                    <div class="col-md-6 ml-auto mr-auto">
-                      <img src="<?php echo base_url('assets/img/person/aqshol.webp'); ?>" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
-                    </div>
-                    <h4 class="card-title">Muhammad Alifian Aqshol
-                      <br>
-                      <small class="card-description text-muted">Back-End Programmer</small>
-                    </h4>
-                    <div class="card-body">
-                      <p class="card-description">Jomblo Elite.</p>
-                    </div>
-                    <div class="card-footer justify-content-center">
-                      <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
-                      <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
-                      <a href="https://www.linkedin.com/in/alifian-aqshol-44969215a" class="btn btn-link btn-just-icon"><i class="fa fa-linkedin"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="team-player">
-                  <div class="card card-plain">
-                    <div class="col-md-6 ml-auto mr-auto">
-                      <img src="<?php echo base_url('assets/img/person/bintang.webp'); ?>" alt="Thumbnail Image" class="img-raised rounded-circle img-fluid">
-                    </div>
-                    <h4 class="card-title">Bintang Kumarasakti
-                      <br>
-                      <small class="card-description text-muted">Admin</small>
-                    </h4>
-                    <div class="card-body">
-                      <p class="card-description">Samlekom Mhank.</p>
-                    </div>
-                    <div class="card-footer justify-content-center">
-                      <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-instagram"></i></a>
-                      <a href="#pablo" class="btn btn-link btn-just-icon"><i class="fa fa-facebook-square"></i></a>
-                      <a href="https://www.linkedin.com/in/bintang-kumarasakti-806b57169" class="btn btn-link btn-just-icon"><i class="fa fa-linkedin"></i></a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div> -->
-        <div class="section section-contacts">
-          <div class="row">
-            <div class="col-md-8 ml-auto mr-auto">
-              <h2 class="text-center title">Kontak kami</h2>
-              <h4 class="text-center description">Tak usah malu untuk menanyakan sesuatu ke kami, dengan senang hati kami akan membalas secepatnya.</h4>
-              <form class="contact-form">
-                <div class="row">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Nama anda</label>
-                      <input type="email" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <label class="bmd-label-floating">Alamat surel anda</label>
-                      <input type="email" class="form-control">
-                    </div>
+      </div>
+    </div>
+      <div class="section section-contacts">
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto">
+            <h2 class="text-center title">Kontak kami</h2>
+            <h4 class="text-center description">Punya pertanyaan tentang aplikasi? Tanyakan kepada kami!<br>Anda juga dapat mengirim saran atau kritik tentang aplikasi</h4>
+            <form class="contact-form">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Nama anda</label>
+                    <input type="email" class="form-control">
                   </div>
                 </div>
-                <div class="form-group">
-                  <label for="exampleMessage" class="bmd-label-floating">Pesan anda</label>
-                  <textarea type="email" class="form-control" rows="4" id="exampleMessage"></textarea>
-                </div>
-                <div class="row">
-                  <div class="col-md-4 ml-auto mr-auto text-center">
-                    <button class="btn btn-primary btn-raised">
-                      Kirim pesan
-                    </button>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="bmd-label-floating">Alamat surel anda</label>
+                    <input type="email" class="form-control">
                   </div>
                 </div>
-              </form>
-            </div>
+              </div>
+              <div class="form-group">
+                <label for="exampleMessage" class="bmd-label-floating">Pesan anda</label>
+                <textarea type="email" class="form-control" rows="4" id="exampleMessage"></textarea>
+              </div>
+              <div class="row">
+                <div class="col-md-4 ml-auto mr-auto text-center">
+                  <button class="btn btn-primary btn-raised">
+                    Kirim pesan
+                  </button>
+                </div>
+              </div>
+            </form>
           </div>
         </div>
       </div>
     </div>
-    <footer class="footer footer-default">
-      <div class="container">
-        <nav class="float-left">
-          <ul>
-            <li>
-              <a href="<?php echo base_url('TentangAplikasi'); ?>">
-                Tentang Aplikasi
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/ezralazuardy/aplikasi-antrian-klinik/blob/master/LICENSE" target="_blank">
-                Lisensi
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/" target="_blank" data-original-title="Ikuti kami di Facebook">
-                <i class="fa fa-facebook-square"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/" target="_blank" data-original-title="Ikuti kami di Instagram">
-                <i class="fa fa-instagram"></i>
-              </a>
-            </li>
-          </ul>
-        </nav>
-        <div class="copyright float-right">
-          &copy;
-          <script>
-            document.write(new Date().getFullYear())
-          </script>, dibuat dengan <i class="material-icons">favorite</i> oleh
-          <a href="#" target="_blank">TinyLab</a>.
-        </div>
+  </div>
+  <footer class="footer footer-default">
+    <div class="container">
+      <nav class="float-left">
+        <ul>
+          <li>
+            <a href="<?php echo base_url('TentangAplikasi'); ?>">
+              Tentang Aplikasi
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/ezralazuardy/aplikasi-antrian-klinik/blob/master/LICENSE" target="_blank">
+              Lisensi
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div class="copyright float-right">
+        &copy;
+        <script>
+          document.write(new Date().getFullYear())
+        </script>, dibuat dengan <i class="material-icons">favorite</i> oleh
+        <a href="#" target="_blank">TinyLab</a>.
       </div>
-    </footer>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/core/popper.min.js'); ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/moment.min.js'); ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/bootstrap-datetimepicker.js'); ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/nouislider.min.js'); ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/jquery.sharrre.js'); ?>"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/material-kit.js?v=2.0.4'); ?>"></script>
-    <script type="text/javascript">
-      var getUrl = window.location;
-      var base_url = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+    </div>
+  </footer>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/core/popper.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/moment.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/bootstrap-datetimepicker.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/nouislider.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/jquery.sharrre.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/material-kit.js?v=2.0.4'); ?>"></script>
+  <script type="text/javascript">
+    var getUrl = window.location;
+    var base_url = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 
-      $(document).ready( function () {
+    $(document).ready( function () {
 
-        checkAntrian();
-        setInterval(function(){ checkAntrian(); }, 10000);
-      });
+      checkAntrian();
+      setInterval(function(){ checkAntrian(); }, 10000);
+    });
 
-      function checkAntrian(){
-        $.ajax({
-          url : base_url+"/getAntrian",
-          type: "POST",
-          dataType: 'json',
-          success: function(result)
-          {
-            var hasil = result.sisa_antrian * 10;
-            $("#sisa-antrian-ini").text(result.sisa_antrian);
-            $("#antrian-ini").text(result.list[0].antrian);
-            $("#waktu-tunggu-ini").text(hasil+" Menit");
-            console.log(result.sisa_antrian);
-          },
-          error: function(jqXHR, textStatus, errorThrown)
-          {
+    function checkAntrian(){
+      $.ajax({
+        url : base_url+"/getAntrian",
+        type: "POST",
+        dataType: 'json',
+        success: function(result)
+        {
+          var hasil = result.sisa_antrian * 10;
+          $("#sisa-antrian-ini").text(result.sisa_antrian);
+          $("#antrian-ini").text(result.list[0].antrian);
+          $("#waktu-tunggu-ini").text(hasil+" Menit");
+          console.log(result.sisa_antrian);
+        },
+        error: function(jqXHR, textStatus, errorThrown)
+        {
 
-          }
-        }); 
-      }
-    </script>
-  </body>
-  </html>
+        }
+      }); 
+    }
+  </script>
+</body>
+</html>

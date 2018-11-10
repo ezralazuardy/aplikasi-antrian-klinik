@@ -31,6 +31,11 @@
               <i class="fa fa-instagram"></i>
             </a>
           </li>
+          <li class="nav-item">
+              <a class="nav-link" href="<?php echo base_url(''); ?>">
+                <i class="material-icons">arrow_back</i> Kembali
+              </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -53,7 +58,11 @@
           </div>
         </div>
         <div class="description text-center" style="padding-bottom: 40px;">
-          <p>Aplikasi untuk manajemen antrian klinik</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas hendrerit eu magna et porttitor. Proin nisl erat, ullamcorper sed ornare et, fermentum at nulla. Praesent pulvinar erat id nisi pharetra tempor. Donec vel felis ut nisi auctor placerat. Morbi neque quam, vestibulum in mollis at, gravida suscipit nulla. Sed mi mauris, tempor vitae commodo vitae, fringilla bibendum massa. Aliquam condimentum, massa quis pharetra malesuada, ante dui maximus leo, eu dignissim orci tellus ut enim.</p>
+          <p>Vivamus dignissim ultricies massa a sodales. Nullam venenatis, magna nec tempor porta, magna ex pellentesque felis, vel consectetur ex purus eget metus. Praesent eu viverra tortor, vitae scelerisque libero. Sed purus risus, sodales eget lectus et, malesuada hendrerit dolor. Aenean maximus varius elit ac feugiat. Aliquam in blandit nulla, quis scelerisque justo. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec turpis tristique, volutpat tellus eu, suscipit velit. Nam eget nisl cursus, consequat elit non, bibendum ante.</p>
+          <p>Aenean hendrerit sem turpis, luctus porttitor libero pellentesque eu. Nunc molestie lectus vel euismod lacinia. Etiam id dapibus ex, in rhoncus lectus. Aenean pretium maximus leo. Proin at augue iaculis, placerat sem eget, fringilla lacus. Quisque aliquam pulvinar nisi, non pharetra erat venenatis at. Quisque in iaculis lacus. Nunc tempor posuere justo a semper. Aliquam erat volutpat.</p>
+          <p>In hac habitasse platea dictumst. Pellentesque venenatis condimentum justo at laoreet. Morbi tempor convallis nisi. Nullam aliquet metus nec hendrerit luctus. Sed dignissim viverra fermentum. Donec rutrum mauris ut lorem aliquet, maximus sollicitudin est ultricies. Etiam dui est, imperdiet eget ornare in, porttitor sit amet metus. Nam sed enim orci. Maecenas aliquam sollicitudin dolor, pharetra facilisis nunc blandit sollicitudin.</p>
+          <p>Nunc orci metus, sollicitudin at nibh et, pulvinar pellentesque risus. Mauris a finibus leo. Suspendisse ac facilisis urna. Quisque a pellentesque erat, fermentum tempor dolor. Donec vitae volutpat nisi. In metus velit, lobortis sed lorem a, vulputate varius risus. In eleifend urna quis cursus efficitur. Praesent turpis mauris, eleifend vitae elementum sed, auctor quis purus.</p>
         </div>
       </div>
     </div>
@@ -62,11 +71,11 @@
     <div class="container">
       <nav class="float-left">
         <ul>
-          <li>
+<!--           <li>
             <a href="<?php echo base_url('LandingPage'); ?>">
               Halaman Utama
             </a>
-          </li>
+          </li> -->
           <li>
             <a href="https://github.com/ezralazuardy/aplikasi-antrian-klinik/blob/master/LICENSE" target="_blank">
               Lisensi
