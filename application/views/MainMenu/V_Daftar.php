@@ -40,19 +40,19 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="bmd-label-floating">Nama Lengkap</label>
-                    <input type="text" name="nama" class="form-control" required=""> </div>
+                    <input type="text" name="nama" class="form-control" required=""></div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Umur</label>
-                    <input type="text" name="umur" class="form-control" required=""> </div>
+                    <input type="text" name="umur" class="form-control" required=""></div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
                     <label class="bmd-label-floating">Berat Badan</label>
-                    <input type="text" name="berat_badan" class="form-control" required=""> </div>
+                    <input type="text" name="berat_badan" class="form-control" required=""></div>
                 </div>
                 <div class="col-md-4">
                   <div class="form-group">
@@ -72,7 +72,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="">Penyakit yang diderita</label>
-                    <input type="text" name="penyakit" class="form-control" required=""> </div>
+                    <input type="text" name="penyakit" class="form-control" required=""></div>
                 </div>
               </div>
               <div class="row">
@@ -105,7 +105,7 @@
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="">Tanggal Periksa</label>
-                    <input type="text" name="tanggal_besuk" class="form-control tanggal-lahir" required=""> </div>
+                    <input type="text" name="tanggal_besuk" class="form-control tanggal-lahir" required=""></div>
                 </div>
               </div>
               <div class="row">
@@ -143,10 +143,10 @@
           <li> <a href="https://github.com/ezralazuardy/aplikasi-antrian-klinik/blob/master/LICENSE" target="_blank">Lisensi</a> </li>
         </ul>
       </nav>
-      <div class="copyright float-right"> &copy;
+      <div class="copyright float-right">&copy;
         <script>
         document.write(new Date().getFullYear())
-        </script>, dibuat dengan <i class="material-icons">favorite</i> oleh <a href="#" target="_blank">TinyLab</a>. </div>
+        </script>, dibuat dengan <i class="material-icons">favorite</i> oleh <a href="#" target="_blank">TinyLab</a>.</div>
     </div>
   </footer>
   <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>

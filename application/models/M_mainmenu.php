@@ -73,12 +73,16 @@ class M_mainmenu extends CI_Model {
 	}
 
 	public function insertDaftar($data){
-		return  $this->db->insert('tbl_pendaftaran',$data);
+		return $this->db->insert('tbl_pendaftaran',$data);
 	}
 
 	public function insertAntrian($data){
-		 $this->db->insert('tbl_antrian',$data);
+		$this->db->insert('tbl_antrian',$data);
 		 return $this->db->insert_id();
+	}
+
+	public function insertHubungi($data){
+		return $this->db->insert('tbl_hubungi',$data);
 	}
 }
 ?>

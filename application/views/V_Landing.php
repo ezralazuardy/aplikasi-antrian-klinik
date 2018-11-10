@@ -8,6 +8,9 @@
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/material-icons.css'); ?>" />
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/vendor/font-awesome/css/font-awesome.min.css');?>">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/material-kit.css?v=2.0.4'); ?>" />
+  <link rel="stylesheet" href="<?php echo base_url('assets/vendor/toastr/toastr.min.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.css'); ?>">
+  <link rel="stylesheet" href="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.css'); ?>">
   <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.webp'); ?>">
   <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url('assets/img/favicon.webp'); ?>"> 
 </head>
@@ -29,11 +32,6 @@
             <li class="nav-item">
               <a class="nav-link" href="<?php echo base_url('JadwalDokter'); ?>"> <i class="material-icons">schedule</i> Jadwal </a>
             </li>
-            <!--             <li class="nav-item">
-              <a class="nav-link" href="Login">
-                <i class="material-icons">lock</i> Masuk
-              </a>
-            </li> -->
           </ul>
         </div>
       </div>
@@ -58,7 +56,7 @@
             if (is_array($list) && !empty($list)) {
               echo $list[0]['antrian'];
             } else {
-              echo "0";
+              echo "-";
             } ?>
           </h1>
           <br> </div>
@@ -83,58 +81,45 @@
             <h2 class="title">Petunjuk Penggunaan Aplikasi</h2>
             <h5 class="description">Informasi singkat tentang bagaimana cara menggunakan Aplikasi Antrian Klinik</h5> </div>
         </div>
-        <!-- <div class="features">
-        <div class="row">
-          <div class="col-md-4">
-            <div class="info">
-              <div class="icon icon-info">
-                <i class="material-icons">schedule</i>
-              </div>
-              <h4 class="info-title">Lihat Jadwal</h4>
-              <p>Dapatkan informasi tentang jadwal dokter yang bersangkutan.</p>
-            </div>
+        <div style="margin-left: 100px; margin-right: 100px; text-align: left; margin-top: 20px;">
+          <div> <a class="title">Daftar &amp; dapatkan nomor antrian</a>
+            <br> <a class="description">Pada bagian halaman atas, klik tombol <i><a href="#">Daftar</a></i>, lalu isi form biodata anda dengan lengkap dan benar.</a>
           </div>
-          <div class="col-md-4">
-            <div class="info">
-              <div class="icon icon-success">
-                <i class="material-icons">chat</i>
-              </div>
-              <h4 class="info-title">Hubungi Kami</h4>
-              <p>Kirim pertanyaan, pesan, kritik, ataupun saran dengan mudah dan cepat, diproses dan dibalas langsung oleh admin ke alamat surel anda.</p>
-            </div>
+          <div style="margin-top: 30px"> <a class="title">Lihat daftar dokter</a>
+            <br> <a class="description">Pada bagian menu di pojok kanan atas, klik tombol <i><a href="<?php echo base_url('DaftarDokter'); ?>">Dokter</a></i>, untuk melihat siapa saja dokter yang hadir dan tersedia untuk pasien sekarang.</a>
           </div>
-          <div class="col-md-4">
-            <div class="info">
-              <div class="icon icon-danger">
-                <i class="material-icons">person</i>
-              </div>
-              <h4 class="info-title">Manajemen Profil</h4>
-              <p>Ubah informasi profil, data diri, atau biodata anda dengan mudah.</p>
-            </div>
+          <div style="margin-top: 30px"> <a class="title">Lihat daftar layanan</a>
+            <br> <a class="description">Pada bagian menu di pojok kanan atas, klik tombol <i><a href="<?php echo base_url('DaftarLayanan'); ?>">Layanan</a></i>, untuk melihat apa saja layanan medis yang disediakan puskesmas.</a>
           </div>
-        </div> --></div>
+          <div style="margin-top: 30px"> <a class="title">Lihat jadwal dokter</a>
+            <br> <a class="description">Pada bagian menu di pojok kanan atas, klik tombol <i><a href="<?php echo base_url('JadwalDokter'); ?>">Jadwal</a></i>, untuk melihat apa saja jadwal dokter.</a>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="section section-contacts">
       <div class="row">
         <div class="col-md-8 ml-auto mr-auto">
           <h2 class="text-center title">Kontak kami</h2>
-          <h4 class="text-center description">Punya pertanyaan tentang aplikasi? Tanyakan kepada kami!<br>Anda juga dapat mengirim saran atau kritik tentang aplikasi</h4>
-          <form class="contact-form">
+          <h4 class="text-center description">Punya pertanyaan tentang aplikasi? Tanyakan kepada kami!<br>Anda juga dapat mengirim saran atau kritik disini</h4>
+          <form class="contact-form" method="POST" action="<?php echo base_url('LandingPage/insertMessage'); ?>">
             <div class="row">
               <div class="col-md-6">
                 <div class="form-group">
-                  <label class="bmd-label-floating">Nama anda</label>
-                  <input type="email" class="form-control"> </div>
+                  <label class="bmd-label-floating">Nama lengkap</label>
+                  <input type="text" name="nama" class="form-control" required="">
+                </div>
               </div>
               <div class="col-md-6">
                 <div class="form-group">
-                  <label class="bmd-label-floating">Alamat surel anda</label>
-                  <input type="email" class="form-control"> </div>
+                  <label class="bmd-label-floating">Alamat surel</label>
+                  <input type="email" name="email" class="form-control" required="">
+                </div>
               </div>
             </div>
             <div class="form-group">
-              <label for="exampleMessage" class="bmd-label-floating">Pesan anda</label>
-              <textarea type="email" class="form-control" rows="4" id="exampleMessage"></textarea>
+              <label for="exampleMessage" class="bmd-label-floating">Pesan, kritik, atau saran</label>
+              <textarea type="text" name="pesan" class="form-control" rows="4" id="exampleMessage" required=""></textarea>
             </div>
             <div class="row">
               <div class="col-md-4 ml-auto mr-auto text-center">
@@ -151,8 +136,8 @@
     <div class="container">
       <nav class="float-left">
         <ul>
-          <li> <a href="<?php echo base_url('TentangAplikasi'); ?>">Tentang Aplikasi</a> </li>
-          <li> <a href="https://github.com/ezralazuardy/aplikasi-antrian-klinik/blob/master/LICENSE" target="_blank">Lisensi</a> </li>
+          <li><a href="<?php echo base_url('TentangAplikasi'); ?>">Tentang Aplikasi</a></li>
+          <li><a href="https://github.com/ezralazuardy/aplikasi-antrian-klinik/blob/master/LICENSE" target="_blank">Lisensi</a></li>
         </ul>
       </nav>
       <div class="copyright float-right"> &copy;
@@ -169,6 +154,8 @@
   <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/nouislider.min.js'); ?>"></script>
   <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/jquery.sharrre.js'); ?>"></script>
   <script type="text/javascript" src="<?php echo base_url('assets/js/material-kit.js?v=2.0.4'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/vendor/toastr/toastr.min.js'); ?>"></script>
   <script type="text/javascript">
   var getUrl = window.location;
   var base_url = getUrl.protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
@@ -194,6 +181,64 @@
       error: function(jqXHR, textStatus, errorThrown) {}
     });
   }
+  </script>
+  <script type="text/javascript">
+  <?php
+  if ($this
+      ->session
+      ->flashdata('success'))
+    {
+  ?>
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+  Command: toastr["success"]("<?php echo $this
+        ->session
+        ->flashdata('success'); ?>")
+  <?php
+  } ?>
+  <?php
+  if ($this
+      ->session
+      ->flashdata('error'))
+    {
+  ?>
+  toastr.options = {
+    "closeButton": false,
+    "debug": false,
+    "newestOnTop": false,
+    "progressBar": false,
+    "positionClass": "toast-top-right",
+    "preventDuplicates": false,
+    "onclick": null,
+    "showDuration": "300",
+    "hideDuration": "1000",
+    "timeOut": "5000",
+    "extendedTimeOut": "1000",
+    "showEasing": "swing",
+    "hideEasing": "linear",
+    "showMethod": "fadeIn",
+    "hideMethod": "fadeOut"
+  }
+  Command: toastr["error"]("<?php echo $this
+        ->session
+        ->flashdata('error'); ?>")
+  <?php
+  } ?>
   </script>
 </body>
 </html>

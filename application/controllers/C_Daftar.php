@@ -26,9 +26,6 @@ class C_Daftar extends CI_Controller {
 
 		$data =  array();
 		$data['list'] = $this->M_mainmenu->generate($id);
-		// echo "<pre>";
-		// print_r($data);
-		// exit();
 		$this->load->view("MainMenu/V_Generate",$data);
 	}
 
@@ -59,10 +56,6 @@ class C_Daftar extends CI_Controller {
 			'id_jamkes'	=> $id_jamkes
 
 		);
-		// echo "<pre>";
-		// print_r($data);
-		// exit();
-
 		/* Encrypt ID */
 		$encrypted_string = $this->encrypt->encode($antrian);
 		$id = str_replace(array('+', '/', '='), array('-', '_', '~'), $encrypted_string);
