@@ -51,8 +51,8 @@ $route['Daftar'] = 'C_Daftar/index';
 $route['Daftar/(:any)'] = 'C_Daftar/$1';
 $route['Daftar/(:any)/(:any)'] = 'C_Daftar/$1/$2';
 
-$route['MainJadwal'] = 'C_MainMenu/jadwal';
-$route['Dokter'] = 'C_MainMenu/dokter';
-$route['MainLayanan'] = 'C_MainMenu/layanan';
+$route['JadwalDokter'] = 'C_MainMenu/jadwal';
+$route['DaftarDokter'] = 'C_MainMenu/dokter';
+$route['DaftarLayanan'] = 'C_MainMenu/layanan';
 $route['getAntrian'] = 'C_Landing/getAntrian';
 	
