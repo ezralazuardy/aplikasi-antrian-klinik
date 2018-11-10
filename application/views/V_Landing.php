@@ -13,6 +13,11 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.css'); ?>">
   <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.webp'); ?>">
   <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url('assets/img/favicon.webp'); ?>"> 
+  <style type="text/css">
+    .toast {
+        opacity: 1 !important;
+    }
+  </style>
 </head>
 <body class="landing-page sidebar-collapse">
   <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
@@ -194,7 +199,7 @@
     "debug": false,
     "newestOnTop": false,
     "progressBar": false,
-    "positionClass": "toast-top-right",
+    "positionClass": "toast-bottom-right",
     "preventDuplicates": false,
     "onclick": null,
     "showDuration": "300",
@@ -222,7 +227,7 @@
     "debug": false,
     "newestOnTop": false,
     "progressBar": false,
-    "positionClass": "toast-top-right",
+    "positionClass": "toast-bottom-right",
     "preventDuplicates": false,
     "onclick": null,
     "showDuration": "300",
