@@ -14,10 +14,9 @@
   <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.css'); ?>">
 </head>
 <body class="landing-page sidebar-collapse">
-  <nav class="navbar  fixed-top navbar-expand-lg" id="sectionsNav">
+  <nav class="navbar  fixed-top navbar-expand-lg bg-rose" id="sectionsNav">
     <div class="container">
-      <div class="navbar-translate"> <a class="navbar-brand" href="<?php echo base_url(''); ?>">
-          Aplikasi Antrian Klinik </a>
+      <div class="navbar-translate"> <a class="title">Aplikasi Antrian Klinik</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span> <span class="navbar-toggler-icon"></span> <span class="navbar-toggler-icon"></span> </button>
       </div>
       <div class="collapse navbar-collapse">
@@ -29,7 +28,7 @@
       </div>
     </div>
   </nav>
-  <div class="main main-raised" style="margin-top: 5%;">
+  <div class="main main-raised" style="margin-top: 0.5%;">
     <div class="container">
       <div class="section section-contacts">
         <div class="row">
@@ -40,7 +39,7 @@
               <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
-                    <label class="bmd-label-floating">Nama Lengkap</label>
+                    <label class="bmd-label-floating">Nama lengkap</label>
                     <input type="text" name="nama" class="form-control" required=""></div>
                 </div>
               </div>
@@ -59,7 +58,7 @@
                   <div class="form-group">
                     <label class="bmd-label-floating">Jenis Kelamin</label>
                     <select name="jenis_kelamin" class="form-control" required="">
-                      <option value="Laki-Laki">Laki - Laki</option>
+                      <option value="Laki-Laki">Laki - laki</option>
                       <option value="Perempuan">Perempuan</option>
                     </select>
                   </div>
@@ -127,7 +126,7 @@
               <br>
               <div class="row">
                 <div class="col-md-4 ml-auto mr-auto text-center">
-                  <button class="btn btn-primary btn-raised">Daftar</button>
+                  <button class="btn btn-rose btn-raised">Daftar</button>
                 </div>
               </div>
             </form>
@@ -150,21 +149,12 @@
         </script>, dibuat dengan <i class="material-icons">favorite</i> oleh <a href="#" target="_blank">TinyLab</a>.</div>
     </div>
   </footer>
-  <script src="assets/js/core/jquery.min.js" type="text/javascript"></script>
-  <script src="assets/js/core/popper.min.js" type="text/javascript"></script>
-  <script src="assets/js/core/bootstrap-material-design.min.js" type="text/javascript"></script>
-  <script src="assets/js/plugins/moment.min.js"></script>
-  <script src="assets/js/plugins/bootstrap-datetimepicker.js" type="text/javascript"></script>
-  <script src="assets/js/plugins/nouislider.min.js" type="text/javascript"></script>
-  <script src="assets/js/plugins/jquery.sharrre.js" type="text/javascript"></script>
-  <script src="assets/js/material-kit.js?v=2.0.4" type="text/javascript"></script>
-  <script src="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.js'); ?>"></script>
-  <script src="<?php echo base_url('assets/vendor/chartist/js/chartist.min.js'); ?>"></script>
-  <script src="<?php echo base_url('assets/scripts/klorofil-common.js');  ?>"></script>
-  <script src="<?php echo base_url('assets/js/jquery.dataTables.min.js'); ?>"></script>
-  <script src="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.js'); ?>"></script>
-  <script src="<?php echo base_url('assets/js/sweetalert.min.js'); ?>"></script>
-  <script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
-  <script src="<?php echo base_url('assets/vendor/toastr/toastr.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/core/popper.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/material-kit.js?v=2.0.4'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.js'); ?>"></script>  
+  <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.dataTables.min.js'); ?>"></script>
+  <script type="text/javascript" src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
 </body>
 </html>

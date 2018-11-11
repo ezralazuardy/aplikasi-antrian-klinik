@@ -25,13 +25,13 @@
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('DaftarDokter'); ?>"> <i class="material-icons">people</i> Dokter </a>
+              <a class="nav-link" href="<?php echo base_url('DaftarDokter'); ?>"><i class="material-icons">people</i>Dokter</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('DaftarLayanan'); ?>"> <i class="material-icons">book</i> Layanan </a>
+              <a class="nav-link" href="<?php echo base_url('DaftarLayanan'); ?>"><i class="material-icons">book</i>Layanan</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('JadwalDokter'); ?>"> <i class="material-icons">schedule</i> Jadwal </a>
+              <a class="nav-link" href="<?php echo base_url('JadwalDokter'); ?>"><i class="material-icons">schedule</i>Jadwal</a>
             </li>
           </ul>
         </div>
@@ -169,7 +169,7 @@
           </h2>
           <br> 
         </div>
-        <div class="col-md-12 text-center"> <a href="<?php echo base_url('Daftar'); ?>" class="btn btn-danger btn-raised btn-lg">Daftar</a> </div>
+        <div class="col-md-12 text-center"><a href="<?php echo base_url('Daftar'); ?>" class="btn btn-danger btn-raised btn-lg">Daftar</a></div>
       </div>
     </div>
   </div>
