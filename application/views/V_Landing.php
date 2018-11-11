@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Landing Page</title>
   <meta charset="utf-8" />
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/material-icons.css'); ?>" />
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/vendor/font-awesome/css/font-awesome.min.css');?>">
-  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/material-kit.css?v=2.0.4'); ?>" />
-  <link rel="stylesheet" href="<?php echo base_url('assets/vendor/toastr/toastr.min.css'); ?>">
-  <link rel="stylesheet" href="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.css'); ?>">
-  <link rel="stylesheet" href="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.css'); ?>">
+  <title>Landing Page</title>
   <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.webp'); ?>">
-  <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url('assets/img/favicon.webp'); ?>"> 
+  <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url('assets/img/favicon.webp'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/material-icons.css'); ?>" />
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/vendor/font-awesome/css/font-awesome.min.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/material-kit.css?v=2.0.4');?>"/>
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/css/jquery.dataTables.min.css'); ?>">
+  <link rel="stylesheet" type="text/css" href="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.css'); ?>">
   <style type="text/css">
-    .toast {
-        opacity: 1 !important;
-    }
-  </style>
+    .toast { opacity: 1 !important; }
+  </style>  
 </head>
 <body class="landing-page sidebar-collapse">
   <nav class="navbar navbar-transparent navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
     <div class="container">
-      <div class="navbar-translate"> <a class="navbar-brand" href="<?php echo base_url(''); ?>">
-        Aplikasi Antrian Klinik </a> </div>
+      <div class="navbar-translate"><a class="navbar-brand" href="#">Aplikasi Antrian Klinik</a></div>
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto"> </ul>
         <div class="collapse navbar-collapse">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="<?php echo base_url('DaftarDokter'); ?>"> <i class="material-icons">persons</i> Dokter </a>
+              <a class="nav-link" href="<?php echo base_url('DaftarDokter'); ?>"> <i class="material-icons">people</i> Dokter </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="<?php echo base_url('DaftarLayanan'); ?>"> <i class="material-icons">book</i> Layanan </a>
@@ -162,7 +158,7 @@
             } ?>
           </h2>
           <br> </div>
-        <div class="col-md-4 text-center" style="margin-top: 20px;">
+        <div class="col-md-4 text-center">
           <h3 class="title">Waktu tunggu</h3>
           <h2 id="waktu-tunggu-ini"><?php 
           if (is_array($list) && !empty($list)) {
@@ -177,26 +173,49 @@
       </div>
     </div>
   </div>
-  <div class="main main-raised" style="margin-top:1%;">
+  <div class="main main-raised" style="margin-top: 0.5%;">
     <div class="container">
-      <div class="section text-center">
+      <div class="section">
         <div class="row">
-          <div class="col-md-8 ml-auto mr-auto">
+          <div class="col-md-8 ml-auto mr-auto text-center">
             <h2 class="title">Petunjuk Penggunaan Aplikasi</h2>
-            <h5 class="description">Informasi singkat tentang bagaimana cara menggunakan Aplikasi Antrian Klinik</h5> </div>
+            <h5 class="description">Informasi singkat tentang bagaimana cara menggunakan Aplikasi Antrian Klinik</h5> 
+          </div>
         </div>
-        <div style="margin-left: 100px; margin-right: 100px; text-align: left; margin-top: 20px;">
-          <div> <a class="title">Daftar &amp; dapatkan nomor antrian</a>
-            <br> <a class="description">Pada bagian halaman atas, klik tombol <i><a href="#">Daftar</a></i>, lalu isi form biodata anda dengan lengkap dan benar.</a>
+        <div class="info info-horizontal" style="margin-top: -50px;">
+          <div class="icon icon-danger">
+            <i class="material-icons">edit</i>
           </div>
-          <div style="margin-top: 30px"> <a class="title">Lihat daftar dokter</a>
-            <br> <a class="description">Pada bagian menu di pojok kanan atas, klik tombol <i><a href="<?php echo base_url('DaftarDokter'); ?>">Dokter</a></i>, untuk melihat siapa saja dokter yang hadir dan tersedia untuk pasien sekarang.</a>
+          <div class="description">
+            <h4 class="info-title">Daftar</h4>
+            <p>Pada bagian halaman atas, klik tombol <i><a href="#">Daftar</a></i>, lalu isi form biodata anda dengan lengkap dan benar.</p>
           </div>
-          <div style="margin-top: 30px"> <a class="title">Lihat daftar layanan</a>
-            <br> <a class="description">Pada bagian menu di pojok kanan atas, klik tombol <i><a href="<?php echo base_url('DaftarLayanan'); ?>">Layanan</a></i>, untuk melihat apa saja layanan medis yang disediakan puskesmas.</a>
+        </div>
+        <div class="info info-horizontal" style="margin-top: -80px;">
+          <div class="icon icon-primary">
+            <i class="material-icons">people</i>
           </div>
-          <div style="margin-top: 30px"> <a class="title">Lihat jadwal dokter</a>
-            <br> <a class="description">Pada bagian menu di pojok kanan atas, klik tombol <i><a href="<?php echo base_url('JadwalDokter'); ?>">Jadwal</a></i>, untuk melihat apa saja jadwal dokter.</a>
+          <div class="description">
+            <h4 class="info-title">Lihat daftar dokter</h4>
+            <p>Pada bagian menu di pojok kanan atas, klik tombol <i><a href="<?php echo base_url('DaftarDokter'); ?>">Dokter</a></i>, untuk melihat siapa saja dokter yang hadir dan tersedia untuk pasien sekarang.</p>
+          </div>
+        </div>
+        <div class="info info-horizontal" style="margin-top: -80px;">
+          <div class="icon icon-success">
+            <i class="material-icons">book</i>
+          </div>
+          <div class="description">
+            <h4 class="info-title">Lihat daftar layanan</h4>
+            <p>Pada bagian menu di pojok kanan atas, klik tombol <i><a href="<?php echo base_url('DaftarLayanan'); ?>">Layanan</a></i>, untuk melihat apa saja layanan medis yang disediakan puskesmas.</p>
+          </div>
+        </div>
+        <div class="info info-horizontal" style="margin-top: -80px;">
+          <div class="icon icon-warning">
+            <i class="material-icons">schedule</i>
+          </div>
+          <div class="description">
+            <h4 class="info-title">Lihat jadwal dokter</h4>
+            <p>Pada bagian menu di pojok kanan atas, klik tombol <i><a href="<?php echo base_url('JadwalDokter'); ?>">Jadwal</a></i>, untuk melihat apa saja jadwal dokter.</p>
           </div>
         </div>
       </div>
@@ -253,12 +272,8 @@
   <script type="text/javascript" src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>"></script>
   <script type="text/javascript" src="<?php echo base_url('assets/js/core/popper.min.js'); ?>"></script>
   <script type="text/javascript" src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/moment.min.js'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/bootstrap-datetimepicker.js'); ?>"></script>
   <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/nouislider.min.js'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/plugins/jquery.sharrre.js'); ?>"></script>
   <script type="text/javascript" src="<?php echo base_url('assets/js/material-kit.js?v=2.0.4'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.js'); ?>"></script>
   <script type="text/javascript" src="<?php echo base_url('assets/vendor/toastr/toastr.min.js'); ?>"></script>
   <script type="text/javascript">
   var getUrl = window.location;
