@@ -44,36 +44,135 @@
   <div class="page-header header-filter" data-parallax="true" style="background-image: url('<?php echo base_url('assets/img/bg.webp'); ?>')">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 text-center">
-          <h4><?php echo date('l, d F Y'); ?></h4> </div>
+        <div class="col-md-12 text-center" style="margin-bottom: 20px;">
+          <h4>
+          <?php
+          $hari = date('D');
+          switch ($hari) {
+            case 'Sun':
+              $hari = "Minggu";
+            break;
+         
+            case 'Mon':     
+              $hari = "Senin";
+            break;
+         
+            case 'Tue':
+              $hari = "Selasa";
+            break;
+         
+            case 'Wed':
+              $hari = "Rabu";
+            break;
+         
+            case 'Thu':
+              $hari = "Kamis";
+            break;
+         
+            case 'Fri':
+              $hari = "Jumat";
+            break;
+         
+            case 'Sat':
+              $hari = "Sabtu";
+            break;
+            
+            default:
+              $hari = "";   
+            break;
+          }
+          $tanggal = date('d');
+          $bulan = date('n');
+          switch ($bulan) {
+            case 1:
+              $bulan = "Januari";
+            break;
+
+            case 2:
+              $bulan = "Februari";
+            break;
+
+            case 3:
+              $bulan = "Maret";
+            break;
+
+            case 4:
+              $bulan = "April";
+            break;
+
+            case 5:
+              $bulan = "Mei";
+            break;
+
+            case 6:
+              $bulan = "Juni";
+            break;
+
+            case 7:
+              $bulan = "Juli";
+            break;
+
+            case 8:
+              $bulan = "Agustus";
+            break;
+
+            case 9:
+              $bulan = "September";
+            break;
+
+            case 10:
+              $bulan = "Oktober";
+            break;
+
+            case 11:
+              $bulan = "November";
+            break;
+
+            case 12:
+              $bulan = "Desember";
+            break;
+            
+            default:
+              $bulan = "";   
+            break;
+          }
+          $tahun = date('Y');
+          echo $hari . ", ". $tanggal . " " . $bulan . " " . $tahun;
+          ?>
+          </h4> 
+        </div>
         <div class="col-md-4 text-center">
           <h3 class="title">Sisa antrian</h3>
-          <h1 id="sisa-antrian-ini"><?php 
+          <h2 id="sisa-antrian-ini"><?php 
             if ($sisa_antrian) {
               echo $sisa_antrian;
             } else {
               echo "0";
-            } ?></h1>
-          <br> </div>
+            } ?>
+          </h2>
+          <br> 
+        </div>
         <div class="col-md-4 text-center">
           <h3 class="title">Antrian saat ini</h3>
-          <h1 id="antrian-ini"><?php 
+          <h2 id="antrian-ini"><?php 
             if (is_array($list) && !empty($list)) {
               echo $list[0]['antrian'];
             } else {
               echo "-";
             } ?>
-          </h1>
+          </h2>
           <br> </div>
-        <div class="col-md-4 text-center">
+        <div class="col-md-4 text-center" style="margin-top: 20px;">
           <h3 class="title">Waktu tunggu</h3>
-          <h1 id="waktu-tunggu-ini"><?php 
+          <h2 id="waktu-tunggu-ini"><?php 
           if (is_array($list) && !empty($list)) {
             echo (int)($sisa_antrian*10) ." Menit";
           } else {
-            echo "0 Menit";
-          } ?></h1>
-          <br> </div>
+            echo "0 menit";
+          } ?>
+          </h2>
+          <br> 
+        </div>
         <div class="col-md-12 text-center"> <a href="<?php echo base_url('Daftar'); ?>" class="btn btn-danger btn-raised btn-lg">Daftar</a> </div>
       </div>
     </div>
@@ -148,7 +247,7 @@
       <div class="copyright float-right"> &copy;
         <script>
         document.write(new Date().getFullYear())
-        </script>, dibuat dengan <i class="material-icons">favorite</i> oleh <a href="#" target="_blank">TinyLab</a>. </div>
+        </script>, dibuat dengan <i class="material-icons">favorite</i> oleh <a href="https://tinylab.tk/about/" target="_blank">TinyLab</a>. </div>
     </div>
   </footer>
   <script type="text/javascript" src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>"></script>

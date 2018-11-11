@@ -22,7 +22,10 @@
             <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.facebook.com/" target="_blank" data-original-title="Ikuti kami di Facebook"> <i class="fa fa-facebook-square"></i> </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/" target="_blank" data-original-title="Ikuti kami di Instagram"> <i class="fa fa-instagram"></i> </a>
+            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.instagram.com/" target="_blank" data-original-title="Ikuti kami di Instagram"> <i class="fa fa-instagram"></i></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" rel="tooltip" title="" data-placement="bottom" href="https://www.github.com/ezralazuardy/aplikasi-antrian-klinik" target="_blank" data-original-title="Kunjungi kami di Github"> <i class="fa fa-github"></i></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="<?php echo base_url(''); ?>"> <i class="material-icons">arrow_back</i> Kembali </a>
