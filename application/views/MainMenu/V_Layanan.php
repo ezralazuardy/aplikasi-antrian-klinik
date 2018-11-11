@@ -13,6 +13,10 @@
   <link rel="stylesheet" href="<?php echo base_url('assets/css/jquery.dataTables.min.css'); ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.css'); ?>">
   <link rel="stylesheet" href="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.css'); ?>">
+  
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   <style type="text/css">
   tr {
     text-align: center;
@@ -35,71 +39,79 @@
       </div>
     </div>
   </nav>
-  <div class="main main-raised" style="margin-top: 5%;">
+  <div class="main main-raised" style="margin-top: 1%;">
     <div class="container">
       <div class="section section-contacts">
         <div class="row">
           <div class="col-md-12">
             <h2 class="text-center title">Daftar Layanan</h2>
-            <h4 class="text-center description">Berikut adalah daftar layanan yang terdapat pada puskesmas</h4>
+            <h4 class="text-center description" style="margin-bottom: 40px;">Berikut adalah daftar layanan yang terdapat pada puskesmas</h4>
             <div class="panel">
               <div class="panel-body">
-                <div class="row">
-                  <div class="col-md-10"> </div>
-                  <div class="col-md-2">
-                    <div class="float-right" style="padding:10px;margin:5px;">
-                      </a>
-                    </div>
-                  </div>
-                </div>
-                <table class="table" id="doctor-table">
+                <table class="mdl-data-table" style="width:100%" id="example">
                   <thead class="text-center">
                     <tr>
-                      <th>No</th>
+                      <th>No.</th>
                       <th>Kode Layanan</th>
-                      <th>Nama</th>
+                      <th>Nama Penyakit</th>
                       <th>Layanan Medis</th>
                       <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
                     <?php 
-                  $i = 1;
-                  if($layanan){
-                    foreach ($layanan as $value) {
-
-                      /* Encrypt ID */
-                      $encrypted_string = $this->encrypt->encode($value['id_layanan']);
-                      $id = str_replace(array('+', '/', '='), array('-', '_', '~'), $encrypted_string);
-
-                      ?>
-                      <tr>
-                        <td>
-                          <?php echo $i++; ?>
-                        </td>
-                        <td>
-                          <?php echo $value['code_layanan']; ?>
-                        </td>
-                        <td>
-                          <?php echo $value['nama']; ?>
-                        </td>
-                        <td>
-                          <?php echo $value['layanan_medis']; ?>
-                        </td>
-                        <td>
-                          <a href="<?php echo base_url('Layanan/layananDetail/'.$id); ?>" class="btn btn-sm btn-primary"> <span class="fa fa-search"></span> </a>
-                        </td>
-                      </tr>
-                      <?php
+                    $i = 1;
+                    if($layanan){
+                      foreach ($layanan as $value) {
+                        $encrypted_string = $this->encrypt->encode($value['id_layanan']);
+                        $id = str_replace(array('+', '/', '='), array('-', '_', '~'), $encrypted_string);
+                        ?>
+                        <tr>
+                          <td>
+                            <?php echo $i++ . "."; ?>
+                          </td>
+                          <td>
+                            <?php echo $value['code_layanan']; ?>
+                          </td>
+                          <td>
+                            <?php echo $value['nama']; ?>
+                          </td>
+                          <td>
+                            <?php echo $value['layanan_medis']; ?>
+                          </td>
+                          <td>
+                            <a href="" data-toggle="modal" data-target="#exampleModal" class="btn btn-sm btn-primary"> <span class="fa fa-search"></span> </a>
+                          </td>
+                        </tr>
+                        <?php
+                      }
                     }
-                  }
-                  ?>
+                    ?>
                   </tbody>
                 </table>
               </div>
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+
+        </div>
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
       </div>
     </div>
   </div>
