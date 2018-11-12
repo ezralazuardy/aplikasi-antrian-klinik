@@ -163,7 +163,7 @@
               <h2 id="antrian-ini" style="color: #000000; margin: 0px;"><?php 
                 if (is_array($list) && !empty($list)) {
                   echo $list[0]['antrian'];
-                } else{
+                } else {
                   echo "-";
                 } ?>
               </h2>
