@@ -62,21 +62,28 @@
                 <div class="info">
                   <div class="icon icon-info"> <i class="material-icons">assignment_ind</i> </div>
                   <h4 class="info-title">Dokter &amp; Layanan Medis</h4>
-                  <h5><?php echo $value['nama_dokter']; ?><br>Penyembuhan Demam Berdarah</h5> 
+                  <h5><?php echo $value['nama_dokter']; ?><br><?php echo $value['layanan_kesehatan']; ?></h5> 
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="info">
                   <div class="icon icon-danger"> <i class="material-icons">person</i> </div>
                   <h4 class="info-title"><?php echo $value['nama_user']; ?></h4>
-                  <h5 align="left" style="margin-left: 10px"><b>Umur :</b> <?php echo $value['umur']; ?> cm<br><b>Berat Badan :</b> <?php echo $value['berat_badan']; ?> kg<br><b>Jenis Kelamin :</b> <br><b>Alamat :</b> <br><b>Tanggal Periksa :</b> <?php echo $value['tanggal_besuk']; ?><br><b>Jaminan Kesehatan :</b> </h5> 
+                  <h5 align="left" style="margin-left: 10px">
+                      <b>Umur :</b> <?php echo $value['umur']; ?> cm<br>
+                      <b>Berat Badan :</b> <?php echo $value['berat_badan']; ?> kg<br>
+                      <b>Jenis Kelamin :</b> <?php echo $value['jenis_kelamin']; ?><br>
+                      <b>Alamat : </b> <?php echo $value['alamat']; ?><br>  
+                      <b>Tanggal Periksa :</b> <?php echo $value['tanggal_besuk']; ?><br>
+                      <b>Jaminan Kesehatan :</b> <?php echo $value['singkatan']; ?> 
+                  </h5> 
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="info">
                   <div class="icon icon-success"> <i class="material-icons">local_hospital</i> </div>
                   <h4 class="info-title">Penyakit yang diderita</h4>
-                  <h5><?php echo $value['nama']; ?></h5> </div>
+                  <h5><?php echo $value['penyakit']; ?></h5> </div>
               </div>
             </div>
           </div>

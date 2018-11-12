@@ -75,8 +75,8 @@
 												<td><?php echo $i++; ?></td>
 												<td><?php echo $value['nama_dokter']; ?></td>
 												<td><?php echo $value['bagian']; ?></td>
-												<td><?php echo $value['hari']; ?></td>
-												<td><?php echo $value['jam']; ?></td>
+												<td><?php echo convertDay($value['hari_pertama']).' s/d '.convertDay($value['hari_terakhir']); ?></td>
+												<td><?php echo $value['jam_pertama'].' s/d '.$value['jam_terakhir']; ?></td>
 												<td>
 
 													<a href="<?php echo base_url('Jadwal/jadwalDetail/'.$id); ?>" class="btn btn-sm btn-primary">

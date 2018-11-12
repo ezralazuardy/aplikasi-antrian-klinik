@@ -36,30 +36,35 @@
 
 								<div class="form-group">
 									<label for="Umur">Umur</label>
-									<input id="Umur" name="bagian" type="text" class="form-control" placeholder="Bagian" required="">
+									<input id="Umur" name="umur" type="text" class="form-control" placeholder="Bagian" required="">
 								</div>
 
 								<div class="form-group">
-									<label for="bagian">Berat</label>
-									<input id="bagian" name="bagian" type="text" class="form-control" placeholder="Bagian" required="">
+									<label for="berat">Berat</label>
+									<input id="berat" name="berat" type="text" class="form-control" placeholder="Bagian" required="">
 								</div>
 
 								<div class="form-group">
-									<label for="hari">Jenis Kelamin</label>
-									<select id="hari" name="hari"  class="form-control">
+									<label for="jenis_kelamin">Jenis Kelamin</label>
+									<select id="jenis_kelamin" name="jenis_kelamin"  class="form-control">
 										<option value="Laki - Laki">Laki - Laki</option>
 										<option value="Perempuan">Perempuan</option>
 									</select>
 								</div>
 								<div class="form-group">
-									<label for="bagian">Alamat</label>
-									<input id="bagian" name="bagian" type="text" class="form-control" placeholder="Bagian" required="">
+									<label for="alamat">Alamat</label>
+									<input id="alamat" name="alamat" type="text" class="form-control" placeholder="Bagian" required="">
 								</div>
 
 								<div class="form-group">
+									<label for="penyakit">Penyakit</label>
+									<input id="penyakit" name="penyakit" type="text" class="form-control" placeholder="Bagian" required="">
+								</div>
+
+								<!-- <div class="form-group">
 									<label for="bagian">Tanggal Besuk</label>
 									<input id="bagian" name="bagian" type="text" class="form-control" placeholder="Bagian" required="">
-								</div>
+								</div> -->
 
 								<div class="form-group">
 									<label for="id_dokter">Dokter</label>

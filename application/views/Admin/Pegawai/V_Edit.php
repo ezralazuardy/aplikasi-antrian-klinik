@@ -93,25 +93,34 @@
 											<div class="form-group">
 												<label for="layanan">Layanan </label>
 												<select name="layanan" class="form-control" placeholder="Layanan" required="">
-													<option disabled="" readonly>Layanan</option>
-													<option value=1>OBAT</option>
-												</select>
-											</div>
+													<?php 
+													$i = 1;
+													if($layanan){
+														foreach ($layanan as $loop) {?>
+<option value=<?php echo $loop['id_layanan']; ?> <?php echo $loop['id_layanan'] == $value['id_layanan'] ? 'selected="selected"' : '' ?> >
+	<?php echo $loop['nama']; ?>
+</option>
+														<?php  
+													}
+												} 
+												?>
+											</select>
 										</div>
-										<?php
-									}
+									</div>
+									<?php
 								}
-								?>
-								<div class="col-md-12">
-									<input class="btn btn-primary btn-lg" type="submit" value="Update">
-								</div>
+							}
+							?>
+							<div class="col-md-12">
+								<input class="btn btn-primary btn-lg" type="submit" value="Update">
 							</div>
 						</div>
-						<!-- END INPUTS -->
 					</div>
+					<!-- END INPUTS -->
 				</div>
 			</div>
 		</div>
-		<!-- END MAIN CONTENT -->
 	</div>
-	<!-- END MAIN -->
+	<!-- END MAIN CONTENT -->
+</div>
+<!-- END MAIN -->

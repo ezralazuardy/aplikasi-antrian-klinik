@@ -84,9 +84,10 @@ public function antrianEdit($id = false) {
 		$umur = $this->input->post('umur');
 		$berat_badan = $this->input->post('berat_badan');
 		$jenis_kelamin = $this->input->post('jenis_kelamin');
-		$tanggal_besuk = $this->input->post('tanggal_besuk');
+		$tanggal_besuk = date('Y-m-d');
 		$alamat = $this->input->post('alamat');
 		$id_jamkes = $this->input->post('jamkes');
+		$penyakit = $this->input->post('penyakit');
 
 		$antrian = $this->getAntrian();
 
@@ -98,6 +99,7 @@ public function antrianEdit($id = false) {
 			'jenis_kelamin' => $jenis_kelamin, 	
 			'tanggal_besuk' => $tanggal_besuk, 	
 			'alamat' => $alamat ,
+			'penyakit' => $penyakit,
 			'id_dokter' => $id_dokter,
 			'id_jamkes' => $id_jamkes
 
@@ -129,13 +131,16 @@ public function antrianEdit($id = false) {
 		$jenis_kelamin = $this->input->post('jenis_kelamin');
 		$tanggal_besuk = $this->input->post('tanggal_besuk');
 		$alamat = $this->input->post('alamat');
+		$penyakit = $this->input->post('penyakit');
 		$id_jamkes = $this->input->post('jamkes');
+
 
 		$data  = array(
 			'nama' => $nama, 
 			'umur' => $umur, 
 			'berat_badan' => $berat_badan, 
 			'jenis_kelamin' => $jenis_kelamin, 	
+			'penyakit' => $penyakit,
 			'tanggal_besuk' => $tanggal_besuk, 	
 			'alamat' => $alamat ,
 			'id_dokter' => $id_dokter, 

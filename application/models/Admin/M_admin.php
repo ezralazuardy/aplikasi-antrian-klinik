@@ -81,7 +81,7 @@ class M_admin extends CI_Model {
 	public function selectPegawai(){
 		$this->db->select('tbl_dokter.*,tbl_layanan.*');;
 		$this->db->from('tbl_dokter');
-		$this->db->join('tbl_layanan','tbl_dokter.id_layanan = tbl_layanan.id_layanan', 'inner');
+		$this->db->join('tbl_layanan','tbl_dokter.id_layanan = tbl_layanan.id_layanan', 'left');
 		$data = $this->db->get();
 		if($data->num_rows() > 0){
 			return $data->result_array();

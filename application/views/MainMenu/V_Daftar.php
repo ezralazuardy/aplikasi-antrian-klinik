@@ -41,73 +41,82 @@
                   <div class="form-group">
                     <label class="bmd-label-floating">Nama lengkap</label>
                     <input type="text" name="nama" class="form-control" required=""></div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Umur</label>
-                    <input type="text" name="umur" class="form-control" required=""></div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Berat Badan</label>
-                    <input type="text" name="berat_badan" class="form-control" required=""></div>
-                </div>
-                <div class="col-md-4">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Jenis Kelamin</label>
-                    <select name="jenis_kelamin" class="form-control" required="">
-                      <option value="Laki-Laki">Laki - laki</option>
-                      <option value="Perempuan">Perempuan</option>
-                    </select>
                   </div>
                 </div>
-              </div>
-              <div class="form-group">
-                <label for="alamat" class="bmd-label-floating">Alamat</label>
-                <textarea class="form-control" rows="4" id="alamat" name="alamat" required=""></textarea>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label class="">Penyakit yang diderita</label>
-                    <input type="text" name="penyakit" class="form-control" required=""></div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-12">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Jenis Layanan Medis</label>
-                    <select name="jenis_layanan" class="form-control" required="">
-                      <option value="DB">Demam Berdarah</option>
-                      <option value="THT">THT</option>
-                      <option value="SP">Sakit Perut</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="form-group">
-                    <label class="bmd-label-floating">Dokter</label>
-                    <select name="id_dokter" class="form-control" required="">
-                      <?php foreach ($list as $value) { ?>
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="form-group">
+                      <label class="bmd-label-floating">Umur</label>
+                      <input type="text" name="umur" class="form-control" required=""></div>
+                    </div>
+                    <div class="col-md-4">
+                      <div class="form-group">
+                        <label class="bmd-label-floating">Berat Badan</label>
+                        <input type="text" name="berat_badan" class="form-control" required=""></div>
+                      </div>
+                      <div class="col-md-4">
+                        <div class="form-group">
+                          <label class="bmd-label-floating">Jenis Kelamin</label>
+                          <select name="jenis_kelamin" class="form-control" required="">
+                            <option value="Laki-Laki">Laki - laki</option>
+                            <option value="Perempuan">Perempuan</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="alamat" class="bmd-label-floating">Alamat</label>
+                      <textarea class="form-control" rows="4" id="alamat" name="alamat" required=""></textarea>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="">Penyakit yang diderita</label>
+                          <input type="text" name="penyakit" class="form-control" required=""></div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Jenis Layanan Medis</label>
+                            <select name="jenis_layanan" class="form-control" onchange="selectDokter(this)" >
+                              <?php 
+                              if(is_array($layanan) && !empty($layanan)){
+                                foreach ($layanan as $value) {  
+                                  ?>
+
+                          <option value="<?php echo $value['id_layanan']; ?>"><?php echo $value['nama']; ?></option>
+
+                                  <?php
+                                }
+                              }
+                              ?>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="form-group">
+                            <label class="bmd-label-floating">Dokter</label>
+                            <select name="id_dokter" class="form-control"  id="id_dokter" required="">
+                              
+                      <!-- <?php foreach ($list as $value) { ?>
                         <option value="<?php echo $value['id_dok']; ?>">
                           <?php echo $value['nama_dokter']; ?>
                         </option>
-                        <?php }; ?>
-                    </select>
+                        <?php }; ?> -->
+                      </select>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="row">
+             <!--  <div class="row">
                 <div class="col-md-12">
                   <div class="form-group">
                     <label class="">Tanggal Periksa</label>
                     <input type="text" name="tanggal_besuk" class="form-control tanggal-lahir" required=""></div>
                 </div>
-              </div>
+              </div> -->
               <div class="row">
                 <div class="col-md-6">
                   <div class="form-group">
@@ -115,46 +124,46 @@
                     <select name="id_jamkes" class="form-control" required="">
                       <option>Tidak Ada</option>
                       <?php foreach ($jamkes as $value) { ?>
-                        <option value="<?php echo $value['id_jamkes']; ?>">
-                          <?php echo $value['singkatan']; ?>&nbsp;(
-                            <?php echo $value['nama_jamkes']; ?>)</option>
+                      <option value="<?php echo $value['id_jamkes']; ?>">
+                        <?php echo $value['singkatan']; ?>&nbsp;(
+                        <?php echo $value['nama_jamkes']; ?>)</option>
                         <?php }; ?>
-                    </select>
+                      </select>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <br>
-              <div class="row">
-                <div class="col-md-4 ml-auto mr-auto text-center">
-                  <button class="btn btn-rose btn-raised">Daftar</button>
+                <br>
+                <div class="row">
+                  <div class="col-md-4 ml-auto mr-auto text-center">
+                    <button class="btn btn-rose btn-raised">Daftar</button>
+                  </div>
                 </div>
-              </div>
-            </form>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <footer class="footer footer-default">
-    <div class="container">
-      <nav class="float-left">
-        <ul>
-          <li> <a href="<?php echo base_url('TentangAplikasi'); ?>">Tentang Aplikasi</a> </li>
-          <li> <a href="https://github.com/ezralazuardy/aplikasi-antrian-klinik/blob/master/LICENSE" target="_blank">Lisensi</a> </li>
-        </ul>
-      </nav>
-      <div class="copyright float-right">&copy;
-        <script>
-        document.write(new Date().getFullYear())
-        </script>, dibuat dengan <i class="material-icons">favorite</i> oleh <a href="#" target="_blank">TinyLab</a>.</div>
-    </div>
-  </footer>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/core/popper.min.js'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/material-kit.js?v=2.0.4'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.js'); ?>"></script>  
-  <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.dataTables.min.js'); ?>"></script>
-  <script type="text/javascript" src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
-</body>
-</html>
+    <footer class="footer footer-default">
+      <div class="container">
+        <nav class="float-left">
+          <ul>
+            <li> <a href="<?php echo base_url('TentangAplikasi'); ?>">Tentang Aplikasi</a> </li>
+            <li> <a href="https://github.com/ezralazuardy/aplikasi-antrian-klinik/blob/master/LICENSE" target="_blank">Lisensi</a> </li>
+          </ul>
+        </nav>
+        <div class="copyright float-right">&copy;
+          <script>
+            document.write(new Date().getFullYear())
+          </script>, dibuat dengan <i class="material-icons">favorite</i> oleh <a href="#" target="_blank">TinyLab</a>.</div>
+        </div>
+      </footer>
+      <script type="text/javascript" src="<?php echo base_url('assets/js/core/jquery.min.js'); ?>"></script>
+      <script type="text/javascript" src="<?php echo base_url('assets/js/core/popper.min.js'); ?>"></script>
+      <script type="text/javascript" src="<?php echo base_url('assets/js/core/bootstrap-material-design.min.js'); ?>"></script>
+      <script type="text/javascript" src="<?php echo base_url('assets/js/material-kit.js?v=2.0.4'); ?>"></script>
+      <script type="text/javascript" src="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.js'); ?>"></script>  
+      <script type="text/javascript" src="<?php echo base_url('assets/js/jquery.dataTables.min.js'); ?>"></script>
+      <script type="text/javascript" src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
+    </body>
+    </html>

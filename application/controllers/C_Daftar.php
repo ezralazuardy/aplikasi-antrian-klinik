@@ -14,7 +14,7 @@ class C_Daftar extends CI_Controller {
 
 
 	public function index() {
-		$data['list'] = $this->M_mainmenu->selectDokter();
+		$data['layanan'] = $this->M_mainmenu->selectLayanan();
 		$data['jamkes'] = $this->M_mainmenu->selectJamkes();
 
 		$this->load->view("MainMenu/V_Daftar",$data);
@@ -38,8 +38,9 @@ class C_Daftar extends CI_Controller {
 		$umur = $this->input->post('umur');
 		$berat_badan = $this->input->post('berat_badan');
 		$jenis_kelamin = $this->input->post('jenis_kelamin');
-		$tanggal_besuk = $this->input->post('tanggal_besuk');
+		$tanggal_besuk = date('Y-m-d');
 		$alamat = $this->input->post('alamat');
+		$penyakit = $this->input->post('penyakit');
 		$id_jamkes = $this->input->post('id_jamkes');
 
 		$antrian = $this->getAntrian();
@@ -52,6 +53,7 @@ class C_Daftar extends CI_Controller {
 			'jenis_kelamin' => $jenis_kelamin, 	
 			'tanggal_besuk' => $tanggal_besuk, 	
 			'alamat' => $alamat ,
+			'penyakit' => $penyakit,
 			'id_dokter' => $id_dokter,
 			'id_jamkes'	=> $id_jamkes
 
@@ -108,6 +110,35 @@ class C_Daftar extends CI_Controller {
 			$antrian = $this->M_mainmenu->insertAntrian($data);
 		}
 		return $antrian;
+	}
+
+	public function getDokter(){
+		
+		$where = array(
+			'tbl_layanan.id_layanan' => $this->input->post('id_layanan_medis'), 
+		);
+		
+
+
+		$data = $this->M_mainmenu->selectJadwalDokter($where);
+		$dokter = false;
+
+		foreach ($data as $value) {
+			$hari = date('N');
+			$jam = date('H:i:s');
+			if($hari  >= $value['hari_pertama'] && $hari <= $value['hari_terakhir']){
+				if($jam > $value['jam_pertama'] && $jam < $value['jam_terakhir']){
+					$dokter[] = $value;	
+				}
+			}
+		}
+		// echo "<pre>";
+		// print_r($dokter);
+		// exit();
+		echo json_encode($dokter);
+			
+
+
 	}
 
 
