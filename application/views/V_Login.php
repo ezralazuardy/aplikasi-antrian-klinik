@@ -36,8 +36,8 @@
 									<label for="signin-password" class="control-label sr-only">Kata sandi</label>
 									<input type="password" class="form-control" id="signin-password" placeholder="Kata sandi" name="password" required=""> </div>
 								<div class="form-group clearfix">
-									<label class="fancy-checkbox element-left">
-										<input type="checkbox"> <span>Ingat saya</span> </label>
+									<!-- <label class="fancy-checkbox element-left">
+										<input type="checkbox"> <span>Ingat saya</span> </label> -->
 								</div>
 								<input type="submit" class="btn btn-primary btn-lg btn-block" value="Masuk" /> <a class="btn btn-success btn-lg btn-block" href="<?php echo base_url(''); ?>" style="margin-top: 10px;">Kembali</a>
 							</form>
@@ -58,12 +58,7 @@
 	<script src="<?php echo base_url('assets/vendor/jquery/jquery.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/vendor/chartist/js/chartist.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/scripts/klorofil-common.js');  ?>"></script>
-	<script src="<?php echo base_url('assets/js/jquery.dataTables.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/js/sweetalert.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/vendor/toastr/toastr.min.js'); ?>"></script>
 	<script type="text/javascript">
