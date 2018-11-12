@@ -11,6 +11,5 @@
   	<script type="text/javascript" src="<?php echo base_url('assets/js/jquery.dataTables.min.js'); ?>"></script>
   	<script type="text/javascript" src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
 	<script type="text/javascript" src="<?php echo base_url('assets/vendor/toastr/toastr.min.js'); ?>"></script>
-	<script type="text/javascript" src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
 </body>
 </html>

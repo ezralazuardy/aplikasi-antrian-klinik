@@ -40,7 +40,7 @@
 					<?php } ?>
 					<div class="panel">
 						<div class="panel-body">
-							<table class="table" id="doctor-table">
+							<table class="table">
 								<thead>
 									<tr>
 										<th>No.</th>

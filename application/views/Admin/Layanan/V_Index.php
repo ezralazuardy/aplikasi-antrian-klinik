@@ -29,7 +29,7 @@
 					<?php echo $status; ?>
 					<div class="panel">
 						<div class="panel-body">
-							<table class="mdl-data-table mdl-js-data-table" style="width:100%">
+							<table class="table">
 								<thead>
 									<tr>
 										<th style="text-align: center;">No.</th>

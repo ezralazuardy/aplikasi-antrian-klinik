@@ -29,7 +29,7 @@
 					<?php echo $status; ?>
 					<div class="panel">
 						<div class="panel-body">
-							<table id="featured-datatable" class="table table-striped table-hover dataTable no-footer" role="grid" aria-describedby="featured-datatable_info">
+							<table class="table">
 								<thead>
 									<tr>
 										<th>No.</th>
