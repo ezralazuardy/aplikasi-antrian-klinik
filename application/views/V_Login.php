@@ -1,19 +1,16 @@
 <!doctype html>
 <html lang="en" class="fullscreen-bg">
 <head>
-	<title>Masuk</title>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<title>Masuk</title>
 	<link rel="stylesheet" href="<?php echo base_url('assets/vendor/bootstrap/css/bootstrap.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/vendor/font-awesome/css/font-awesome.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/vendor/linearicons/style.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/vendor/chartist/css/chartist-custom.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/vendor/toastr/toastr.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/css/main.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/css/jquery.dataTables.min.css'); ?>">
 	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.css'); ?>">
-	<link rel="stylesheet" href="<?php echo base_url('assets/plugins/jqueryui/jquery-ui.min.css'); ?>">
 	<link href="<?php echo base_url('assets/css/font.source-sans-pro.css'); ?>" rel="stylesheet">
     <link rel="apple-touch-icon" sizes="76x76" href="<?php echo base_url('assets/img/apple-icon.webp'); ?>">
     <link rel="icon" type="image/png" sizes="96x96" href="<?php echo base_url('assets/img/favicon.webp'); ?>">  
@@ -31,15 +28,14 @@
 							<form class="form-auth-small" method="POST" action="<?php echo base_url('Login/authlogin'); ?>">
 								<div class="form-group">
 									<label for="signin-email" class="control-label sr-only">Nama pengguna</label>
-									<input type="text" class="form-control" id="signin-email" placeholder="Nama pengguna" name="username" required=""> </div>
+									<input type="text" class="form-control" id="signin-email" placeholder="Nama pengguna" name="username" required=""> 
+								</div>
 								<div class="form-group">
 									<label for="signin-password" class="control-label sr-only">Kata sandi</label>
-									<input type="password" class="form-control" id="signin-password" placeholder="Kata sandi" name="password" required=""> </div>
-								<div class="form-group clearfix">
-									<!-- <label class="fancy-checkbox element-left">
-										<input type="checkbox"> <span>Ingat saya</span> </label> -->
+									<input type="password" class="form-control" id="signin-password" placeholder="Kata sandi" name="password" required=""> 
 								</div>
-								<input type="submit" class="btn btn-primary btn-lg btn-block" value="Masuk" /> <a class="btn btn-success btn-lg btn-block" href="<?php echo base_url(''); ?>" style="margin-top: 10px;">Kembali</a>
+								<div class="form-group clearfix"></div>
+								<input type="submit" class="btn btn-primary btn-lg btn-block" value="Masuk"/>
 							</form>
 						</div>
 					</div>
@@ -57,7 +53,6 @@
 	</div>
 	<script src="<?php echo base_url('assets/vendor/jquery/jquery.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/vendor/bootstrap/js/bootstrap.min.js'); ?>"></script>
-	<script src="<?php echo base_url('assets/vendor/jquery-slimscroll/jquery.slimscroll.min.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/scripts/klorofil-common.js');  ?>"></script>
 	<script src="<?php echo base_url('assets/js/custom.js'); ?>"></script>
 	<script src="<?php echo base_url('assets/vendor/toastr/toastr.min.js'); ?>"></script>
