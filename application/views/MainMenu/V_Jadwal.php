@@ -70,10 +70,10 @@
                             <?php echo $value['bagian']; ?>
                           </td>
                           <td>
-                            <?php echo $value['hari']; ?>
+                            <?php echo convertDay($value['hari_pertama'])." s/d ".convertDay($value['hari_terakhir']); ?>
                           </td>
                           <td>
-                            <?php echo $value['jam']; ?>
+                            <?php echo $value['jam_pertama']." s/d ".$value['jam_terakhir']; ?>
                           </td>
                           <td>
                             <a href="" data-toggle="modal" data-target="#modal" class="btn btn-sm btn-warning"><span class="fa fa-search"></span></a>
