@@ -40,7 +40,7 @@
   <div class="page-header header-filter" data-parallax="true" style="background-image: url('<?php echo base_url('assets/img/bg.webp'); ?>')">
     <div class="container">
       <div class="row">
-        <div class="col-md-12 text-center" style="margin-bottom: 20px;">
+        <div class="col-md-12 text-center" style="margin-bottom: 60px;">
           <h4>
           <?php
           $hari = date('D');
@@ -138,38 +138,57 @@
           </h4> 
         </div>
         <div class="col-md-4 text-center">
-          <h3 class="title">Sisa antrian</h3>
-          <h2 id="sisa-antrian-ini"><?php 
-            if ($sisa_antrian) {
-              echo $sisa_antrian;
-            } else {
-              echo "0";
-            } ?>
-          </h2>
-          <br> 
+          <div class="card">
+            <div class="card-header card-header-text card-header-primary">
+              <h4 class="card-title">Sisa antrian</h4>
+            </div>
+            <div class="card-body">
+              <h2 id="sisa-antrian-ini" style="color: #000000; margin: 0px;">
+                <?php 
+                if ($sisa_antrian) {
+                  echo $sisa_antrian;
+                } else {
+                  echo "0";
+                } ?>
+              </h2>
+            </div>
+          </div>
         </div>
         <div class="col-md-4 text-center">
-          <h3 class="title">Antrian saat ini</h3>
-          <h2 id="antrian-ini"><?php 
-            if (is_array($list) && !empty($list)) {
-              echo $list[0]['antrian'];
-            } else {
-              echo "-";
-            } ?>
-          </h2>
-          <br> </div>
-        <div class="col-md-4 text-center">
-          <h3 class="title">Waktu tunggu</h3>
-          <h2 id="waktu-tunggu-ini"><?php 
-          if (is_array($list) && !empty($list)) {
-            echo (int)($sisa_antrian*10) ." Menit";
-          } else {
-            echo "0 menit";
-          } ?>
-          </h2>
-          <br> 
+          <div class="card">
+            <div class="card-header card-header-text card-header-success">
+              <h4 class="card-title">Antrian saat ini</h4>
+            </div>
+            <div class="card-body">
+              <h2 id="antrian-ini" style="color: #000000; margin: 0px;"><?php 
+                if (is_array($list) && !empty($list)) {
+                  echo $list[0]['antrian'];
+                } else {
+                  echo "-";
+                } ?>
+              </h2>
+            </div>
+          </div>
         </div>
-        <div class="col-md-12 text-center"><a href="<?php echo base_url('Daftar'); ?>" class="btn btn-danger btn-raised btn-lg">Daftar</a></div>
+        <div class="col-md-4 text-center">
+          <div class="card">
+            <div class="card-header card-header-text card-header-warning">
+              <h4 class="card-title">Waktu tunggu</h4>
+            </div>
+            <div class="card-body">
+              <h2 id="waktu-tunggu-ini" style="color: #000000; margin: 0px;">
+                <?php 
+                if (is_array($list) && !empty($list)) {
+                  echo (int)($sisa_antrian*10) ." Menit";
+                } else {
+                  echo "0 menit";
+                } 
+                ?>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-12 text-center" style="margin-top: 40px;"><a href="<?php echo base_url('Daftar'); ?>" class="btn btn-danger btn-raised btn-lg">Daftar</a></div>
       </div>
     </div>
   </div>
