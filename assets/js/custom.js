@@ -1,9 +1,10 @@
 var getUrl = window.location;
 var base_url = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
 
-$(document).ready( function () {
+$(document).ready(function () {
 
 	$('#doctor-table').DataTable();
+	$('.table').DataTable();
 	$('.tanggal-lahir').datepicker({
 		changeMonth: true,
 		changeYear: true

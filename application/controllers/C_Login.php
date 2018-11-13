@@ -22,8 +22,7 @@ class C_Login extends CI_Controller {
 	public function authlogin() {
 		$username = $this->input->post('username');
 		$password = $this->input->post('password');
-		//kanggo debugging ra sah diuncomment sek
-		//$password = md5(md5(md5(strrev($password))));
+		$password = md5(md5(md5(strrev($password))));
 		if($hasil = $this->M_login->checkUser($username)) {
 			if($data = $this->M_login->checkPassword($username,$password)) {
 				$akses = $this->M_login->checkAccountType($username,$password);

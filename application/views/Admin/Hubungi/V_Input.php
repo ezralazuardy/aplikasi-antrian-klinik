@@ -17,7 +17,7 @@
 	<!-- MAIN CONTENT -->
 	<div class="main-content">
 		<div class="container-fluid">
-			<h3 class="page-title">Input Layanan</h3>
+			<h3 class="page-title">Input Hubungi</h3>
 			<div class="row">
 				<div class="col-md-12">
 					<!-- INPUTS -->
@@ -25,26 +25,20 @@
 						<div class="panel-heading">
 						</div>
 						<div class="panel-body">
-							<form action="<?php echo base_url('Layanan/insertLayanan'); ?>" method="POST">
+							<form action="<?php echo base_url('Hubungi/inserthubungi'); ?>" method="POST">
 							<div class="col-md-6">
 								<div class="form-group">
 									<label for="nama">Nama</label>
 									<input id="nama" name="nama" type="text" class="form-control" placeholder="Nama" required="">
 								</div>
 								<div class="form-group">
-									<label for="nama">Kode Layanan</label>
-									<input id="nama" maxlength="3" name="code_layanan" type="text" class="form-control" placeholder="Kode Layanan" style="width:30%" required="">
+									<label for="nama">Email</label>
+									<input id="nama" maxlength="3" name="email" type="email" class="form-control" placeholder="Email" style="width:30%" required="">
 								</div>
 
 								<div class="form-group">
-									<label for="layanan_medis">Layanan Medis</label>
-									<input id="layanan_medis" name="layanan_medis" type="text" class="form-control" placeholder="Layanan Medis" required="">
-								</div>
-
-								<div class="form-group">
-									<label for="info_medis">Info Medis</label>
-									<textarea id="info_medis" name="info_medis" class="form-control" placeholder="Info Medis" required="">
-									</textarea>
+									<label for="layanan_medis">Pesan</label>
+									<textarea id="layanan_medis" name="pesan" type="text" class="form-control" placeholder="Pesan" required=""> </textarea>
 								</div>
 							</div>
 							<div class="col-md-12">

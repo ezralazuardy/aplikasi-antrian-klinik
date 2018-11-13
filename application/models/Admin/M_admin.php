@@ -31,6 +31,10 @@ class M_admin extends CI_Model {
 		return $this->db->insert('tbl_jamkes',$data);
 	}
 
+	public function insertHubungi($data){
+		return $this->db->insert('tbl_jamkes',$data);
+	}
+
 	/*-=--=-=-=-=-=-=--=-=-= SELECT MAIN SECTION -=-=-=-=-=-=-=-=-=-=-=-= */
 
 	public function getCountAntrian(){
@@ -181,6 +185,27 @@ class M_admin extends CI_Model {
 		}	
 	}
 
+	public function selectHubungi(){
+		$this->db->select('*');
+		$this->db->from('tbl_hubungi');
+		$data = $this->db->get();
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}
+	}
+
+	public function getHubungi($id){
+		$this->db->where('id_hubungi',$id);
+		$data = $this->db->get('tbl_hubungi');
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}	
+	}
+
 	public function selectAntrian(){
 		$this->db->select('* , tbl_pendaftaran.nama nama_user');
 		$this->db->from('tbl_antrian');
@@ -241,6 +266,11 @@ class M_admin extends CI_Model {
 		return $this->db->update('tbl_jadwal',$data);
 	}
 
+	public function updateHubungi($id,$data){
+		$this->db->where('id_hubungi',$id);
+		return $this->db->update('tbl_hubungi',$data);
+	}
+
 	public function skipAntrian($id){
 		$this->db->set('status','1');
 		$this->db->where('id_antrian',$id);
@@ -271,6 +301,11 @@ class M_admin extends CI_Model {
 	public function deleteJamkes($id){
 		$this->db->where('id_jamkes',$id);
 		return $this->db->delete('tbl_jamkes');
+	}
+
+	public function deleteHubungi($id){
+		$this->db->where('id_hubungi',$id);
+		return $this->db->delete('tbl_hubungi');
 	}
 }
 ?>

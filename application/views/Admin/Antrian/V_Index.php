@@ -39,7 +39,7 @@
 					<?php } ?>
 					<div class="panel">
 						<div class="panel-body">
-							<table class="table">
+							<table id="doctor-table" class="table">
 								<thead>
 									<tr>
 										<th>No.</th>

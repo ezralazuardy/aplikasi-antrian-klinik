@@ -39,6 +39,10 @@ $route['Antrian'] = 'Admin/C_Antrian/';
 $route['Antrian/(:any)'] = 'Admin/C_Antrian/$1';
 $route['Antrian/(:any)/(:any)'] = 'Admin/C_Antrian/$1/$2';
 
+$route['Hubungi'] = 'Admin/C_Hubungi/';
+$route['Hubungi/(:any)'] = 'Admin/C_Hubungi/$1';
+$route['Hubungi/(:any)/(:any)'] = 'Admin/C_Hubungi/$1/$2';
+
 $route['PetunjukAdmin'] = 'Admin/C_PetunjukAdmin';
 
 $route['ProfilAdmin'] = 'Admin/C_ProfilAdmin';

@@ -29,7 +29,7 @@
 					<?php echo $status; ?>
 					<div class="panel">
 						<div class="panel-body">
-							<table class="table">
+							<table id="doctor-table" class="table">
 								<thead>
 									<tr>
 										<th>No.</th>
@@ -37,7 +37,7 @@
 										<th>Tanggal Lahir</th>
 										<th>Status</th>
 										<th>Layanan</th>
-										<th style="text-align: center;">Opsi</th>
+										<th>Opsi</th>
 									</tr>
 								</thead>
 								<tbody>

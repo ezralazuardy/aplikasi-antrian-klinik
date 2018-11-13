@@ -58,12 +58,12 @@ $(document).ready(function() {
 		}
 	});
 
-	if( $('.sidebar-scroll').length > 0 ) {
-		$('.sidebar-scroll').slimScroll({
-			height: '95%',
-			wheelStep: 2,
-		});
-	}
+	// if( $('.sidebar-scroll').length > 0 ) {
+	// 	$('.sidebar-scroll').slimScroll({
+	// 		height: '95%',
+	// 		wheelStep: 2,
+	// 	});
+	// }
 
 
 	/*-----------------------------------/
