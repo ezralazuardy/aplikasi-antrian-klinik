@@ -71,14 +71,14 @@ public function hubungiDetail($id = false) {
 
 }
 
-public function hubungiEdit($id = false) {
+public function hubungiAnswer($id = false) {
 		$plaintext_string = str_replace(array('-', '_', '~'), array('+', '/', '='), $id);
 		$plaintext_string = $this->encrypt->decode($plaintext_string);
 		$data['id_hubungi']	= $plaintext_string;
 		$data['list'] = $this->M_admin->getHubungi($plaintext_string);
 
 		$this->load->view("V_Header");
-		$this->load->view("Admin/Hubungi/V_Edit",$data);
+		$this->load->view("Admin/Hubungi/V_Answer",$data);
 		$this->load->view("V_Footer");
 }
 
@@ -107,23 +107,25 @@ public function hubungiEdit($id = false) {
 
 /*------------------------------- UPDATE SECTION --------------------------------*/
 
-	public function updateHubungi(){
-		 $id = $this->input->post('id');
-		 $nama = $this->input->post('nama');
-   		 $email = $this->input->post('email');
-   		 $pesan = $this->input->post('pesan');
-   		 $data  = array(
-   		   'nama' => $nama,
-   		   'email' => $email,
-   		   'pesan' => $pesan
-   		 );
+	public function answerHubungi(){
+		
    		 
-   		 if ($this->M_mainmenu->updateHubungi($data,$id)) {
+   		 $to      = $this->input->post('email');
+		 $subject = $this->input->post('subject');
+		 $message = $this->input->post('pesan');
+		 $headers = 
+			'From: Admin Staff Puskesmas' . "\r\n" .
+    		'Reply-To: '.$this->input->post('nama')."\r\n" .
+    		'X-Mailer: PHP/' . phpversion();
+
+
+
+   		 if (mail($to, $subject, $message, $headers)) {
    		   $this->session->set_flashdata('success','Pesan anda berhasil dikirim!');
-   		   redirect('Hubungi/index/update');
+   		   redirect('Hubungi/index');
    		 } else {
    		   $this->session->set_flashdata('error','Terjadi kesalahan saat mengirim pesan anda...');
-   		   redirect('Hubungi/index/update');
+   		   redirect('Hubungi/index');
    		 }	
 	}
 

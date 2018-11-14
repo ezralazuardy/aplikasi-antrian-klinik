@@ -55,8 +55,9 @@
 												<td align="center"><?php echo $value['email']; ?></td>
 												<td  align="center" class="long-text"><?php echo $value['pesan']; ?></td>
 												<td align="center">
+													<a href="<?php echo base_url('Hubungi/hubungiAnswer/'.$id); ?>" class="btn btn-sm btn-success"><span class="fa fa-comments"></span></a>
 													<a href="<?php echo base_url('Hubungi/hubungiDetail/'.$id); ?>" class="btn btn-sm btn-primary"><span class="fa fa-search"></span></a>
-													<a href="<?php echo base_url('Hubungi/hubungiEdit/'.$id); ?>" class="btn btn-sm btn-warning"><span class="fa fa-pencil"></span></a>
+													
 													<button class="btn btn-sm btn-danger" onclick="deleteThis('<?php echo base_url('Hubungi/deleteHubungi/'.$id); ?>');" ><span class="fa fa-trash"></span></button>
 												</td>
 											</tr>
