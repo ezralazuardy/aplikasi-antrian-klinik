@@ -17,16 +17,12 @@
 <div class="main">
 	<div class="main-content">
 		<div class="container-fluid">
-			<h3 class="page-title">Input Jadwal</h3>
+			<h3 class="page-title">Tambah Jadwal</h3>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="panel">
-						<div class="panel-heading">
-						</div>
 						<div class="panel-body">
 							<form action="<?php echo base_url('Jadwal/insertJadwal'); ?>" method="POST">
-								<div class="col-md-3">
-								</div>
 								<div class="col-md-6">
 									<div class="form-group">
 										<label for="id_dokter">Dokter</label>
@@ -38,12 +34,10 @@
 												<?php }} ?>
 											</select>
 										</div>
-
 										<div class="form-group">
 											<label for="bagian">Bagian</label>
 											<input id="bagian" name="bagian" type="text" class="form-control" placeholder="Bagian" required="">
 										</div>
-
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-2">
@@ -61,11 +55,7 @@
 														<option value=7>Minggu</option>
 													</select>
 												</div>
-
-												<div class="col-md-2 text-center">
-													s/d
-												</div>
-
+												<div class="col-md-2 text-center"><label>s/d</label></div>
 												<div class="col-md-4">
 													<select id="hari" name="hari_terakhir"  class="form-control">
 														<option value=1>Senin</option>
@@ -79,31 +69,23 @@
 												</div>
 											</div>
 										</div>
-
-
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-2">
 													<label for=time_awal>Jam</label>
 												</div>
-
-
 												<div class="col-md-4">
 													<input id="time_awal" name="time_awal" type="time" class="form-control" placeholder="Bagian" required="">
 												</div>
-
-												<div class="col-md-2 text-center">
-													s/d
-												</div>
-
+												<div class="col-md-2 text-center"><label>s/d</label></div>
 												<div class="col-md-4">
 													<input id="time_akhir" name="time_akhir" type="time" class="form-control" placeholder="Bagian" required="">
 												</div>
 											</div>
 										</div>
 									</div>
-									<div style="padding: 20px;" class="col-md-12 text-center">
-										<input class="btn btn-success btn-lg" type="submit" value="Input">
+									<div class="col-md-12">
+										<input class="btn btn-raised btn-primary" type="submit" value="Tambah">
 									</div>
 								</form>
 								</div>

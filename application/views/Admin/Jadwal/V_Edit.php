@@ -37,26 +37,20 @@
 												foreach ($dokter as $value) { ?>
 													
 													<option value="<?php echo $value['id_dok']; ?>" <?php echo $list[0]['id_dokter'] == $value['id_dok'] ? 'selected="selected"' : ''; ?> >
-
 														<?php echo $value['nama_dokter']; ?>
-		
 													</option>
-
 												<?php }} ?>
 											</select>
 										</div>
-
 										<div class="form-group">
 											<label for="bagian">Bagian</label>
 											<input id="bagian" name="bagian" type="text" class="form-control" placeholder="Bagian" required="" value="<?php echo $list[0]['bagian']; ?>" >
 										</div>
-
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-2">
 													<label for=time_awal>Hari</label>
 												</div>
-
 												<div class="col-md-4">
 													<select id="hari" name="hari_pertama"  class="form-control">
 <option <?php echo $list[0]['hari_pertama'] == 1 ? 'selected=selected' : ''; ?>  value=1 >Senin</option>
@@ -68,11 +62,7 @@
 <option <?php echo $list[0]['hari_pertama'] == 7 ? 'selected=selected' : ''; ?>  value=7>Minggu</option>
 													</select>
 												</div>
-
-												<div class="col-md-2 text-center">
-													s/d
-												</div>
-
+												<div class="col-md-2 text-center"><label>s/d</label></div>
 												<div class="col-md-4">
 													<select id="hari" name="hari_terakhir"  class="form-control">
 <option <?php echo $list[0]['hari_terakhir'] == 1 ? 'selected=selected' : ''; ?>  value=1 >Senin</option>
@@ -86,35 +76,27 @@
 												</div>
 											</div>
 										</div>
-
-
 										<div class="form-group">
 											<div class="row">
 												<div class="col-md-2">
 													<label for=time_awal>Jam</label>
 												</div>
-
-
 												<div class="col-md-4">
 													<input id="time_awal" name="time_awal" type="time" class="form-control" placeholder="Bagian" value="<?php echo $list[0]['jam_pertama']; ?>" required="">
 												</div>
-
-												<div class="col-md-2 text-center">
-													s/d
-												</div>
-
+												<div class="col-md-2 text-center"><label>s/d</label></div>
 												<div class="col-md-4">
 													<input id="time_akhir" name="time_akhir" type="time" class="form-control" placeholder="Bagian" value="<?php echo $list[0]['jam_terakhir']; ?>" required="">
 												</div>
 											</div>
 										</div>
 									</div>
-									<div style="padding: 20px;" class="col-md-12 text-center">
-										<input class="btn btn-success btn-lg" type="submit" value="Update">
+									<div class="col-md-12 text-center">
+										<input class="btn btn-raised btn-primary" type="submit" value="Edit">
 									</div>
 								</form>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>

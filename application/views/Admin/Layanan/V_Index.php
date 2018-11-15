@@ -54,7 +54,7 @@
 												<td align="center"><?php echo $value['nama']; ?></td>
 												<td align="center"><?php echo $value['layanan_medis']; ?></td>
 												<td align="center">
-													<a href="<?php echo base_url('Layanan/layananDetail/'.$id); ?>" class="btn btn-sm btn-primary"><span class="fa fa-search"></span></a>
+													<a href="<?php echo base_url('Layanan/layananDetail/'.$id); ?>" class="btn btn-sm btn-primary"><span class="fa fa-info"></span></a>
 													<a href="<?php echo base_url('Layanan/layananEdit/'.$id); ?>" class="btn btn-sm btn-warning"><span class="fa fa-pencil"></span></a>
 													<button class="btn btn-sm btn-danger" onclick="deleteThis('<?php echo base_url('Layanan/deleteLayanan/'.$id); ?>');" ><span class="fa fa-trash"></span></button>
 												</td>

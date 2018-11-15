@@ -68,10 +68,10 @@
 												<td><?php echo $value['nama_dokter']; ?></td>
 												<td><?php echo $value['singkatan']; ?></td>
 												<td align="center">
-													<a href="<?php echo base_url('Daftar/generate/'.$id); ?>" class="btn btn-sm btn-primary"><span class="fa fa-search"></span></a>
-													<a href="<?php echo base_url('Antrian/antrianEdit/'.$id); ?>" class="btn btn-sm btn-warning"><span class="lnr lnr-pencil"></span></a>
+													<a href="<?php echo base_url('Daftar/generate/'.$id); ?>" class="btn btn-sm btn-primary"><span class="fa fa-info"></span></a>
+													<a href="<?php echo base_url('Antrian/antrianEdit/'.$id); ?>" class="btn btn-sm btn-warning"><span class="fa-fa-pencil"></span></a>
 													<button class="btn btn-sm btn-danger" onclick="deleteThis('<?php echo base_url('Antrian/deleteAntrian/'.$id); ?>');" ><span class="fa fa-trash"></span></button> 
-													<button class="btn btn-sm btn-success" onclick="skipThis('<?php echo base_url('Antrian/skipAntrian/'.$id); ?>');" ><span class="fa fa-play"></span></button> 
+													<button class="btn btn-sm btn-success" onclick="skipThis('<?php echo base_url('Antrian/skipAntrian/'.$id); ?>');" ><span class="fa fa-hand-o-right"></span></button> 
 												</td>
 											</tr>
 											<?php

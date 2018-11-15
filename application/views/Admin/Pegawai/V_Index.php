@@ -56,8 +56,8 @@
 												<td><?php echo $value['status']; ?></td>
 												<td><?php echo $value['nama']; ?></td>
 												<td align="center">
-													<a href="<?php echo base_url('Admin/pegawaiDetail/'.$id); ?>" class="btn btn-sm btn-primary"><span class="fa fa-search"></span></a>
-													<a href="<?php echo base_url('Admin/pegawaiEdit/'.$id); ?>" class="btn btn-sm btn-warning"><span class="lnr lnr-pencil"></span></a>
+													<a href="<?php echo base_url('Admin/pegawaiDetail/'.$id); ?>" class="btn btn-sm btn-primary"><span class="fa fa-info"></span></a>
+													<a href="<?php echo base_url('Admin/pegawaiEdit/'.$id); ?>" class="btn btn-sm btn-warning"><span class="fa fa-pencil"></span></a>
 													<button class="btn btn-sm btn-danger" onclick="deleteThis('<?php echo base_url('Admin/deletePegawai/'.$id); ?>');" ><span class="fa fa-trash"></span></button>
 												</td>
 											</tr>

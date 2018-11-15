@@ -17,12 +17,10 @@
 <div class="main">
 	<div class="main-content">
 		<div class="container-fluid">
-			<h3 class="page-title">Input Jaminan Kesehatan</h3>
+			<h3 class="page-title">Tambah Jaminan Kesehatan</h3>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="panel">
-						<div class="panel-heading">
-						</div>
 						<div class="panel-body">
 							<form action="<?php echo base_url('Jamkes/insertJamkes'); ?>" method="POST">
 							<div class="col-md-6">
@@ -36,7 +34,7 @@
 								</div>
 							</div>
 							<div class="col-md-12">
-								<input class="btn btn-success btn-lg" type="submit" value="Input">
+								<input class="btn btn-raised btn-primary" type="submit" value="Tambah">
 							</div>
 						</div>
 					</div>

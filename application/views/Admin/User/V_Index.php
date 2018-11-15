@@ -19,7 +19,7 @@
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-10">
-					<h3 class="page-title">Daftar Akun Pengguna</h3>
+					<h3 class="page-title">Daftar Akun</h3>
 				</div>
 				<div class="col-md-2" align="right">
         			<a href="<?php echo base_url('User/inputUser'); ?>" class="btn btn-raised btn-primary"><span class="fa fa-plus" style="margin-right: 10px;"></span>Tambah</a>
@@ -64,8 +64,8 @@
 												<td><?php echo $value['nama']; ?></td>
 												<td><?php echo $value['akses']; ?></td>
 												<td align="center">
-													<a href="<?php echo base_url('User/userDetail/'.$id); ?>" class="btn btn-sm btn-primary"><span class="fa fa-search"></span></a>
-													<a href="<?php echo base_url('User/userEdit/'.$id); ?>" class="btn btn-sm btn-warning"><span class="lnr lnr-pencil"></span></a>
+													<a href="<?php echo base_url('User/userDetail/'.$id); ?>" class="btn btn-sm btn-primary"><span class="fa fa-info"></span></a>
+													<a href="<?php echo base_url('User/userEdit/'.$id); ?>" class="btn btn-sm btn-warning"><span class="fa fa-pencil"></span></a>
 													<button class="btn btn-sm btn-danger" onclick="deleteThis('<?php echo base_url('User/deleteUser/'.$id); ?>');" ><span class="fa fa-trash"></span></button> 
 												</td>
 											</tr>

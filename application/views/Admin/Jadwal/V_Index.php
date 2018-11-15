@@ -67,8 +67,8 @@
 												<td><?php echo convertDay($value['hari_pertama']).' s/d '.convertDay($value['hari_terakhir']); ?></td>
 												<td><?php echo $value['jam_pertama'].' s/d '.$value['jam_terakhir']; ?></td>
 												<td align="center">
-													<a href="<?php echo base_url('Jadwal/jadwalDetail/'.$id); ?>" class="btn btn-sm btn-primary"><span class="fa fa-search"></span></a>
-													<a href="<?php echo base_url('Jadwal/jadwalEdit/'.$id); ?>" class="btn btn-sm btn-warning"><span class="lnr lnr-pencil"></span></a>
+													<a href="<?php echo base_url('Jadwal/jadwalDetail/'.$id); ?>" class="btn btn-sm btn-primary"><span class="fa fa-info"></span></a>
+													<a href="<?php echo base_url('Jadwal/jadwalEdit/'.$id); ?>" class="btn btn-sm btn-warning"><span class="fa fa-pencil"></span></a>
 													<button class="btn btn-sm btn-danger" onclick="deleteThis('<?php echo base_url('Jadwal/deleteJadwal/'.$id); ?>');" ><span class="fa fa-trash"></span></button> 
 												</td>
 											</tr>
