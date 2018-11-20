@@ -76,7 +76,7 @@
                             <?php echo $value['nama']; ?>
                           </td>
                           <td>
-                            <a href="" data-toggle="modal" data-target="#modal" class="btn btn-sm btn-primary"><span class="fa fa-search"></span></a>
+                            <a href="" data-toggle="modal" data-target="#modal" class="btn btn-sm btn-primary"><span class="fa fa-info"></span></a>
                           </td>
                         </tr>
                         <?php

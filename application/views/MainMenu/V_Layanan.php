@@ -72,7 +72,7 @@
                             <?php echo $value['layanan_medis']; ?>
                           </td>
                           <td>
-                            <a href="" data-toggle="modal" data-target="#modal" class="btn btn-sm btn-success"><span class="fa fa-search"></span></a>
+                            <a href="" data-toggle="modal" data-target="#modal" class="btn btn-sm btn-success"><span class="fa fa-info"></span></a>
                           </td>
                         </tr>
                         <?php

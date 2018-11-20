@@ -76,7 +76,7 @@
                             <?php echo $value['jam_pertama']." s/d ".$value['jam_terakhir']; ?>
                           </td>
                           <td>
-                            <a href="" data-toggle="modal" data-target="#modal" class="btn btn-sm btn-warning"><span class="fa fa-search"></span></a>
+                            <a href="" data-toggle="modal" data-target="#modal" class="btn btn-sm btn-warning"><span class="fa fa-info"></span></a>
                           </td>
                         </tr>
                         <?php
