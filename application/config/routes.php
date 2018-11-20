@@ -3,7 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 $route['default_controller'] = 'C_Landing';
 $route['TentangAplikasi'] = 'C_TentangAplikasi';
-$route['LandingPage'] = 'C_Landing';
+$route['LandingPage'] = 'C_Landing/index';
+$route['LandingPage/(:any)'] = 'C_Landing/$1';
+$route['LandingPage/(:any)/(:any)'] = 'C_Landing/$1/$2';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
@@ -29,9 +31,17 @@ $route['Jadwal'] = 'Admin/C_Jadwal/';
 $route['Jadwal/(:any)'] = 'Admin/C_Jadwal/$1';
 $route['Jadwal/(:any)/(:any)'] = 'Admin/C_Jadwal/$1/$2';
 
+$route['Jamkes'] = 'Admin/C_Jamkes/';
+$route['Jamkes/(:any)'] = 'Admin/C_Jamkes/$1';
+$route['Jamkes/(:any)/(:any)'] = 'Admin/C_Jamkes/$1/$2';
+
 $route['Antrian'] = 'Admin/C_Antrian/';
 $route['Antrian/(:any)'] = 'Admin/C_Antrian/$1';
 $route['Antrian/(:any)/(:any)'] = 'Admin/C_Antrian/$1/$2';
+
+$route['Hubungi'] = 'Admin/C_Hubungi/';
+$route['Hubungi/(:any)'] = 'Admin/C_Hubungi/$1';
+$route['Hubungi/(:any)/(:any)'] = 'Admin/C_Hubungi/$1/$2';
 
 $route['PetunjukAdmin'] = 'Admin/C_PetunjukAdmin';
 
@@ -47,7 +57,8 @@ $route['Daftar'] = 'C_Daftar/index';
 $route['Daftar/(:any)'] = 'C_Daftar/$1';
 $route['Daftar/(:any)/(:any)'] = 'C_Daftar/$1/$2';
 
-$route['MainJadwal'] = 'C_MainMenu/jadwal';
-$route['Dokter'] = 'C_MainMenu/dokter';
-$route['MainLayanan'] = 'C_MainMenu/layanan';
+$route['JadwalDokter'] = 'C_MainMenu/jadwal';
+$route['DaftarDokter'] = 'C_MainMenu/dokter';
+$route['DaftarLayanan'] = 'C_MainMenu/layanan';
+$route['getAntrian'] = 'C_Landing/getAntrian';
 	

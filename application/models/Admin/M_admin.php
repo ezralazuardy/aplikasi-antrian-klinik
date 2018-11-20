@@ -27,6 +27,14 @@ class M_admin extends CI_Model {
 		return $this->db->insert('tbl_jadwal',$data);
 	}
 
+	public function insertJamkes($data){
+		return $this->db->insert('tbl_jamkes',$data);
+	}
+
+	public function insertHubungi($data){
+		return $this->db->insert('tbl_jamkes',$data);
+	}
+
 	/*-=--=-=-=-=-=-=--=-=-= SELECT MAIN SECTION -=-=-=-=-=-=-=-=-=-=-=-= */
 
 	public function getCountAntrian(){
@@ -40,7 +48,6 @@ class M_admin extends CI_Model {
 		$data = $this->db->get();
 
 		return $data->num_rows();
-
 	}
 
 	public function getCountSisaAntrian(){
@@ -78,7 +85,7 @@ class M_admin extends CI_Model {
 	public function selectPegawai(){
 		$this->db->select('tbl_dokter.*,tbl_layanan.*');;
 		$this->db->from('tbl_dokter');
-		$this->db->join('tbl_layanan','tbl_dokter.id_layanan = tbl_layanan.id_layanan', 'inner');
+		$this->db->join('tbl_layanan','tbl_dokter.id_layanan = tbl_layanan.id_layanan', 'left');
 		$data = $this->db->get();
 		if($data->num_rows() > 0){
 			return $data->result_array();
@@ -148,8 +155,50 @@ class M_admin extends CI_Model {
 	}
 
 	public function getJadwal($id){
-		$this->db->where('id_dok',$id);
+		$this->db->where('id_jadwal',$id);
+		$data = $this->db->get('tbl_jadwal');
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}	
+	}
+
+	public function selectJamkes(){
+		$this->db->select('*');
+		$this->db->from('tbl_jamkes');
+		$data = $this->db->get();
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}
+	}
+
+	public function getJamkes($id){
+		$this->db->where('id_jamkes',$id);
 		$data = $this->db->get('tbl_dokter');
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}	
+	}
+
+	public function selectHubungi(){
+		$this->db->select('*');
+		$this->db->from('tbl_hubungi');
+		$data = $this->db->get();
+		if($data->num_rows() > 0){
+			return $data->result_array();
+		}else{
+			return false;
+		}
+	}
+
+	public function getHubungi($id){
+		$this->db->where('id_hubungi',$id);
+		$data = $this->db->get('tbl_hubungi');
 		if($data->num_rows() > 0){
 			return $data->result_array();
 		}else{
@@ -163,6 +212,7 @@ class M_admin extends CI_Model {
 		$this->db->join('tbl_pendaftaran','tbl_antrian.id_antrian = tbl_pendaftaran.id_antrian', 'outter');
 		$this->db->join('tbl_dokter','tbl_dokter.id_dok = tbl_pendaftaran.id_dokter', 'outter');
 		$this->db->join('tbl_layanan','tbl_dokter.id_layanan = tbl_layanan.id_layanan', 'outter');
+		$this->db->join('tbl_jamkes','tbl_pendaftaran.id_jamkes = tbl_jamkes.id_jamkes', 'outter');
 		$this->db->where('tbl_antrian.status != 1');
 		$this->db->order_by('tanggal','desc');
 		$this->db->order_by('antrian','asc');
@@ -183,6 +233,7 @@ class M_admin extends CI_Model {
 		$this->db->join('tbl_pendaftaran','tbl_antrian.id_antrian = tbl_pendaftaran.id_antrian', 'outter');
 		$this->db->join('tbl_dokter','tbl_dokter.id_dok = tbl_pendaftaran.id_dokter', 'outter');
 		$this->db->join('tbl_layanan','tbl_dokter.id_layanan = tbl_layanan.id_layanan', 'outter');	
+		$this->db->join('tbl_jamkes','tbl_pendaftaran.id_jamkes = tbl_jamkes.id_jamkes', 'outter');
 		$this->db->where('tbl_antrian.id_antrian',$id);
 		$data = $this->db->get();
 		if($data->num_rows() > 0){
@@ -215,6 +266,11 @@ class M_admin extends CI_Model {
 		return $this->db->update('tbl_jadwal',$data);
 	}
 
+	public function updateHubungi($id,$data){
+		$this->db->where('id_hubungi',$id);
+		return $this->db->update('tbl_hubungi',$data);
+	}
+
 	public function skipAntrian($id){
 		$this->db->set('status','1');
 		$this->db->where('id_antrian',$id);
@@ -240,6 +296,16 @@ class M_admin extends CI_Model {
 	public function deleteJadwal($id){
 		$this->db->where('id_jadwal',$id);
 		return $this->db->delete('tbl_jadwal');
+	}
+
+	public function deleteJamkes($id){
+		$this->db->where('id_jamkes',$id);
+		return $this->db->delete('tbl_jamkes');
+	}
+
+	public function deleteHubungi($id){
+		$this->db->where('id_hubungi',$id);
+		return $this->db->delete('tbl_hubungi');
 	}
 }
 ?>

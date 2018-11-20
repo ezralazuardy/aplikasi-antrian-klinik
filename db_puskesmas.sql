@@ -1,15 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.0.1
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
--- Host: localhost
--- Generation Time: Oct 27, 2018 at 03:41 AM
--- Server version: 10.1.32-MariaDB
--- PHP Version: 5.6.36
+-- Host: 127.0.0.1
+-- Generation Time: 12 Nov 2018 pada 05.10
+-- Versi Server: 10.1.9-MariaDB
+-- PHP Version: 5.5.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
 
 
@@ -25,7 +23,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_antrian`
+-- Struktur dari tabel `tbl_antrian`
 --
 
 CREATE TABLE `tbl_antrian` (
@@ -36,7 +34,7 @@ CREATE TABLE `tbl_antrian` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_antrian`
+-- Dumping data untuk tabel `tbl_antrian`
 --
 
 INSERT INTO `tbl_antrian` (`id_antrian`, `tanggal`, `antrian`, `status`) VALUES
@@ -45,12 +43,16 @@ INSERT INTO `tbl_antrian` (`id_antrian`, `tanggal`, `antrian`, `status`) VALUES
 (8, '2018-10-26', 'A002', 0),
 (9, '2018-10-26', 'A003', 1),
 (10, '2018-10-26', 'A004', 1),
-(11, '2018-10-27', 'A001', 0);
+(11, '2018-10-27', 'A001', 0),
+(12, '2018-10-27', 'A002', 0),
+(13, '2018-11-07', 'A001', 0),
+(14, '2018-11-07', 'A002', 0),
+(15, '2018-11-12', 'A001', 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_dokter`
+-- Struktur dari tabel `tbl_dokter`
 --
 
 CREATE TABLE `tbl_dokter` (
@@ -66,23 +68,22 @@ CREATE TABLE `tbl_dokter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_dokter`
+-- Dumping data untuk tabel `tbl_dokter`
 --
 
 INSERT INTO `tbl_dokter` (`id_dok`, `nama_dokter`, `tempat_lahir`, `tanggal_lahir`, `alamat`, `jenis_kelamin`, `status`, `pendidikan_akhir`, `id_layanan`) VALUES
 (1, 'Adexe', 'Lahirian', '2018-10-05', 'Jalan Sumbreng									', 'male', 'Raja', 'Magister', 1),
-(2, 'AdexeHola', 'Lhiaraasn', '0000-00-00', 'Dimana Saja', 'female', 'Akademik', 'SMP', 1),
-(3, 'adexeaad', 'a12321', '0000-00-00', 'asdasdads', 'male', 'asdasd', 'SMK', 1),
-(6, 'asdasd', 'asdasd', '0000-00-00', 'asdasdasd', 'female', '123', 'SMK', 1),
+(2, 'AdexeHola', 'Lhiaraasn', '2018-11-24', 'Dimana Saja												', 'female', 'Akademik', 'SMP', 3),
+(3, 'adexe an ade', 'a12321', '2018-11-29', 'asdasdads																								', 'male', 'asdasd', 'SMK', 2),
 (8, 'asdasd', 'asdasd', '2018-10-23', 'asdasdasd									', 'male', '123', 'SMK', 1),
-(9, 'daasdsad', 'asdasdasd', '2018-10-10', 'asdasdasd', 'asdasd', 'asd', 'asd', 1),
-(10, 'asdasdasd', 'asdasd', '2018-10-16', 'asdasdasd', 'female', '1231', 'SMA', 1),
-(11, 'asdasdasd', 'asdasd', '2018-10-16', 'asdasdasd', 'female', '1231', 'SMA', 1);
+(12, 'Desi', 'Semarang', '2018-12-22', 'Semarang dimana aku gatau', 'female', 'Istri Orang', 'Doktor', 2),
+(13, 'Zakiyya', 'Semarang', '2018-08-15', 'Semarang', 'female', 'Istri Orang', 'Doktor', 2),
+(14, 'Ezron', 'Miniman', '2018-11-08', 'Suaoro', 'male', 'Januck', 'SD', 2);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_hubungi`
+-- Struktur dari tabel `tbl_hubungi`
 --
 
 CREATE TABLE `tbl_hubungi` (
@@ -95,30 +96,55 @@ CREATE TABLE `tbl_hubungi` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_jadwal`
+-- Struktur dari tabel `tbl_jadwal`
 --
 
 CREATE TABLE `tbl_jadwal` (
   `id_jadwal` int(11) NOT NULL,
   `id_dokter` int(11) NOT NULL,
   `bagian` varchar(255) DEFAULT NULL,
-  `hari` varchar(255) DEFAULT NULL,
-  `jam` varchar(255) DEFAULT NULL
+  `hari_pertama` int(11) DEFAULT NULL,
+  `hari_terakhir` int(11) DEFAULT NULL,
+  `jam_pertama` time DEFAULT NULL,
+  `jam_terakhir` time DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_jadwal`
+-- Dumping data untuk tabel `tbl_jadwal`
 --
 
-INSERT INTO `tbl_jadwal` (`id_jadwal`, `id_dokter`, `bagian`, `hari`, `jam`) VALUES
-(1, 2, '12', 'Jumat', '00:00 s/d 00:00'),
-(2, 3, 'Hubker', 'Sabtu', '11:00 s/d 11:00'),
-(3, 10, 'adexe12', 'Minggu', '09:00 s/d 23:00');
+INSERT INTO `tbl_jadwal` (`id_jadwal`, `id_dokter`, `bagian`, `hari_pertama`, `hari_terakhir`, `jam_pertama`, `jam_terakhir`) VALUES
+(5, 1, 'Kesehatan', 1, 7, '10:00:00', '20:20:00'),
+(6, 2, 'Pernikanan', 1, 5, '06:00:00', '14:00:00'),
+(7, 3, 'Lompat Tali', 3, 6, '03:00:00', '20:00:00'),
+(8, 6, 'Adakah hari ini', 2, 5, '00:00:00', '20:00:00'),
+(9, 12, 'Telinga dan Kesehatan', 1, 7, '00:00:00', '11:00:00'),
+(10, 13, 'Hatiku', 2, 6, '12:00:00', '17:00:00'),
+(11, 14, 'Keamaan', 1, 2, '12:00:00', '23:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_layanan`
+-- Struktur dari tabel `tbl_jamkes`
+--
+
+CREATE TABLE `tbl_jamkes` (
+  `id_jamkes` int(11) NOT NULL,
+  `singkatan` varchar(255) NOT NULL,
+  `nama_jamkes` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data untuk tabel `tbl_jamkes`
+--
+
+INSERT INTO `tbl_jamkes` (`id_jamkes`, `singkatan`, `nama_jamkes`) VALUES
+(1, 'BPJS', 'Badan Penyelenggara Jaminan Sosial');
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `tbl_layanan`
 --
 
 CREATE TABLE `tbl_layanan` (
@@ -130,7 +156,7 @@ CREATE TABLE `tbl_layanan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_layanan`
+-- Dumping data untuk tabel `tbl_layanan`
 --
 
 INSERT INTO `tbl_layanan` (`id_layanan`, `nama`, `layanan_medis`, `info_medis`, `code_layanan`) VALUES
@@ -141,7 +167,7 @@ INSERT INTO `tbl_layanan` (`id_layanan`, `nama`, `layanan_medis`, `info_medis`, 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_pendaftaran`
+-- Struktur dari tabel `tbl_pendaftaran`
 --
 
 CREATE TABLE `tbl_pendaftaran` (
@@ -153,27 +179,33 @@ CREATE TABLE `tbl_pendaftaran` (
   `umur` varchar(255) DEFAULT NULL,
   `berat_badan` varchar(255) DEFAULT NULL,
   `tanggal_besuk` varchar(255) DEFAULT NULL,
-  `id_dokter` int(11) NOT NULL
+  `penyakit` varchar(255) DEFAULT NULL,
+  `id_dokter` int(11) NOT NULL,
+  `id_jamkes` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_pendaftaran`
+-- Dumping data untuk tabel `tbl_pendaftaran`
 --
 
-INSERT INTO `tbl_pendaftaran` (`id_daftar`, `id_antrian`, `nama`, `alamat`, `jenis_kelamin`, `umur`, `berat_badan`, `tanggal_besuk`, `id_dokter`) VALUES
-(1, '4', 'Muhammad Alifian Aqshol', 'adexeadexe', 'Laki-Laki', '22', '120', '2018-10-18', 9),
-(2, '5', 'asd', 'asdasd', 'Perempuan', '21', '12', '2018-10-17', 10),
-(3, '6', 'Desi', 'Dihati seseotrang', 'Perempuan', '22', '50', '2018-10-09', 2),
-(4, '7', 'Termonator', 'adexe asdaexe', 'Perempuan', '22', '12', '2018-10-27', 2),
-(5, '8', 'Teriyaki Bos', 'Adexe', 'Perempuan', '123', '100', '2018-10-31', 9),
-(6, '9', 'Saya kuandar', 'Tempat sepi', 'Laki-Laki', '201', '110', '2018-10-20', 10),
-(7, '10', 'Kurtwandar', 'Sepi di dalam gundah', 'Laki-Laki', '12', '110', '2018-10-27', 1),
-(8, '11', 'Muhammad Alifian Aqshol', 'adeexe', 'Laki-Laki', '18', '22', 'Saturday, 27 October 2018', 1);
+INSERT INTO `tbl_pendaftaran` (`id_daftar`, `id_antrian`, `nama`, `alamat`, `jenis_kelamin`, `umur`, `berat_badan`, `tanggal_besuk`, `penyakit`, `id_dokter`, `id_jamkes`) VALUES
+(1, '4', 'Muhammad Alifian Aqshol', 'adexeadexe', 'Laki-Laki', '22', '120', '2018-10-18', NULL, 9, 1),
+(2, '5', 'asd', 'asdasd', 'Perempuan', '21', '12', '2018-10-17', NULL, 10, 1),
+(3, '6', 'Desi', 'Dihati seseotrang', 'Perempuan', '22', '50', '2018-10-09', NULL, 2, 1),
+(4, '7', 'Termonator', 'adexe asdaexe', 'Perempuan', '22', '12', '2018-10-27', NULL, 2, 1),
+(5, '8', 'Teriyaki Bos', 'Adexe', 'Perempuan', '123', '100', '2018-10-31', NULL, 9, 1),
+(6, '9', 'Saya kuandar', 'Tempat sepi', 'Laki-Laki', '201', '110', '2018-10-20', NULL, 10, 1),
+(7, '10', 'Kurtwandar', 'Sepi di dalam gundah', 'Laki-Laki', '12', '110', '2018-10-27', NULL, 1, 1),
+(8, '11', 'Muhammad Alifian Aqshol', 'adeexe', 'Laki-Laki', '18', '22', 'Saturday, 27 October 2018', NULL, 1, 1),
+(9, '12', 'Draft you wild gonna ', 'adexeasd', 'Laki-Laki', '20', '12', 'Tuesday, 30 October 2018', NULL, 9, 1),
+(10, '13', 'Dople', 'Menggenangkan Sebuah Genangan', 'Perempuan', '21', '20', 'Friday, 23 November 2018', NULL, 2, 1),
+(11, '14', 'DDD', 'KAMU ADA DIMANA', 'Laki-Laki', '20', '10', 'Wednesday, 28 November 2018', NULL, 6, 1),
+(12, '15', 'Muhammad Alifian Aqshol', 'Kimpoy', 'Laki-Laki', '20', '20', '2018-11-12', 'Sehat Selalu', 12, 1);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_user`
+-- Struktur dari tabel `tbl_user`
 --
 
 CREATE TABLE `tbl_user` (
@@ -185,7 +217,7 @@ CREATE TABLE `tbl_user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `tbl_user`
+-- Dumping data untuk tabel `tbl_user`
 --
 
 INSERT INTO `tbl_user` (`id_user`, `username`, `password`, `nama`, `akses`) VALUES
@@ -222,6 +254,12 @@ ALTER TABLE `tbl_jadwal`
   ADD PRIMARY KEY (`id_jadwal`);
 
 --
+-- Indexes for table `tbl_jamkes`
+--
+ALTER TABLE `tbl_jamkes`
+  ADD PRIMARY KEY (`id_jamkes`);
+
+--
 -- Indexes for table `tbl_layanan`
 --
 ALTER TABLE `tbl_layanan`
@@ -247,45 +285,42 @@ ALTER TABLE `tbl_user`
 -- AUTO_INCREMENT for table `tbl_antrian`
 --
 ALTER TABLE `tbl_antrian`
-  MODIFY `id_antrian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
+  MODIFY `id_antrian` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `tbl_dokter`
 --
 ALTER TABLE `tbl_dokter`
-  MODIFY `id_dok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
-
+  MODIFY `id_dok` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `tbl_hubungi`
 --
 ALTER TABLE `tbl_hubungi`
   MODIFY `id_hubungi` int(11) NOT NULL AUTO_INCREMENT;
-
 --
 -- AUTO_INCREMENT for table `tbl_jadwal`
 --
 ALTER TABLE `tbl_jadwal`
-  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
+  MODIFY `id_jadwal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+--
+-- AUTO_INCREMENT for table `tbl_jamkes`
+--
+ALTER TABLE `tbl_jamkes`
+  MODIFY `id_jamkes` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `tbl_layanan`
 --
 ALTER TABLE `tbl_layanan`
   MODIFY `id_layanan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-
 --
 -- AUTO_INCREMENT for table `tbl_pendaftaran`
 --
 ALTER TABLE `tbl_pendaftaran`
-  MODIFY `id_daftar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
+  MODIFY `id_daftar` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `tbl_user`
 --
 ALTER TABLE `tbl_user`
   MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
-COMMIT;
-
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

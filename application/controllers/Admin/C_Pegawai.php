@@ -68,19 +68,25 @@ class C_Pegawai extends CI_Controller {
 public function pegawaiDetail($id = false) {
 		$plaintext_string = str_replace(array('-', '_', '~'), array('+', '/', '='), $id);
 		$plaintext_string = $this->encrypt->decode($plaintext_string);
+		
 		$data['id_dok']	= $plaintext_string;
 		$data['list'] = $this->M_admin->getPegawai($plaintext_string);
 		$data['id'] = $id;
+		
 		$this->load->view("V_Header");
 		$this->load->view("Admin/Pegawai/V_Detail",$data);
 		$this->load->view("V_Footer");
 }
 
 public function pegawaiEdit($id = false) {
+		
 		$plaintext_string = str_replace(array('-', '_', '~'), array('+', '/', '='), $id);
 		$plaintext_string = $this->encrypt->decode($plaintext_string);
+		
 		$data['id_dok']	= $plaintext_string;
 		$data['list'] = $this->M_admin->getPegawai($plaintext_string);
+		$data['layanan'] = $this->M_admin->selectLayanan();
+
 		$this->load->view("V_Header");
 		$this->load->view("Admin/Pegawai/V_Edit",$data);
 		$this->load->view("V_Footer");

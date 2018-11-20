@@ -52,8 +52,15 @@ public function jadwalDetail($id = false) {
 public function jadwalEdit($id = false) {
 		$plaintext_string = str_replace(array('-', '_', '~'), array('+', '/', '='), $id);
 		$plaintext_string = $this->encrypt->decode($plaintext_string);
+		
 		$data['id_jadwal']	= $plaintext_string;
 		$data['list'] = $this->M_admin->getJadwal($plaintext_string);
+		$data['dokter'] = $this->M_admin->selectPegawai();
+
+		// echo "<pre>";
+		// print_r($data);
+		// exit();
+
 		$this->load->view("V_Header");
 		$this->load->view("Admin/Jadwal/V_Edit",$data);
 		$this->load->view("V_Footer");
@@ -68,17 +75,25 @@ public function jadwalEdit($id = false) {
 		$bagian = $this->input->post('bagian');
 		$hari = $this->input->post('hari');
 		$time_awal = $this->input->post('time_awal');
-		$time_akhir = $this->input->post('time_awal');
-		$time = $time_awal." s/d ".$time_akhir;
+		$time_akhir = $this->input->post('time_akhir');
+		$hari_pertama = $this->input->post('hari_pertama');
+		$hari_terakhir = $this->input->post('hari_terakhir');
+		
+		// $time = $time_awal." s/d ".$time_akhir;
+		
 		$data  = array(
 				'id_dokter' => $id_dokter, 
 				'bagian' => $bagian,
-				'hari' => $hari,
-				'jam' => $time
+				'hari_pertama' => $hari_pertama,
+				'hari_terakhir' => $hari_terakhir,
+				'jam_pertama' => $time_awal,
+				'jam_terakhir' => $time_akhir
 				);
+		
 		// echo "<pre>";
 		// print_r($data);
 		// exit();
+
 		if($this->M_admin->insertJadwal($data)) {
 			$this->session->set_flashdata('success', 'Jadwal berhasil ditambahkan!');
 			redirect('Jadwal/index/simpan');
@@ -96,13 +111,19 @@ public function jadwalEdit($id = false) {
 		$bagian = $this->input->post('bagian');
 		$hari = $this->input->post('hari');
 		$time_awal = $this->input->post('time_awal');
-		$time_akhir = $this->input->post('time_awal');
-		$time = $time_awal." s/d ".$time_akhir;
+		$time_akhir = $this->input->post('time_akhir');
+		$hari_pertama = $this->input->post('hari_pertama');
+		$hari_terakhir = $this->input->post('hari_terakhir');
+		
+		// $time = $time_awal." s/d ".$time_akhir;
+		
 		$data  = array(
-				'id_dokter' => $id_dok, 
+				'id_dokter' => $id_dokter, 
 				'bagian' => $bagian,
-				'hari' => $hari,
-				'jam' => $time
+				'hari_pertama' => $hari_pertama,
+				'hari_terakhir' => $hari_terakhir,
+				'jam_pertama' => $time_awal,
+				'jam_terakhir' => $time_akhir
 				);
 		// echo "<pre>";
 		// print_r($data);
@@ -131,4 +152,12 @@ public function deleteJadwal($id) {
 			redirect('Jadwal/index/error');
 		}	
 	}
+
+
+	/*-=-=-=-=-=-=-=-=-=--=-=-=-=-=- FUNCTION SECTION -=-=-=-=-=-=-=-=-=-=-=--=-=-=-=-=-=-=-=-= */
+
+
+
 }
+
+

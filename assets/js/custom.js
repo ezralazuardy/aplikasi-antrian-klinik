@@ -1,11 +1,16 @@
-$(document).ready( function () {
+var getUrl = window.location;
+var base_url = getUrl .protocol + "//" + getUrl.host + "/" + getUrl.pathname.split('/')[1];
+
+$(document).ready(function () {
 
 	$('#doctor-table').DataTable();
+	$('.table').DataTable();
 	$('.tanggal-lahir').datepicker({
 		changeMonth: true,
 		changeYear: true
 	});		
 	$('.tanggal-lahir').datepicker("option", "dateFormat", 'DD, dd MM yy');
+
 
 });
 
@@ -41,6 +46,36 @@ function skipThis($link){
 				icon: "success",
 			});
 			window.location.replace($link)
+		}
+	});
+}
+
+function selectDokter(th) {
+	var id_layanan_medis = $(th).val();
+
+	console.log(id_layanan_medis);
+	$.ajax({
+		url: base_url + "/Daftar/getDokter",
+		type: "POST",
+		dataType: 'json',
+		data:{id_layanan_medis:id_layanan_medis},
+		success: function(result) {
+
+			$("#id_dokter").find('option').remove().end();
+
+			if(result){
+				var html = '<option></option>';
+				$.each(result,function(i,data){
+					html += "<option value='"+data.id_dok+"'>"+data.nama_dokter+"</option>";
+				});
+			}else{
+				var html = '<option disabled>Tidak ada dokter yang bertugas</option>';
+			}	
+			$("#id_dokter").append(html);
+			console.log(result);
+		},
+		error: function(jqXHR, textStatus, errorThrown) {
+			console.log(jqXHR);
 		}
 	});
 }

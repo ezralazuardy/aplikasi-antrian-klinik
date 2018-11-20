@@ -20,12 +20,6 @@ class C_Dashboard extends CI_Controller {
 		$data['total_antrian'] = $this->M_admin->getCountAntrian();
 		$data['sisa_antrian'] = $this->M_admin->getCountSisaAntrian();
 		$data['current_antrian'] = $this->M_admin->getCurrentAntrian();
-
-
-		// echo "<pre>";
-		// print_r($data);
-		// exit();
-		
 		$this->checkSession();
 		$this->load->view("V_Header");
 		$this->load->view("Admin/V_Index",$data);
@@ -33,7 +27,7 @@ class C_Dashboard extends CI_Controller {
 	}
 
 	public function checkSession(){
-		if(!$this->session->id_user){
+		if (!$this->session->id_user){
 			redirect('Login');
 		}
 	}	

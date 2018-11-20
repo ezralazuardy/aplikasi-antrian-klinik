@@ -38,6 +38,8 @@ class C_Antrian extends CI_Controller {
 
 	public function inputAntrian() {
 		$data['dokter'] = $this->M_admin->selectPegawai();
+		$data['jamkes'] = $this->M_admin->selectJamkes();
+		
 		$this->load->view("V_Header");
 		$this->load->view("Admin/Antrian/V_Input",$data);
 		$this->load->view("V_Footer");	
@@ -66,7 +68,8 @@ public function antrianEdit($id = false) {
 		$data['id_antrian']	= $plaintext_string;
 		$data['list'] = $this->M_admin->getAntrian($plaintext_string);
 		$data['id_dok'] = $this->M_admin->selectPegawai();
-
+		$data['jamkes'] = $this->M_admin->selectJamkes();
+		
 		$this->load->view("V_Header");
 		$this->load->view("Admin/Antrian/V_Edit",$data);
 		$this->load->view("V_Footer");
@@ -81,8 +84,10 @@ public function antrianEdit($id = false) {
 		$umur = $this->input->post('umur');
 		$berat_badan = $this->input->post('berat_badan');
 		$jenis_kelamin = $this->input->post('jenis_kelamin');
-		$tanggal_besuk = $this->input->post('tanggal_besuk');
+		$tanggal_besuk = date('Y-m-d');
 		$alamat = $this->input->post('alamat');
+		$id_jamkes = $this->input->post('jamkes');
+		$penyakit = $this->input->post('penyakit');
 
 		$antrian = $this->getAntrian();
 
@@ -94,7 +99,9 @@ public function antrianEdit($id = false) {
 			'jenis_kelamin' => $jenis_kelamin, 	
 			'tanggal_besuk' => $tanggal_besuk, 	
 			'alamat' => $alamat ,
-			'id_dokter' => $id_dokter 
+			'penyakit' => $penyakit,
+			'id_dokter' => $id_dokter,
+			'id_jamkes' => $id_jamkes
 
 		);
 		// echo "<pre>";
@@ -124,16 +131,20 @@ public function antrianEdit($id = false) {
 		$jenis_kelamin = $this->input->post('jenis_kelamin');
 		$tanggal_besuk = $this->input->post('tanggal_besuk');
 		$alamat = $this->input->post('alamat');
+		$penyakit = $this->input->post('penyakit');
+		$id_jamkes = $this->input->post('jamkes');
+
 
 		$data  = array(
 			'nama' => $nama, 
 			'umur' => $umur, 
 			'berat_badan' => $berat_badan, 
 			'jenis_kelamin' => $jenis_kelamin, 	
+			'penyakit' => $penyakit,
 			'tanggal_besuk' => $tanggal_besuk, 	
 			'alamat' => $alamat ,
-			'id_dokter' => $id_dokter 
-
+			'id_dokter' => $id_dokter, 
+			'id_jamkes' => $id_jamkes
 		);
 		// echo "<pre>";
 		// print_r($data);
@@ -195,7 +206,7 @@ public function antrianEdit($id = false) {
 public function getAntrian(){
 		$antrian = '';
 		
-		if($data = $this->M_mainmenu->countAntrian()){
+		if($data = $this->M_mainmenu->countAntrian(true)){
 
 			$no_urut = (int) substr($data[0]['antrian'],1,3);
 			
