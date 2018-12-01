@@ -11,6 +11,7 @@ class C_Landing extends CI_Controller {
     $this->load->helper('html');
     $this->load->library('form_validation');
     $this->load->library('session');
+    $this->load->library('encryption');
     $this->load->model('M_mainmenu');
     $this->load->model('Admin/M_admin');
     date_default_timezone_set("Asia/Bangkok");
