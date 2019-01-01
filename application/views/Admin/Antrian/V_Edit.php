@@ -27,7 +27,7 @@
 									<input type="hidden" name="id_antrian" value="<?php echo $id_antrian; ?>">
 									<div class="form-group">
 										<label for="nama_lengkap">Nama Lengkap</label>
-										<input id="nama_lengkap" name="nama_lengkap" type="text" class="form-control" placeholder="Nama Lengkap" value="<?php echo $list[0]['nama_lengkap']; ?>" required="">
+										<input id="nama_lengkap" name="nama_lengkap" type="text" class="form-control" placeholder="Nama Lengkap" value="<?php echo $list[0]['nama']; ?>" required="">
 									</div>
 									<div class="form-group">
 										<label for="Umur">Umur</label>
@@ -35,7 +35,7 @@
 									</div>
 									<div class="form-group">
 										<label for="bagian">Berat</label>
-										<input id="bagian" name="bagian" type="text" class="form-control" placeholder="Bagian" value="<?php echo $list[0]['berat']; ?>" required="">
+										<input id="bagian" name="bagian" type="text" class="form-control" placeholder="Bagian" value="<?php echo $list[0]['berat_badan']; ?>" required="">
 									</div>
 									<div class="form-group">
 										<label for="hari">Jenis Kelamin</label>
