@@ -1,4 +1,4 @@
-[![Author](https://img.shields.io/badge/author-Ezra%20Lazuardy%20&%20AnbiDev-blue.svg)](https://github.com/ezralazuardy) [![License](https://img.shields.io/github/license/ezralazuardy/ChocoView.svg)](https://github.com/ezralazuardy/aplikasi-antrian-klinik/blob/master/LICENSE) [![Releases](https://img.shields.io/github/v/release/ezralazuardy/aplikasi-antrian-klinik?color=green)](https://github.com/ezralazuardy/aplikasi-antrian-klinik/releases)
+[![Author](https://img.shields.io/badge/author-ezra%20lazuardy-blue.svg)](https://github.com/ezralazuardy) [![License](https://img.shields.io/github/license/ezralazuardy/ChocoView.svg)](https://github.com/ezralazuardy/aplikasi-antrian-klinik/blob/master/LICENSE) [![Releases](https://img.shields.io/github/v/release/ezralazuardy/aplikasi-antrian-klinik?color=green)](https://github.com/ezralazuardy/aplikasi-antrian-klinik/releases)
 
 ## Aplikasi Antrian Klinik [DISCONTINUED]
 Aplikasi untuk kepentingan manajemen klinik.<br>
